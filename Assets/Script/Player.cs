@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
     {
         Debug.Log("Ω√¿€");
         Debug.Log("Test1");
+        Debug.Log("PJH pr");
     }
 
     
