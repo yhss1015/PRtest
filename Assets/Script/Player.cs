@@ -6,7 +6,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         Debug.Log("Ω√¿€");
-        Debug.Log("Pull Request");
+        Debug.Log("Test1");
     }
 
     
