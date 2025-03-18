@@ -29,5 +29,23 @@ public class Player : MonoBehaviour
         transform.Translate(CurSpeedX, CurSpeedY, 0);
     }
 
+    void TakeDamage(float dmg)
+    {
+        curHp -= dmg;
+
+        if(curHp<=0)
+        {
+            Debug.Log("플레이어 사망");
+
+        }
+    }
     
+    void PlusHp(float amount)
+    {
+        curHp += amount;
+        if(curHp>maxHp)
+        {
+            curHp = maxHp;
+        }
+    }
 }
