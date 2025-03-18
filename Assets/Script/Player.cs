@@ -4,26 +4,30 @@ public class Player : MonoBehaviour
 {
     public float maxHp = 100;
     public float curHp = 100;
-    public float speed = 5;
+    public float speedX = 5;
+    public float speedY = 4;
     public float attack = 10;
 
 
 
     void Start()
     {
-        
+
     }
 
-    
+
     void Update()
     {
         PMove();
+        
     }
 
     void PMove()
     {
-        float speedX = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
-        float speedY = Input.GetAxis("Vertical") * (speed / 2) * Time.deltaTime;
-        transform.Translate(speedX, speedY, 0);
+        float CurSpeedX = Input.GetAxis("Horizontal") * speedX * Time.deltaTime;
+        float CurSpeedY = Input.GetAxis("Vertical") * speedY * Time.deltaTime;
+        transform.Translate(CurSpeedX, CurSpeedY, 0);
     }
+
+    
 }
