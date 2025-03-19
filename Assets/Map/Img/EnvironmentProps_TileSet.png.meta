@@ -748,7 +748,31 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      EnvironmentProps_TileSet_0: -658870211797736900
+      EnvironmentProps_TileSet_1: 8600799903764642671
+      EnvironmentProps_TileSet_10: 1404293642248401403
+      EnvironmentProps_TileSet_11: 5433419778628077730
+      EnvironmentProps_TileSet_12: -5013997960508367791
+      EnvironmentProps_TileSet_13: -5528206972268374345
+      EnvironmentProps_TileSet_14: 6809205080350156625
+      EnvironmentProps_TileSet_15: 5024077259486479131
+      EnvironmentProps_TileSet_16: 3665671346340126517
+      EnvironmentProps_TileSet_17: 7758932163138475603
+      EnvironmentProps_TileSet_18: -5237996327760298285
+      EnvironmentProps_TileSet_19: 6342279789343318365
+      EnvironmentProps_TileSet_2: 8278704658924831135
+      EnvironmentProps_TileSet_20: -7276353954614741131
+      EnvironmentProps_TileSet_21: 5006420162194914420
+      EnvironmentProps_TileSet_22: 4656870089054648045
+      EnvironmentProps_TileSet_23: -2571839438839584810
+      EnvironmentProps_TileSet_3: -6997419639323041462
+      EnvironmentProps_TileSet_4: -8889922134136552339
+      EnvironmentProps_TileSet_5: -198410084399201065
+      EnvironmentProps_TileSet_6: 2160559843560099595
+      EnvironmentProps_TileSet_7: 6951304300987898258
+      EnvironmentProps_TileSet_8: -4194619910807621998
+      EnvironmentProps_TileSet_9: -2989652329648382499
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
