@@ -1,9 +1,9 @@
 using UnityEngine;
 
-public class MapManager : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
-    public static MapManager Instance { get; private set; }
-
+    public static GameManager Instance { get; private set; }
+    public PoolManager pool;
     public Player player;
 
     private void Awake()
@@ -29,13 +29,5 @@ public class MapManager : MonoBehaviour
         {
 
         }
-
     }
-
-    public void RepeatMap()
-    {
-        
-    }
-
-
 }
