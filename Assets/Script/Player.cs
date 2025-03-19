@@ -9,9 +9,10 @@ public class Player : MonoBehaviour
     public float speedY = 4;
     public float attack = 10;
 
-    public float Level = 1;
+    public float Level = 1; //캐릭터 레벨
 
-    public float BasicAttack_Level = 1;
+    public float BasicAttack_Level = 1; // 기본 공격 레벨
+    public float BasicCool = 2f;    // 기본 공격 주기를 결정
 
     private Vector3 defaultScale;
     private Animator playerAnim; // 플레이어 애니메이터 가져옴
@@ -69,7 +70,7 @@ public class Player : MonoBehaviour
         while (true)
         {
             BasicAttack();
-            yield return new WaitForSeconds(2f); // 2초 대기 후 반복
+            yield return new WaitForSeconds(BasicCool); // 2초 대기 후 반복
         }
     }
 
