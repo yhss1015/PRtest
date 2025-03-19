@@ -13,18 +13,18 @@ MonoBehaviour:
   m_Name: BackGround
   m_EditorClassIdentifier: 
   m_DefaultSprite: {fileID: 21300096, guid: 3b30003999f7c419b878b6e3e3948812, type: 3}
-  m_DefaultGameObject: {fileID: 7776880302410354956, guid: 25c2d82c0a3d84143895e77af0f82d34, type: 3}
+  m_DefaultGameObject: {fileID: 0}
   m_DefaultColliderType: 1
   m_TilingRules:
   - m_Id: 0
     m_Sprites:
-    - {fileID: 4773970642056527509, guid: 53b572e6fe3a2294abae85fec21835af, type: 3}
-    - {fileID: 1419976517, guid: 53b572e6fe3a2294abae85fec21835af, type: 3}
-    - {fileID: 354741081, guid: 53b572e6fe3a2294abae85fec21835af, type: 3}
-    - {fileID: -1571598209, guid: 53b572e6fe3a2294abae85fec21835af, type: 3}
-    - {fileID: 2133415879, guid: 53b572e6fe3a2294abae85fec21835af, type: 3}
-    - {fileID: -1620558076, guid: 53b572e6fe3a2294abae85fec21835af, type: 3}
-    - {fileID: -693399987, guid: 53b572e6fe3a2294abae85fec21835af, type: 3}
+    - {fileID: 21300096, guid: 3b30003999f7c419b878b6e3e3948812, type: 3}
+    - {fileID: 21300098, guid: 3b30003999f7c419b878b6e3e3948812, type: 3}
+    - {fileID: 21300100, guid: 3b30003999f7c419b878b6e3e3948812, type: 3}
+    - {fileID: 21300102, guid: 3b30003999f7c419b878b6e3e3948812, type: 3}
+    - {fileID: 21300150, guid: 3b30003999f7c419b878b6e3e3948812, type: 3}
+    - {fileID: 21300152, guid: 3b30003999f7c419b878b6e3e3948812, type: 3}
+    - {fileID: 21300154, guid: 3b30003999f7c419b878b6e3e3948812, type: 3}
     m_GameObject: {fileID: 0}
     m_MinAnimationSpeed: 1
     m_MaxAnimationSpeed: 1
