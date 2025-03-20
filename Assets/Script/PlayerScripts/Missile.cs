@@ -56,7 +56,7 @@ public class Missile : MonoBehaviour
 
         foreach (Collider2D collider in hitColliders)
         {
-            if (collider.CompareTag("Monster"))
+            if (collider.CompareTag("Enemy"))
             {
                 float distance = Vector2.Distance(transform.position, collider.transform.position);
                 if (distance < closestDistance)
@@ -94,7 +94,7 @@ public class Missile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("Monster"))
+        if(collision.CompareTag("Enemy"))
         {
             Debug.Log("미사일 몬스터 타격");
             Instantiate(boom_Effect, transform.position, Quaternion.identity);

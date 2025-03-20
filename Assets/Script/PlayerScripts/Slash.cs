@@ -11,7 +11,7 @@ public class Slash : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("Monster"))
+        if(collision.CompareTag("Enemy"))
         {
             Debug.Log("몬스터 맞음");
             if(firstSound==true) // 몬스터 피격 소리가 겹치면 매우 크므로 검기 하나당 1번만 실행
