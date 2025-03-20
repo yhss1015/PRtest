@@ -21,7 +21,6 @@ public class PoolManager : MonoBehaviour
     {
         StartCoroutine(TryRegisterCoroutine());
         prefabs = Resources.LoadAll<GameObject>("Monster/");        
-
     }
 
     public GameObject GetPrefab(int index)
@@ -47,7 +46,7 @@ public class PoolManager : MonoBehaviour
         */
         if (!select)
         {
-            select = Instantiate(prefabs[index], transform);
+            select = Instantiate(prefabs[index], GetSpawnPos(GameManager.Instance.player.transform.position));
             pools[index].Add(select);
         }
 
@@ -61,5 +60,46 @@ public class PoolManager : MonoBehaviour
             yield return null; // 한 프레임 대기
         }
         GameManager.Instance.pool = this;
+    }
+
+    Transform GetSpawnPos(Vector3 playerPos)
+    {
+        Camera mainCam = Camera.main;
+        if (mainCam == null) return null;
+
+        Vector3 spawnPos = playerPos;
+
+        float camHeight = 2f * mainCam.orthographicSize;
+        float camWidth = camHeight * mainCam.aspect;
+
+        float spawnMargin = 2f;
+        float spawnDistance = 5f;
+
+        int randomSide = Random.Range(0, 4); //방향 랜덤설정
+
+        switch (randomSide)
+        {
+            case 0: // 위쪽
+                spawnPos += new Vector3(Random.Range(-camWidth / 2, camWidth / 2), camHeight / 2 + spawnMargin, 0); break;
+            case 1: // 아래쪽
+                spawnPos += new Vector3(Random.Range(-camWidth / 2, camWidth / 2), -camHeight / 2 - spawnMargin, 0); break;
+            case 2: // 왼쪽
+                spawnPos += new Vector3(-camWidth / 2 - spawnMargin, Random.Range(-camHeight / 2, camHeight / 2), 0); break;
+            case 3: // 오른쪽
+                spawnPos += new Vector3(camWidth / 2 + spawnMargin, Random.Range(-camHeight / 2, camHeight / 2), 0); break;
+        }
+
+        // 플레이어와 일정 거리 유지
+        if (Vector3.Distance(spawnPos, playerPos) < spawnDistance)
+        {
+            spawnPos += (spawnPos - playerPos).normalized * spawnDistance;
+        }
+
+        // 빈 GameObject를 생성하여 위치 설정
+        GameObject spawnPoint = new GameObject("SpawnPoint");
+        spawnPoint.transform.position = spawnPos;
+
+
+        return spawnPoint.transform;
     }
 }
