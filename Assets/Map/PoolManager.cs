@@ -62,7 +62,7 @@ public class PoolManager : MonoBehaviour
         GameManager.Instance.pool = this;
     }
 
-    Transform GetSpawnPos(Vector3 playerPos)
+    public Transform GetSpawnPos(Vector3 playerPos)
     {
         Camera mainCam = Camera.main;
         if (mainCam == null) return null;
