@@ -20,6 +20,7 @@ public class PoolManager : MonoBehaviour
     private void Start()
     {
         StartCoroutine(TryRegisterCoroutine());
+        prefabs = Resources.LoadAll<GameObject>("Monster/");        
 
     }
 
@@ -28,8 +29,8 @@ public class PoolManager : MonoBehaviour
         GameObject select = null;
 
         /*
-        ¼±ÅÃÇÑ Ç®ÀÇ ºñÈ°¼ºÈ­ µÈ(»ç¿ëÁßÀÌ ¾Æ´Ñ)°ÔÀÓ ¿ÀºêÁ§Æ®¿¡ Á¢±Ù,
-        ¹ß°ßÇÏ¸é select º¯¼ö¿¡ ÇÒ´ç
+        ì„ íƒí•œ í’€ì˜ ë¹„í™œì„±í™” ëœ(ì‚¬ìš©ì¤‘ì´ ì•„ë‹Œ)ê²Œì„ ì˜¤ë¸Œì íŠ¸ì— ì ‘ê·¼,
+        ë°œê²¬í•˜ë©´ select ë³€ìˆ˜ì— í• ë‹¹
         */
         foreach(GameObject obj in pools[index])
         {
@@ -42,7 +43,7 @@ public class PoolManager : MonoBehaviour
         }
 
         /*
-        Ã£Áö ¸øÇÏ¸é »õ·Ó°Ô »ı¼ºÇÏ°í select º¯¼ö¿¡ ÇÒ´ç
+        ì°¾ì§€ ëª»í•˜ë©´ ìƒˆë¡­ê²Œ ìƒì„±í•˜ê³  select ë³€ìˆ˜ì— í• ë‹¹
         */
         if (!select)
         {
@@ -57,7 +58,7 @@ public class PoolManager : MonoBehaviour
     {
         while (GameManager.Instance == null)
         {
-            yield return null; // ÇÑ ÇÁ·¹ÀÓ ´ë±â
+            yield return null; // í•œ í”„ë ˆì„ ëŒ€ê¸°
         }
         GameManager.Instance.pool = this;
     }
