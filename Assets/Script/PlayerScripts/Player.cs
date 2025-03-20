@@ -5,9 +5,11 @@ public class Player : MonoBehaviour
 {
     public float maxHp = 100;
     public float curHp = 100;
-    public float speedX = 5;
-    public float speedY = 4;
+    public float speed = 4;
     public float attack = 10;
+
+    public float curExp = 0;
+    public float maxExp = 100;
 
     public float Level = 1; //캐릭터 레벨
 
@@ -42,8 +44,8 @@ public class Player : MonoBehaviour
 
     void PMove()
     {
-        float curSpeedX = Input.GetAxis("Horizontal") * speedX * Time.deltaTime;
-        float curSpeedY = Input.GetAxis("Vertical") * speedY * Time.deltaTime;
+        float curSpeedX = Input.GetAxis("Horizontal") * speed *1.25f * Time.deltaTime;
+        float curSpeedY = Input.GetAxis("Vertical") * speed * Time.deltaTime;
 
         if (curSpeedX != 0 || curSpeedY != 0)
         {
@@ -109,7 +111,7 @@ public class Player : MonoBehaviour
     }
 
 
-    void TakeDamage(float dmg)
+    public void TakeDamage(float dmg)
     {
         curHp -= dmg;
 
@@ -120,12 +122,36 @@ public class Player : MonoBehaviour
         }
     }
     
-    void PlusHp(float amount)
+    public void PlusHp(float amount)
     {
         curHp += amount;
         if(curHp>maxHp)
         {
             curHp = maxHp;
         }
+    }
+
+    public void PlusExp(float amount)
+    {
+        // 경험치 증가
+        curExp += amount;
+        if(curExp>=maxExp) // 레벨경험치 꽉찰시 현재경험치 차감,최대 경험치 상승, 레벨 상승
+        {
+            curExp -= maxExp;
+            maxExp *= 1.2f;
+            Level++;
+        }
+    }
+
+
+    // 단순 스텟 증가 참조 변수 활용
+    public void Something(float amount, ref float stat)   // ex. ( 증가할 값 , player.speed )
+    {
+        stat += amount;
+    }
+
+    public void PlusSpeed(float amount)
+    {
+        speed += amount;
     }
 }

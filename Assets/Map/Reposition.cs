@@ -52,8 +52,8 @@ public class Reposition : MonoBehaviour
     }
     private void OnBecameInvisible()
     {
-        if (transform.tag != "Enemy") return;
-        // 🔥 화면 밖으로 나가면 재소환 타이머 시작
+        if (transform.tag != "Enemy" || !this.gameObject.activeInHierarchy) return;
+        // 화면 밖으로 나가면 재소환 타이머 시작
         if (respawnCoroutine == null)
         {
             respawnCoroutine = StartCoroutine(RespawnAfterDelay(2f));
@@ -62,8 +62,8 @@ public class Reposition : MonoBehaviour
 
     private void OnBecameVisible()
     {
-        if (transform.tag != "Enemy") return;
-        // ✅ 다시 화면 안으로 들어오면 타이머 취소
+        if (transform.tag != "Enemy" || !this.gameObject.activeInHierarchy) return;
+        // 다시 화면 안으로 들어오면 타이머 취소
         if (respawnCoroutine != null)
         {
             StopCoroutine(respawnCoroutine);
