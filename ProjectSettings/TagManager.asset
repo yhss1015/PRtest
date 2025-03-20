@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Area
   - Ground
+  - FxTemporaire
+  - Monster
   layers:
   - Default
   - TransparentFX
