@@ -8,6 +8,8 @@ TagManager:
   - Ground
   - FxTemporaire
   - Monster
+  - Enemy
+
   layers:
   - Default
   - TransparentFX

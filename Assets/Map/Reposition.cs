@@ -1,7 +1,11 @@
+using System.Collections;
 using UnityEngine;
 
 public class Reposition : MonoBehaviour
 {
+
+    private Coroutine respawnCoroutine; // 재소환 코루틴 저장용
+
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (!collision.CompareTag("Area")) return;
@@ -37,8 +41,51 @@ public class Reposition : MonoBehaviour
                 }
                 break;
             case "Enemy":
+                /*if (!IsEnemyOnScreen())
+                {
+                    transform.position = GameManager.Instance.pool.GetSpawnPos(GameManager.Instance.player.transform.position).position;
+                }*/
+
                 break;
         }
 
+    }
+    private void OnBecameInvisible()
+    {
+        if (transform.tag != "Enemy") return;
+        // 🔥 화면 밖으로 나가면 재소환 타이머 시작
+        if (respawnCoroutine == null)
+        {
+            respawnCoroutine = StartCoroutine(RespawnAfterDelay(2f));
+        }
+    }
+
+    private void OnBecameVisible()
+    {
+        if (transform.tag != "Enemy") return;
+        // ✅ 다시 화면 안으로 들어오면 타이머 취소
+        if (respawnCoroutine != null)
+        {
+            StopCoroutine(respawnCoroutine);
+            respawnCoroutine = null;
+        }
+    }
+
+    IEnumerator RespawnAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
+        if (!IsEnemyOnScreen())
+        {
+            transform.position = GameManager.Instance.pool.GetSpawnPos(GameManager.Instance.player.transform.position).position;
+        }
+
+        respawnCoroutine = null; // 코루틴 리셋
+    }
+
+    bool IsEnemyOnScreen()
+    {
+        Vector3 screenPoint = Camera.main.WorldToViewportPoint(transform.position);
+        return screenPoint.x > 0 && screenPoint.x < 1 && screenPoint.y > 0 && screenPoint.y < 1 && screenPoint.z > 0;
     }
 }
