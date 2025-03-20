@@ -14,10 +14,15 @@ public class Player : MonoBehaviour
     public float BasicAttack_Level = 1; // 기본 공격 레벨
     public float BasicCool = 2f;    // 기본 공격 주기를 결정
 
+    public float MissileAttack_Level = 1;   // 투사체 공격 레벨
+    public float MissileCool = 3f;  // 투사체 공격 주기
+    
+
     private Vector3 defaultScale;
     private Animator playerAnim; // 플레이어 애니메이터 가져옴
 
     public GameObject []attack_Prefab;
+    public GameObject missile_prefab;
 
     void Start()
     {
@@ -26,6 +31,7 @@ public class Player : MonoBehaviour
 
         // 2초마다 BasicAttackRoutine 실행
         StartCoroutine(BasicAttackRoutine());
+        StartCoroutine(MissileAttackRoutine());
     }
 
     void Update()
@@ -74,13 +80,23 @@ public class Player : MonoBehaviour
         }
     }
 
+    IEnumerator MissileAttackRoutine()
+    {
+        while(true)
+        {
+            Instantiate(missile_prefab, transform.position, Quaternion.identity);
+            yield return new WaitForSeconds(MissileCool);
+        }
+    }
+
+
     void BasicAttack()
     {
-        if (attack_Prefab.Length < 2) return;
+        if (attack_Prefab.Length < 1) return;
 
         // 왼쪽 공격
         Instantiate(attack_Prefab[0], transform.position + attack_Prefab[0].transform.position, attack_Prefab[0].transform.rotation);
-
+        SoundManager.Instance.slashSound();
         // 0.1초 후 오른쪽 공격 실행
         StartCoroutine(DelayedAttack());
     }
@@ -88,6 +104,7 @@ public class Player : MonoBehaviour
     IEnumerator DelayedAttack()
     {
         yield return new WaitForSeconds(0.1f);
+        SoundManager.Instance.slashSound();
         Instantiate(attack_Prefab[1], transform.position + attack_Prefab[1].transform.position, attack_Prefab[1].transform.rotation);
     }
 
