@@ -46,7 +46,7 @@ public class PoolManager : MonoBehaviour
         */
         if (!select)
         {
-            select = Instantiate(prefabs[index], GetSpawnPos(GameManager.Instance.player.transform.position));
+            select = Instantiate(prefabs[index], GetSpawnPos(GameManager.Instance.player.transform.position), Quaternion.identity);
             pools[index].Add(select);
         }
 
@@ -62,10 +62,10 @@ public class PoolManager : MonoBehaviour
         GameManager.Instance.pool = this;
     }
 
-    public Transform GetSpawnPos(Vector3 playerPos)
+    public Vector3 GetSpawnPos(Vector3 playerPos)
     {
         Camera mainCam = Camera.main;
-        if (mainCam == null) return null;
+        if (mainCam == null) return Vector3.zero;
 
         Vector3 spawnPos = playerPos;
 
@@ -94,12 +94,12 @@ public class PoolManager : MonoBehaviour
         {
             spawnPos += (spawnPos - playerPos).normalized * spawnDistance;
         }
-
+/*
         // 빈 GameObject를 생성하여 위치 설정
         GameObject spawnPoint = new GameObject("SpawnPoint");
         spawnPoint.transform.position = spawnPos;
+*/
 
-
-        return spawnPoint.transform;
+        return spawnPos;
     }
 }

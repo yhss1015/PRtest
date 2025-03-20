@@ -77,7 +77,7 @@ public class Reposition : MonoBehaviour
 
         if (!IsEnemyOnScreen())
         {
-            transform.position = GameManager.Instance.pool.GetSpawnPos(GameManager.Instance.player.transform.position).position;
+            transform.position = GameManager.Instance.pool.GetSpawnPos(GameManager.Instance.player.transform.position);
         }
 
         respawnCoroutine = null; // 코루틴 리셋
