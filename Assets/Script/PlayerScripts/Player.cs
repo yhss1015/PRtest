@@ -109,7 +109,7 @@ public class Player : MonoBehaviour
     }
 
 
-    void TakeDamage(float dmg)
+    public void TakeDamage(float dmg)
     {
         curHp -= dmg;
 
@@ -120,7 +120,7 @@ public class Player : MonoBehaviour
         }
     }
     
-    void PlusHp(float amount)
+    public void PlusHp(float amount)
     {
         curHp += amount;
         if(curHp>maxHp)
