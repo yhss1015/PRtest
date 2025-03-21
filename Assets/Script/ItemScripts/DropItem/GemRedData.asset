@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 031036d8dc676904499d5419a50b3c28, type: 3}
+  m_Name: GemRedData
+  m_EditorClassIdentifier: 
+  gemType: 2
+  itemSprite: {fileID: -1666933443714990831, guid: c65a9312b35a2e04fae41699764db2e8, type: 3}
+  xpAmount: 10

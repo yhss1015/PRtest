@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: d7f43c596a336a44a848632ff43f1538
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - weaponPrefab: {fileID: 8343974562744449887, guid: 6ded56c8a6c54714a972ad8822399f52, type: 3}
+  - accessoryPrefab: {fileID: 1818621112373551941, guid: 5f11b00484456e248a948a8fbd63b021, type: 3}
+  - gemPrefab: {fileID: 6519713633024068713, guid: cc768c64e90bf034ea39209b76d2bddf, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
