@@ -1,12 +1,13 @@
 using NUnit.Framework;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.Dependencies.NCalc;
 using UnityEngine;
 
 public class PoolManager : MonoBehaviour
 {
     public GameObject[] prefabs;
-    List<GameObject>[] pools;
+    public List<GameObject>[] pools;
 
     private void Awake()
     {
@@ -31,7 +32,12 @@ public class PoolManager : MonoBehaviour
         선택한 풀의 비활성화 된(사용중이 아닌)게임 오브젝트에 접근,
         발견하면 select 변수에 할당
         */
-        foreach(GameObject obj in pools[index])
+        if(index >= pools.Length)
+        {
+            index = pools.Length-1;
+        }
+        //out of range 나올 수 있음 index <- 몬스터 레벨 증가(종류 변경)
+        foreach (GameObject obj in pools[index])
         {
             if (!obj.activeSelf)
             {
