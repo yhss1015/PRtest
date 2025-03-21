@@ -50,6 +50,23 @@ public class Reposition : MonoBehaviour
         }
 
     }
+    public Vector3 GetDir()
+    {
+        Vector3 playerPos = MapManager.Instance.player.transform.position;
+        Vector3 myPos = transform.position;
+
+        float dirX = playerPos.x - myPos.x;
+        float dirY = playerPos.y - myPos.y;
+
+        //플레이어랑 몬스터가 조금이라도 축이 다르면 대각선으로 나옴
+        float diffX = Mathf.Abs(dirX);
+        float diffY = Mathf.Abs(dirY);
+        dirX = dirX > 0 ? 1 : -1;
+        dirY = dirY > 0 ? 1 : -1;
+
+        return new Vector3(dirX, dirY, 0);
+
+    }
     private void OnBecameInvisible()
     {
         if (transform.tag != "Enemy" || !this.gameObject.activeInHierarchy) return;
@@ -73,12 +90,28 @@ public class Reposition : MonoBehaviour
 
     IEnumerator RespawnAfterDelay(float delay)
     {
-        yield return new WaitForSeconds(delay);
-
-        if (!IsEnemyOnScreen())
+        while (true)
         {
-            transform.position = GameManager.Instance.pool.GetSpawnPos(GameManager.Instance.player.transform.position);
+            yield return new WaitForSeconds(delay);
+
+            if (!IsEnemyOnScreen())
+            {
+                /*transform.position = GameManager.Instance.pool.GetSpawnPos(GameManager.Instance.player.transform.position);*/
+                Vector3 playerDir = GetDir(); // 플레이어 방향 가져오기
+                float spawnDistance = 40f; // Ground와 같은 거리
+
+                // 플레이어 방향으로 이동
+                transform.Translate(new Vector3(playerDir.x * spawnDistance, playerDir.y * spawnDistance, 0));
+
+                // 스폰 포인트도 반영 (보정 필요할 수도 있음)
+                transform.position = GameManager.Instance.pool.GetSpawnPos(MapManager.Instance.player.transform.position);
+            }
+            else
+            {
+                break;
+            }
         }
+        
 
         respawnCoroutine = null; // 코루틴 리셋
     }
