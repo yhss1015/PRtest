@@ -3,10 +3,11 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public float maxHp = 100;
-    public float curHp = 100;
-    public float speed = 4;
-    public float attack = 10;
+    public float maxHp = 100;       // 최대 체력
+    public float curHp = 100;       // 현재 체력
+    public float speed = 4;         // 스피드
+    public float attack = 10;       // 공격력
+    public float recoveryHp = 1f;   // 1초마다 재생 체력
 
     public float curExp = 0;
     public float maxExp = 100;
@@ -40,6 +41,12 @@ public class Player : MonoBehaviour
     {
         PMove();
 
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            Slash sl = attack_Prefab[0].GetComponent<Slash>();
+            sl.power += 1;
+            Debug.Log("능력치업");
+        }
     }
 
     void PMove()
@@ -88,6 +95,15 @@ public class Player : MonoBehaviour
         {
             Instantiate(missile_prefab, transform.position, Quaternion.identity);
             yield return new WaitForSeconds(MissileCool);
+        }
+    }
+
+    IEnumerator RecoveryRoutine()
+    {
+        while (true)
+        {
+            PlusHp(recoveryHp);
+            yield return new WaitForSeconds(1f);
         }
     }
 

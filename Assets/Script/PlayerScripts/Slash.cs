@@ -6,6 +6,8 @@ public class Slash : MonoBehaviour
     public float power;
     public float delay;
 
+    public float destroy_delay; 
+
     [SerializeField]
     private bool firstSound = true;
 
@@ -28,13 +30,19 @@ public class Slash : MonoBehaviour
     private void Start()
     {
         PolygonCollider2D polygon = GetComponent<PolygonCollider2D>();
-        StartCoroutine(OnCollider(polygon,delay));
+        StartCoroutine(OnCollider(polygon,delay,true));
+        if(destroy_delay!=0)
+        {
+            StartCoroutine(OnCollider(polygon, destroy_delay,false));
+        }
     }
 
-    IEnumerator OnCollider(PolygonCollider2D polygon,float delay)
+    IEnumerator OnCollider(PolygonCollider2D polygon,float delay,bool isenable)
     {
         yield return new WaitForSeconds(delay);
-        polygon.enabled = true;
+        polygon.enabled = isenable;
     }
+
+    
 
 }

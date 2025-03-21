@@ -10121,8 +10121,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13ed3a259d12c8a418b940e12950948c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  power: 0
+  power: 5
   delay: 0.1
+  destroy_delay: 0.33
   firstSound: 1
 --- !u!4 &3286683016843523012 stripped
 Transform:
