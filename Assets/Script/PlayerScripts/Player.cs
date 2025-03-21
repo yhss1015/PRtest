@@ -83,8 +83,8 @@ public class Player : MonoBehaviour
     }
 
     IEnumerator MissileAttackRoutine()
-    {
-        while(true)
+    { 
+        while (true)
         {
             Instantiate(missile_prefab, transform.position, Quaternion.identity);
             yield return new WaitForSeconds(MissileCool);
