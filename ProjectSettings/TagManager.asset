@@ -9,7 +9,7 @@ TagManager:
   - FxTemporaire
   - Monster
   - Enemy
-
+  - EXP
   layers:
   - Default
   - TransparentFX
