@@ -1,12 +1,15 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using VampireSurvival.ItemSystem;
 
 public class Slash : MonoBehaviour
 {
     public float power;
     public float delay;
 
-    public float destroy_delay; 
+    public float destroy_delay;
+    public ItemManager itemManager;
 
     [SerializeField]
     private bool firstSound = true;
@@ -21,7 +24,42 @@ public class Slash : MonoBehaviour
                 SoundManager.Instance.slashAttackSound();
                 firstSound = false;
             }
-            
+
+            Monster monster = collision.GetComponent<Monster>();
+            monster.TakeDamage(power);
+
+        }
+    }
+
+    private void Awake()
+    {
+        itemManager = FindAnyObjectByType<ItemManager>();
+        if (itemManager == null)
+        {
+            Debug.LogError("ItemManager를 찾을 수 없습니다!");
+            return;
+        }
+
+        // weaponDataList에서 Whip 무기 찾기
+        WeaponData whipWeapon = null;
+        foreach (var weapon in itemManager.weaponDataList)
+        {
+            if (weapon.weaponType == WeaponType.Whip)
+            {
+                whipWeapon = weapon;
+                break;  // 첫 번째 Whip 무기를 찾으면 반복 종료
+            }
+        }
+
+        if (whipWeapon != null)
+        {
+            power = whipWeapon.baseAttackPower;
+            //delay = whipWeapon.baseCoolTime;
+            Debug.Log($"Whip 무기 적용: 공격력({power}), 쿨타임({delay})");
+        }
+        else
+        {
+            Debug.LogError("weaponDataList에서 Whip 타입 무기를 찾을 수 없습니다!");
         }
     }
 

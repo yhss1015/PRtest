@@ -10124,6 +10124,7 @@ MonoBehaviour:
   power: 5
   delay: 0.1
   destroy_delay: 0.33
+  itemManager: {fileID: 0}
   firstSound: 1
 --- !u!4 &3286683016843523012 stripped
 Transform:
