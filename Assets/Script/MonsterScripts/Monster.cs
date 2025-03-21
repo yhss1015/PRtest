@@ -7,10 +7,13 @@ public class Monster : MonoBehaviour
     public float Attack = 5;
 
     public GameObject target;  //플레이어
+    public GameObject EXP;
     Vector2 Dir;
     Vector2 DirNo;
 
     Animator Mob_Ani;
+
+    private bool isDead = false; // 몬스터가 죽었는지 확인하는 변수
 
     void Start()
     {
@@ -19,6 +22,8 @@ public class Monster : MonoBehaviour
 
     void Update()
     {
+        if (isDead) return; // 죽었으면 이동하지 않음
+
         target = GameObject.FindGameObjectWithTag("Player"); 
 
         Dir = target.transform.position - transform.position;
@@ -43,12 +48,15 @@ public class Monster : MonoBehaviour
 
     public void TakeDamage(float dmg) // 몬스터가 피해를 입는 함수
     {
+        if (isDead) return; // 이미 죽었으면 추가 피해를 받지 않음
         HP -= dmg;
 
         if(HP <= 0)
         {
+            isDead = true; // 몬스터 사망 처리
+            ExpDrop();
             Die();
-            //ExpDrop();
+            
         }
     }
 
@@ -58,8 +66,8 @@ public class Monster : MonoBehaviour
         Destroy(gameObject, 1.5f);
     }
 
-    //public void ExpDrop()
-    //{
-
-    //}
+    public void ExpDrop()
+    {
+        Instantiate(EXP, transform.position, Quaternion.identity);
+    }
 }
