@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Missile : MonoBehaviour
 {
+    public float power = 5f;
     public float detectionRange = 5f;  // 사거리
     public float speed = 10f;  // 미사일 이동 속도
     public bool targeting = true;  // 추적 여부
@@ -10,44 +11,64 @@ public class Missile : MonoBehaviour
 
     public GameObject boom_Effect;
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Enemy"))
+        {
+            Debug.Log("미사일 몬스터 타격");
+            Instantiate(boom_Effect, transform.position, Quaternion.identity);
+
+            Monster monster = collision.GetComponent<Monster>();
+            if (monster != null)
+            {
+                monster.TakeDamage(power);
+            }
+
+            Destroy(gameObject);
+        }
+    }
+
     void Start()
     {
-        // Start에서 "Monster" 태그를 가진 가장 가까운 객체를 찾기
+        // 가장 가까운 "Monster" 찾기
         target = FindClosestMonster();
 
         if (target != null)
         {
-            // 목표를 향해 미사일이 바로 향하도록 회전시킴
+            // 목표 방향 계산
             Vector3 direction = target.position - transform.position;
-            transform.rotation = Quaternion.LookRotation(Vector3.forward, direction); // Z축을 기준으로 회전
 
-            // 직선 날아가기 모드일 때, 처음 방향을 설정
+            // 🔹 오른쪽(→) 기준으로 목표 방향을 향하도록 회전
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.Euler(0, 0, angle);
+
+            // 직선 이동 모드일 때, 초기 방향 저장
             initialDirection = direction.normalized;
         }
         else
         {
-            Debug.LogWarning("No Monster found within range.");
+            // 🔹 처음부터 타겟이 없으면 그냥 직진
+            initialDirection = transform.right;  // 현재 미사일의 오른쪽 방향을 초기 방향으로 설정
+            targeting = false;  // 추적 모드 비활성화
+            Destroy(gameObject);
         }
     }
 
     void Update()
     {
-        if (target != null)
+        if (targeting && target != null)
         {
-            if (targeting)
-            {
-                // 추적 모드
-                MoveTowardsTarget();
-            }
-            else
-            {
-                // 직선 비추적 모드
-                MoveInInitialDirection();
-            }
+            // 🔹 추적 모드: 목표가 있으면 따라감
+            MoveTowardsTarget();
+        }
+        else
+        {
+            // 🔹 비추적 모드 또는 타겟을 잃었을 때: 직선 이동
+            MoveInInitialDirection();
         }
     }
 
-    // 가장 가까운 "Monster"를 찾는 함수 (2D 물리 사용)
+    // 가장 가까운 "Monster"를 찾는 함수
     private Transform FindClosestMonster()
     {
         Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, detectionRange);
@@ -70,35 +91,33 @@ public class Missile : MonoBehaviour
         return closestMonster;
     }
 
-    // 목표 방향으로 미사일을 이동시키는 함수
+    // 🔹 목표를 향해 이동하는 함수 (추적 모드)
     private void MoveTowardsTarget()
     {
-        // 목표 방향으로 미사일 이동
+        if (target == null)
+        {
+            // 🔹 타겟을 잃으면 비추적 모드로 변경
+            targeting = false;            
+            return;
+        }
+
+        // 목표 방향 계산
         Vector3 direction = (target.position - transform.position).normalized;
         transform.position += direction * speed * Time.deltaTime;
 
-        // 목표를 향해 미사일 회전
-        Quaternion targetRotation = Quaternion.LookRotation(Vector3.forward, direction);
-        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 5f); // 회전 속도 조절
+        // 목표를 향해 미사일 회전 (기본 방향이 오른쪽이므로 적용)
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0, 0, angle);
     }
 
-    // 초기 방향으로만 미사일을 이동시키는 함수
+    // 🔹 직선으로 이동하는 함수 (비추적 모드)
     private void MoveInInitialDirection()
     {
-        // 직선으로 목표를 향한 방향으로 이동
         transform.position += initialDirection * speed * Time.deltaTime;
-
-        // 미사일이 직선으로 목표 방향으로 날아가도록 회전은 하지 않음
     }
 
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnBecameInvisible()
     {
-        if(collision.CompareTag("Enemy"))
-        {
-            Debug.Log("미사일 몬스터 타격");
-            Instantiate(boom_Effect, transform.position, Quaternion.identity);
-            Destroy(gameObject);
-        }
+        Destroy(gameObject);
     }
 }
