@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Diagnostics;
 using UnityEngine;
@@ -10,6 +11,8 @@ public class Spawner : MonoBehaviour
     public int monsterNum = 0; //몬스터 숫자
     private Stopwatch stopwatch;
 
+    public int monsterMaxNum = 300;
+
     private void Start()
     {
         monsterNum = 1;
@@ -17,11 +20,7 @@ public class Spawner : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            GameStart();
-        }
-        
+                
     }
     private void GameStart()
     {
@@ -33,10 +32,13 @@ public class Spawner : MonoBehaviour
 
     private IEnumerator SpawnMonsters()
     {
-        while (true)
+        while (GameManager.Instance.isRunning)
         {
-            yield return new WaitForSeconds(spawnInterval);
             SpawnMonster();
+            UnityEngine.Debug.Log(stopwatch.Elapsed.Seconds);
+            
+            yield return new WaitForSeconds(spawnInterval);            
+            
         }
     }
 
@@ -51,16 +53,25 @@ public class Spawner : MonoBehaviour
 
     private void SpawnMonster()
     {
-        for(int i = 0; i<monsterNum; i++)
+        
+        for (int i = 0; i<monsterNum; i++)
         {
             GameObject monster = GameManager.Instance.pool.GetPrefab(monsterLevel);
             if (monster != null)
             {
-                // 몬스터 위치 설정 (예제)
+                // 몬스터 위치 설정 
                 monster.transform.position = GameManager.Instance.pool.GetSpawnPos(GameManager.Instance.player.transform.position);
             }
         }
         
+    }
+    private IEnumerator IncreaseMonsterNum()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(10f);
+            monsterNum++;
+        }
     }
 
 }

@@ -6,6 +6,8 @@ public class GameManager : MonoBehaviour
     public PoolManager pool;
     public Player player;
 
+    public bool isRunning = false;
+
 
     private void Awake()
     {
@@ -30,5 +32,18 @@ public class GameManager : MonoBehaviour
         {
 
         }
+    }
+
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            SetisRunning();
+        }
+    }
+
+    public void SetisRunning()
+    {
+        isRunning = !isRunning;
     }
 }
