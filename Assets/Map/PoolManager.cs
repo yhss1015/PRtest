@@ -7,6 +7,7 @@ using UnityEngine;
 public class PoolManager : MonoBehaviour
 {
     public GameObject[] prefabs;
+    [SerializeField]
     public List<GameObject>[] pools;
 
     private void Awake()
@@ -54,11 +55,28 @@ public class PoolManager : MonoBehaviour
         {
             select = Instantiate(prefabs[index], GetSpawnPos(GameManager.Instance.player.transform.position), Quaternion.identity);
             pools[index].Add(select);
+
+            Monster monster = select.GetComponent<Monster>();
+            if (monster != null)
+            {
+                monster.Initialize_Index(index);
+            }
         }
 
 
         return select;
     }
+
+    public void ReturnPool(GameObject obj, int index)
+    {
+        if (index >= pools.Length) return;
+        if (!pools[index].Contains(obj))
+        {
+            pools[index].Add(obj);
+        }
+        obj.SetActive(false);
+    }
+
     IEnumerator TryRegisterCoroutine()
     {
         while (GameManager.Instance == null)

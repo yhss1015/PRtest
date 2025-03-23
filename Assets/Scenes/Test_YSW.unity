@@ -166,6 +166,7 @@ MonoBehaviour:
   spawnInterval: 5
   difficultyIncreaseInterval: 30
   monsterNum: 0
+  monsterMaxNum: 300
 --- !u!1 &244900498
 GameObject:
   m_ObjectHideFlags: 0
@@ -9471,6 +9472,7 @@ MonoBehaviour:
   spawnInterval: 5
   difficultyIncreaseInterval: 30
   monsterNum: 0
+  monsterMaxNum: 300
 --- !u!1 &1618354789
 GameObject:
   m_ObjectHideFlags: 0
@@ -14132,6 +14134,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Poisonous_Gel
       objectReference: {fileID: 0}
+    - target: {fileID: 3905144880160940595, guid: 271ac2c72f63ae9478270eb9c311057c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4270765975930599606, guid: 271ac2c72f63ae9478270eb9c311057c, type: 3}
       propertyPath: EXP
       value: 
@@ -18440,6 +18446,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53874b2e2b9b6e8448dd18edbd6ca6fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &2123026064
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2123026066}
+  - component: {fileID: 2123026065}
+  m_Layer: 0
+  m_Name: ItemManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2123026065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2123026064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7f43c596a336a44a848632ff43f1538, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponDataList:
+  - {fileID: 11400000, guid: 172f0e0e5528fb441bd0e4e49512c9b2, type: 2}
+  accessoryDataList: []
+  weaponPrefab: {fileID: 8343974562744449887, guid: 6ded56c8a6c54714a972ad8822399f52, type: 3}
+  accessoryPrefab: {fileID: 1818621112373551941, guid: 5f11b00484456e248a948a8fbd63b021, type: 3}
+--- !u!4 &2123026066
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2123026064}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.5472772, y: 0.35325682, z: 0.04167865}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &31299284722749979
 Transform:
   m_ObjectHideFlags: 0
@@ -18870,3 +18925,4 @@ SceneRoots:
   - {fileID: 1972413378}
   - {fileID: 1892040065}
   - {fileID: 7151953288001802492}
+  - {fileID: 2123026066}
