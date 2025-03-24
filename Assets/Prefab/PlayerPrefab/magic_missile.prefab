@@ -126,7 +126,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   power: 5
   detectionRange: 10
-  speed: 7
+  attackRange: 5
+  speed: 15
   targeting: 0
   boom_Effect: {fileID: 2708598583397607911, guid: 6398d43fe79ea0140913dc5530c646af, type: 3}
 --- !u!58 &3943815447628717297

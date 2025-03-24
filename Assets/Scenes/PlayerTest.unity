@@ -184,7 +184,7 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 457d89d1444d7bf43b04c47e9e9c399c, type: 3}
---- !u!1001 &79726172
+--- !u!1001 &9627301
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -194,11 +194,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1649498382298841026, guid: 457d89d1444d7bf43b04c47e9e9c399c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.81
+      value: 4.6
       objectReference: {fileID: 0}
     - target: {fileID: 1649498382298841026, guid: 457d89d1444d7bf43b04c47e9e9c399c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.34
+      value: -5.39
       objectReference: {fileID: 0}
     - target: {fileID: 1649498382298841026, guid: 457d89d1444d7bf43b04c47e9e9c399c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -234,7 +234,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3905144880160940595, guid: 457d89d1444d7bf43b04c47e9e9c399c, type: 3}
       propertyPath: m_Name
-      value: Poisonous_Gel (3)
+      value: Poisonous_Gel (4)
       objectReference: {fileID: 0}
     - target: {fileID: 3905144880160940595, guid: 457d89d1444d7bf43b04c47e9e9c399c, type: 3}
       propertyPath: m_TagString
@@ -300,6 +300,136 @@ PrefabInstance:
     - target: {fileID: 3905144880160940595, guid: 457d89d1444d7bf43b04c47e9e9c399c, type: 3}
       propertyPath: m_Name
       value: Poisonous_Gel (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3905144880160940595, guid: 457d89d1444d7bf43b04c47e9e9c399c, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4192406829185420151, guid: 457d89d1444d7bf43b04c47e9e9c399c, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 457d89d1444d7bf43b04c47e9e9c399c, type: 3}
+--- !u!1001 &202184223
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1649498382298841026, guid: 457d89d1444d7bf43b04c47e9e9c399c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1649498382298841026, guid: 457d89d1444d7bf43b04c47e9e9c399c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -5.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 1649498382298841026, guid: 457d89d1444d7bf43b04c47e9e9c399c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1649498382298841026, guid: 457d89d1444d7bf43b04c47e9e9c399c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1649498382298841026, guid: 457d89d1444d7bf43b04c47e9e9c399c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1649498382298841026, guid: 457d89d1444d7bf43b04c47e9e9c399c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1649498382298841026, guid: 457d89d1444d7bf43b04c47e9e9c399c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1649498382298841026, guid: 457d89d1444d7bf43b04c47e9e9c399c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1649498382298841026, guid: 457d89d1444d7bf43b04c47e9e9c399c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1649498382298841026, guid: 457d89d1444d7bf43b04c47e9e9c399c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3905144880160940595, guid: 457d89d1444d7bf43b04c47e9e9c399c, type: 3}
+      propertyPath: m_Name
+      value: Poisonous_Gel (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3905144880160940595, guid: 457d89d1444d7bf43b04c47e9e9c399c, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4192406829185420151, guid: 457d89d1444d7bf43b04c47e9e9c399c, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 457d89d1444d7bf43b04c47e9e9c399c, type: 3}
+--- !u!1001 &212758671
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1649498382298841026, guid: 457d89d1444d7bf43b04c47e9e9c399c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 7.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 1649498382298841026, guid: 457d89d1444d7bf43b04c47e9e9c399c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 1649498382298841026, guid: 457d89d1444d7bf43b04c47e9e9c399c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1649498382298841026, guid: 457d89d1444d7bf43b04c47e9e9c399c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1649498382298841026, guid: 457d89d1444d7bf43b04c47e9e9c399c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1649498382298841026, guid: 457d89d1444d7bf43b04c47e9e9c399c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1649498382298841026, guid: 457d89d1444d7bf43b04c47e9e9c399c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1649498382298841026, guid: 457d89d1444d7bf43b04c47e9e9c399c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1649498382298841026, guid: 457d89d1444d7bf43b04c47e9e9c399c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1649498382298841026, guid: 457d89d1444d7bf43b04c47e9e9c399c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3905144880160940595, guid: 457d89d1444d7bf43b04c47e9e9c399c, type: 3}
+      propertyPath: m_Name
+      value: Poisonous_Gel (3)
       objectReference: {fileID: 0}
     - target: {fileID: 3905144880160940595, guid: 457d89d1444d7bf43b04c47e9e9c399c, type: 3}
       propertyPath: m_TagString
@@ -669,9 +799,21 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 5750995505907909141, guid: 965affdc2a395db49af1a91570c594d3, type: 3}
+      propertyPath: whipCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5750995505907909141, guid: 965affdc2a395db49af1a91570c594d3, type: 3}
       propertyPath: itemManager
       value: 
       objectReference: {fileID: 1505693494}
+    - target: {fileID: 5750995505907909141, guid: 965affdc2a395db49af1a91570c594d3, type: 3}
+      propertyPath: circle_prefab
+      value: 
+      objectReference: {fileID: 3742033552751930772, guid: f1696313fc1b08c409d60f71318fabe6, type: 3}
+    - target: {fileID: 6299986106999367767, guid: 965affdc2a395db49af1a91570c594d3, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6470898653534502497, guid: 965affdc2a395db49af1a91570c594d3, type: 3}
       propertyPath: m_Name
       value: Player
@@ -717,7 +859,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 5264008853055476507, guid: 965affdc2a395db49af1a91570c594d3, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 965affdc2a395db49af1a91570c594d3, type: 3}
@@ -731,5 +874,7 @@ SceneRoots:
   - {fileID: 1404978103}
   - {fileID: 86431230}
   - {fileID: 5058047}
-  - {fileID: 79726172}
+  - {fileID: 212758671}
+  - {fileID: 9627301}
+  - {fileID: 202184223}
   - {fileID: 2091434611}
