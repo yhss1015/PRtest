@@ -669,6 +669,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 5750995505907909141, guid: 965affdc2a395db49af1a91570c594d3, type: 3}
+      propertyPath: whipCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5750995505907909141, guid: 965affdc2a395db49af1a91570c594d3, type: 3}
       propertyPath: itemManager
       value: 
       objectReference: {fileID: 1505693494}

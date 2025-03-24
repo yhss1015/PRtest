@@ -16,10 +16,10 @@ public class Slash : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("Enemy"))
+        if (collision.CompareTag("Enemy"))
         {
             Debug.Log("몬스터 맞음");
-            if(firstSound==true) // 몬스터 피격 소리가 겹치면 매우 크므로 검기 하나당 1번만 실행
+            if (firstSound == true) // 몬스터 피격 소리가 겹치면 매우 크므로 검기 하나당 1번만 실행
             {
                 SoundManager.Instance.slashAttackSound();
                 firstSound = false;
@@ -31,7 +31,7 @@ public class Slash : MonoBehaviour
         }
     }
 
-    
+
 
 
     // 히트 되는 타이밍을 조절하기위해 collider를 일정 시간 뒤에 활성화 함.
@@ -67,19 +67,19 @@ public class Slash : MonoBehaviour
         }
 
         PolygonCollider2D polygon = GetComponent<PolygonCollider2D>();
-        StartCoroutine(OnCollider(polygon,delay,true));
-        if(destroy_delay!=0)
+        StartCoroutine(OnCollider(polygon, delay, true));
+        if (destroy_delay != 0)
         {
-            StartCoroutine(OnCollider(polygon, destroy_delay,false));
+            StartCoroutine(OnCollider(polygon, destroy_delay, false));
         }
     }
 
-    IEnumerator OnCollider(PolygonCollider2D polygon,float delay,bool isenable)
+    IEnumerator OnCollider(PolygonCollider2D polygon, float delay, bool isenable)
     {
         yield return new WaitForSeconds(delay);
         polygon.enabled = isenable;
     }
 
-    
+
 
 }
