@@ -227,17 +227,19 @@ MonoBehaviour:
   curExp: 0
   maxExp: 100
   Level: 1
-  BasicAttack_Level: 1
-  BasicCool: 2
-  whipWeapon: {fileID: 0}
-  whipCount: 0
   isLeft: 0
-  MissileAttack_Level: 1
-  MissileCool: 1.5
   attack_Prefab:
   - {fileID: 5230563220734635514, guid: c237dfa0a9e439441a86607fb639221c, type: 3}
   - {fileID: 3286683016843523009, guid: a18a177b73a272d4fbe06c260a3fbbe3, type: 3}
+  whipAttack_Level: 1
+  whipCool: 2
+  whipWeapon: {fileID: 0}
+  whipCount: 0
   missile_prefab: {fileID: 1107109864453835660, guid: af4a69b970cdb1d4cbecef54addf2618, type: 3}
+  MissileAttack_Level: 1
+  MissileCool: 1.5
+  circleAttackManager: {fileID: 0}
+  circle_prefab: {fileID: 3742033552751930772, guid: f1696313fc1b08c409d60f71318fabe6, type: 3}
   itemManager: {fileID: 0}
 --- !u!61 &6287346918608997446
 BoxCollider2D:
