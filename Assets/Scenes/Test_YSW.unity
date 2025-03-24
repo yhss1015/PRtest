@@ -5065,6 +5065,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pool: {fileID: 0}
   player: {fileID: 0}
+  isRunning: 0
 --- !u!4 &1150209571
 Transform:
   m_ObjectHideFlags: 0
@@ -18810,7 +18811,7 @@ MonoBehaviour:
   - {fileID: 5230563220734635514, guid: c237dfa0a9e439441a86607fb639221c, type: 3}
   - {fileID: 3286683016843523009, guid: a18a177b73a272d4fbe06c260a3fbbe3, type: 3}
   missile_prefab: {fileID: 1107109864453835660, guid: af4a69b970cdb1d4cbecef54addf2618, type: 3}
-  itemManager: {fileID: 0}
+  itemManager: {fileID: 2123026065}
 --- !u!61 &6287346916924649525
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -15,14 +15,16 @@ public class Spawner : MonoBehaviour
 
     private void Start()
     {
-        monsterNum = 1;
+        monsterNum = 8;
+        StartCoroutine(TryRegisterCoroutine());
+        
     }
 
     void Update()
     {
                 
     }
-    private void GameStart()
+    public void GameStart()
     {
         stopwatch = new Stopwatch();
         stopwatch.Start();
@@ -54,7 +56,7 @@ public class Spawner : MonoBehaviour
     private void SpawnMonster()
     {
         
-        for (int i = 0; i<monsterNum; i++)
+        for (int i = 0; i<monsterNum + (stopwatch.Elapsed.Seconds/10); i++)
         {
             GameObject monster = GameManager.Instance.pool.GetPrefab(monsterLevel);
             if (monster != null)
@@ -72,6 +74,15 @@ public class Spawner : MonoBehaviour
             yield return new WaitForSeconds(10f);
             monsterNum++;
         }
+    }
+
+    IEnumerator TryRegisterCoroutine()
+    {
+        while (GameManager.Instance == null)
+        {
+            yield return null; // 한 프레임 대기
+        }
+        GameManager.Instance.spawner = this;
     }
 
 }
