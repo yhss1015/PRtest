@@ -1,12 +1,15 @@
 using System.Collections;
 using UnityEngine;
+using VampireSurvival.ItemSystem;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
+    public ItemManager ItemManager;
     public PoolManager pool;
     public Player player;
     public Spawner spawner;
+    
 
     public bool isRunning = false;
 
@@ -35,6 +38,18 @@ public class GameManager : MonoBehaviour
 
         }
     }
+
+    /*void levelUpEvent()
+    {
+        Random.InitState((int)System.DateTime.Now.Ticks);
+        WeaponData[] selectItem = new WeaponData[3];
+        WeaponData selectedItem;
+        ItemManager.SpawnRandomWeaponOrAccessory(selectItem);
+        UIManager.instance.LevelUpUI(selectItem, (selectedItem) =>
+        {
+            GameManager.Instance.player.AddWeapon(selectedItem); // 예시: 무기 적용
+        });
+    }*/
 
     public void Update()
     {
