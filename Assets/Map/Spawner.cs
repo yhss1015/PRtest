@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Diagnostics;
 using UnityEngine;
@@ -7,19 +8,23 @@ public class Spawner : MonoBehaviour
     public float spawnInterval = 5f; // 몬스터 생성 주기
     public float difficultyIncreaseInterval = 30f; // 난이도 증가 주기
     private int monsterLevel = 0; // 몬스터 강도
-    private int monsterNum = 0; //몬스터 숫자
+    public int monsterNum = 0; //몬스터 숫자
     private Stopwatch stopwatch;
 
+    public int monsterMaxNum = 300;
+
+    private void Start()
+    {
+        monsterNum = 8;
+        StartCoroutine(TryRegisterCoroutine());
+        
+    }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            GameStart();
-        }
-        
+                
     }
-    private void GameStart()
+    public void GameStart()
     {
         stopwatch = new Stopwatch();
         stopwatch.Start();
@@ -29,10 +34,13 @@ public class Spawner : MonoBehaviour
 
     private IEnumerator SpawnMonsters()
     {
-        while (true)
+        while (GameManager.Instance.isRunning)
         {
-            yield return new WaitForSeconds(spawnInterval);
             SpawnMonster();
+            UnityEngine.Debug.Log(stopwatch.Elapsed.Seconds);
+            
+            yield return new WaitForSeconds(spawnInterval);            
+            
         }
     }
 
@@ -47,16 +55,34 @@ public class Spawner : MonoBehaviour
 
     private void SpawnMonster()
     {
-        for(int i = 0; i<monsterNum; i++)
+        
+        for (int i = 0; i<monsterNum + (stopwatch.Elapsed.Seconds/10); i++)
         {
             GameObject monster = GameManager.Instance.pool.GetPrefab(monsterLevel);
             if (monster != null)
             {
-                // 몬스터 위치 설정 (예제)
-                monster.transform.position = GameManager.Instance.pool.GetSpawnPos(MapManager.Instance.player.transform.position);
+                // 몬스터 위치 설정 
+                monster.transform.position = GameManager.Instance.pool.GetSpawnPos(GameManager.Instance.player.transform.position);
             }
         }
         
+    }
+    private IEnumerator IncreaseMonsterNum()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(10f);
+            monsterNum++;
+        }
+    }
+
+    IEnumerator TryRegisterCoroutine()
+    {
+        while (GameManager.Instance == null)
+        {
+            yield return null; // 한 프레임 대기
+        }
+        GameManager.Instance.spawner = this;
     }
 
 }

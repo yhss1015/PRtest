@@ -15,25 +15,32 @@ public class Player : MonoBehaviour
     public float maxExp = 100;
 
     public float Level = 1; //캐릭터 레벨
-
-    public float BasicAttack_Level = 1; // 기본 공격 레벨
-    public float BasicCool = 2f;    // 기본 공격 주기를 결정
-    public WeaponData whipWeapon;
-    public float whipCount = 0;
     public bool isLeft = false;
 
+    [Header("채찍 공격 정보")]
+    public GameObject[] attack_Prefab;
+    public float whipAttack_Level = 1; // 기본 공격 레벨
+    public float whipCool = 2f;    // 기본 공격 주기를 결정
+    public WeaponData whipWeapon;
+    public float whipCount = 0;
+    
+
+    [Header("원거리 공격 정보")]
+    public GameObject missile_prefab;
     public float MissileAttack_Level = 1;   // 투사체 공격 레벨
     public float MissileCool = 3f;  // 투사체 공격 주기
 
 
-    
+    [Header("써클 공격 정보")]
+    public CircleAttackManager circleAttackManager;
+    public GameObject circle_prefab;   // 원형 공격 프리팹
+    // 채찍,원거리 공격도 따로 Manager를 만들어서 관리하도록 변경할 필요 있음. Player에 코드가 너무많아진거 같음.
 
+
+    
     private Vector3 defaultScale;
     private Animator playerAnim; // 플레이어 애니메이터 가져옴
-
-    public GameObject []attack_Prefab;
-    public GameObject missile_prefab;
-
+    [Header("아이템 매니저")]
     public ItemManager itemManager;
 
     void Start()
@@ -41,13 +48,15 @@ public class Player : MonoBehaviour
         defaultScale = transform.localScale; // 초기 스케일 저장
         playerAnim = GetComponent<Animator>();
 
+        // 처음에는 whip 무기만 존재
         FindWeaponInfo(WeaponType.Whip, ref whipWeapon);
-        BasicCool = whipWeapon.baseCoolTime;
+        whipCool = whipWeapon.baseCoolTime;
         whipCount = whipWeapon.baseProjectileCount;
 
         // 2초마다 BasicAttackRoutine 실행
         StartCoroutine(BasicAttackRoutine());
         StartCoroutine(MissileAttackRoutine());
+        AcquireCircleAttack();
     }
 
     void Update()
@@ -59,6 +68,8 @@ public class Player : MonoBehaviour
             Slash sl = attack_Prefab[0].GetComponent<Slash>();
             sl.power += 1;
             Debug.Log("능력치업");
+
+            IncreaseCircleCount();
         }
     }
 
@@ -95,15 +106,17 @@ public class Player : MonoBehaviour
         }
     }
 
+    // 채찍 공격 코루틴
     IEnumerator BasicAttackRoutine()
     {
         while (true)
         {
             BasicAttack();
-            yield return new WaitForSeconds(BasicCool); // 2초 대기 후 반복
+            yield return new WaitForSeconds(whipCool); // 2초 대기 후 반복
         }
     }
 
+    // 원거리 공격 코루틴
     IEnumerator MissileAttackRoutine()
     { 
         while (true)
@@ -113,6 +126,29 @@ public class Player : MonoBehaviour
         }
     }
 
+    // 써클 공격 시작 함수
+    void AcquireCircleAttack()
+    {
+        if (circleAttackManager == null)
+        {
+            circleAttackManager = gameObject.AddComponent<CircleAttackManager>();
+            circleAttackManager.circlePrefab = circle_prefab; //플레이어에서 프리팹 할당할시 사용
+            circleAttackManager.StartCircleAttack();
+        }
+    }
+
+    // 써클 공격 갯수 증가 함수
+    void IncreaseCircleCount()
+    {
+        if (circleAttackManager != null)
+        {
+            int newCount = circleAttackManager.maxCircles + 1;
+            if (newCount > 6) newCount = 6; // 최대 6개 제한
+            circleAttackManager.UpdateCircleCount(newCount);
+        }
+    }
+
+    // 체젠 코루틴
     IEnumerator RecoveryRoutine()
     {
         while (true)
@@ -205,6 +241,8 @@ public class Player : MonoBehaviour
         speed += amount;
     }
 
+
+    // 특정 무기정보를 가져온다.(참조 변수 활용)
     public void FindWeaponInfo(WeaponType weaponType,ref WeaponData curWeapon)
     {
         if(itemManager==null)
