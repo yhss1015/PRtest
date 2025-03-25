@@ -9,6 +9,7 @@ public class PrefabManager : MonoBehaviour
     WeaponType wt; // 디버깅용
     Weapon_All wa;
     int count;
+    Player player;
 
 
     // Weapondata변경 사항을 프리팹에 적용하는 함수
@@ -38,6 +39,7 @@ public class PrefabManager : MonoBehaviour
                 wa.Critical = weaponData.baseCritical;
                 wa.Knockback = weaponData.baseKnockback;
 
+                player.UpdateWeaponInfo(weaponData);
 
                 Debug.Log($"{weaponData.weaponType}을 업데이트");
                 if (count == 0)
@@ -52,7 +54,7 @@ public class PrefabManager : MonoBehaviour
     {
 
         InitializeWeapon();
-        Player player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         // 처음에는 whip 무기만 존재
         player.UpdateWeaponInfo(player.FindWeaponInfo(WeaponType.Whip));
 
