@@ -124,7 +124,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74ed371f9abd8c44ba90e7b43482cab3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  power: 5
+  awakenedVersion: {fileID: 0}
+  weaponType: 1
+  itemSprite: {fileID: 0}
+  AttackPower: 5
+  ProjectileCount: 0
+  projectileLimit: 0
+  CoolTime: 0
+  Penetration: 0
+  Critical: 0
+  Knockback: 0
   detectionRange: 10
   attackRange: 5
   speed: 15
