@@ -9789,7 +9789,6 @@ MonoBehaviour:
   - {fileID: 3286683016843523009, guid: a18a177b73a272d4fbe06c260a3fbbe3, type: 3}
   whipAttack_Level: 1
   whipCool: 2
-  whipWeapon: {fileID: 11400000, guid: f45d4ce1ce4b57c48b73f29a6d4918c9, type: 2}
   whipCount: 0
   missile_prefab: {fileID: 7839300202025165950, guid: 75381a8828a0e97499e5d4a9f5a2f09b, type: 3}
   MissileAttack_Level: 1
@@ -9925,6 +9924,7 @@ MonoBehaviour:
   itemGet: {fileID: 0}
   slash: {fileID: 8300000, guid: 368700313dc115742a87e29e41317de5, type: 3}
   slashAttack: {fileID: 8300000, guid: 4fb84feacbf885745af622f9b67b7018, type: 3}
+  levelUp: {fileID: 0}
 --- !u!82 &1892040064
 AudioSource:
   m_ObjectHideFlags: 0
@@ -18924,7 +18924,6 @@ MonoBehaviour:
   - {fileID: 3286683016843523009, guid: a18a177b73a272d4fbe06c260a3fbbe3, type: 3}
   whipAttack_Level: 1
   whipCool: 2
-  whipWeapon: {fileID: 11400000, guid: f45d4ce1ce4b57c48b73f29a6d4918c9, type: 2}
   whipCount: 0
   missile_prefab: {fileID: 1107109864453835660, guid: af4a69b970cdb1d4cbecef54addf2618, type: 3}
   MissileAttack_Level: 1
@@ -19178,7 +19177,6 @@ MonoBehaviour:
   - {fileID: 3286683016843523009, guid: a18a177b73a272d4fbe06c260a3fbbe3, type: 3}
   whipAttack_Level: 1
   whipCool: 2
-  whipWeapon: {fileID: 11400000, guid: f45d4ce1ce4b57c48b73f29a6d4918c9, type: 2}
   whipCount: 0
   missile_prefab: {fileID: 1107109864453835660, guid: af4a69b970cdb1d4cbecef54addf2618, type: 3}
   MissileAttack_Level: 1
