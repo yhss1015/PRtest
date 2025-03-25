@@ -21,7 +21,7 @@ public class Player : MonoBehaviour
     public GameObject[] attack_Prefab;
     public float whipAttack_Level = 1; // 기본 공격 레벨
     public float whipCool = 2f;    // 기본 공격 주기를 결정
-    public WeaponData whipWeapon;
+    //public WeaponData whipWeapon;
     public float whipCount = 0;
     
 
@@ -49,9 +49,7 @@ public class Player : MonoBehaviour
         playerAnim = GetComponent<Animator>();
 
         // 처음에는 whip 무기만 존재
-        FindWeaponInfo(WeaponType.Whip, ref whipWeapon);
-        whipCool = whipWeapon.baseCoolTime;
-        whipCount = whipWeapon.baseProjectileCount;
+        UpdateWeaponInfo(WeaponType.Whip);
 
         // 2초마다 BasicAttackRoutine 실행
         StartCoroutine(BasicAttackRoutine());
@@ -66,7 +64,7 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             Slash sl = attack_Prefab[0].GetComponent<Slash>();
-            sl.power += 1;
+            sl.AttackPower += 1;
             Debug.Log("능력치업");
 
             IncreaseCircleCount();
@@ -221,9 +219,10 @@ public class Player : MonoBehaviour
         curExp += amount;
         if(curExp>=maxExp) // 레벨경험치 꽉찰시 현재경험치 차감,최대 경험치 상승, 레벨 상승
         {
-            curExp -= maxExp;
+            curExp -= maxExp; // 경험치 초기화 및 초과분 반환
             maxExp *= 1.1f; // 최대 경험치 증가
             Level++;
+            SoundManager.Instance.PlaySound(SoundManager.Instance.levelUp); // 레벨업 사운드
             // 레벨업 ui 함수 추가
         }
         
@@ -243,23 +242,47 @@ public class Player : MonoBehaviour
 
 
     // 특정 무기정보를 가져온다.(참조 변수 활용)
-    public void FindWeaponInfo(WeaponType weaponType,ref WeaponData curWeapon)
+    public WeaponData FindWeaponInfo(WeaponType weaponType)
     {
+        
         if(itemManager==null)
         {
             Debug.LogWarning("씬에 ItemManager 객체를 생성하고 스크립트를 넣어주세요.");
+            return null;
         }
         else
         {
+            WeaponData curWeapon = null;
             foreach (var weapon in itemManager.weaponDataList)
             {
                 if (weapon.weaponType == weaponType)
                 {
                     curWeapon = weapon;
+                    //UpdateWeaponInfo(curWeapon.weaponType,weapon);
                     break;  // 첫 번째 Whip 무기를 찾으면 반복 종료
                 }
             }
+            return curWeapon;
         }
             
+    }
+
+    // 특정 무기의 정보를 가지고 플레이어의 무기를 업데이트한다.(특정무기만)
+    // ex. 채찍무기를 레벨업 하였다-> UpdateWeaponInfo(WeaponType.Whip,
+    public void UpdateWeaponInfo(WeaponType weaponType)
+    {
+        WeaponData weapondata = FindWeaponInfo(weaponType);
+        switch(weaponType)
+        {
+            case WeaponType.Whip:
+                whipCool = weapondata.baseCoolTime;
+                whipCount = weapondata.baseProjectileCount;
+                break;
+            case WeaponType.MagicWand:
+                MissileCool = weapondata.baseCoolTime;
+                break;
+        }
+
+           
     }
 }
