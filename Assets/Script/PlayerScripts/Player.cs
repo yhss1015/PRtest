@@ -48,8 +48,7 @@ public class Player : MonoBehaviour
         defaultScale = transform.localScale; // 초기 스케일 저장
         playerAnim = GetComponent<Animator>();
 
-        // 처음에는 whip 무기만 존재
-        UpdateWeaponInfo(WeaponType.Whip);
+        //무기 초기화는 PrefabManager에서 실행       
 
         // 2초마다 BasicAttackRoutine 실행
         StartCoroutine(BasicAttackRoutine());
@@ -268,11 +267,11 @@ public class Player : MonoBehaviour
     }
 
     // 특정 무기의 정보를 가지고 플레이어의 무기를 업데이트한다.(특정무기만)
-    // ex. 채찍무기를 레벨업 하였다-> UpdateWeaponInfo(WeaponType.Whip,
-    public void UpdateWeaponInfo(WeaponType weaponType)
+    // ex. 채찍무기를 레벨업 하였다-> UpdateWeaponInfo(WeaponData @@@) 알아서 구분하여 업데이트
+    public void UpdateWeaponInfo(WeaponData weapondata)
     {
-        WeaponData weapondata = FindWeaponInfo(weaponType);
-        switch(weaponType)
+        
+        switch(weapondata.weaponType)
         {
             case WeaponType.Whip:
                 whipCool = weapondata.baseCoolTime;

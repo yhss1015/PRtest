@@ -1,9 +1,9 @@
 using UnityEngine;
 
-public class AroundPlayer : MonoBehaviour
+public class AroundPlayer : Weapon_All
 {
 
-    public float power = 5f; // 원의 공격력
+   
 
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -14,7 +14,7 @@ public class AroundPlayer : MonoBehaviour
             
 
             Monster monster = collision.GetComponent<Monster>();
-            monster.TakeDamage(power);
+            monster.TakeDamage(AttackPower);
 
         }
     }
