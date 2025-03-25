@@ -10,6 +10,8 @@ public class PrefabManager : MonoBehaviour
     Weapon_All wa;
     int count;
 
+
+    // Weapondata변경 사항을 프리팹에 적용하는 함수
     public void UpdateWeaponPrefab(WeaponData weaponData)
     {
         if (weaponData.weaponType == WeaponType.Whip)
@@ -53,6 +55,7 @@ public class PrefabManager : MonoBehaviour
         Player player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         // 처음에는 whip 무기만 존재
         player.UpdateWeaponInfo(player.FindWeaponInfo(WeaponType.Whip));
+
     }
 
     public void InitializeWeapon()

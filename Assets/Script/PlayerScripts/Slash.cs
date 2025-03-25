@@ -58,7 +58,7 @@ public class Slash : Weapon_All
         {
             AttackPower = whipWeapon.baseAttackPower;
             //delay = whipWeapon.baseCoolTime;
-            Debug.Log($"Whip 무기 적용: 공격력({AttackPower}), 쿨타임({CoolTime})");
+            Debug.Log($"Whip 무기 적용: 공격력({AttackPower}))");
         }
         else
         {
