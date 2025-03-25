@@ -19,10 +19,15 @@ public class Monster : MonoBehaviour
 
     private bool isDead = false; // 몬스터가 죽었는지 확인하는 변수
 
+
     private SpriteRenderer sr;
     private Rigidbody2D rb;
 
     private Color original;
+
+    //for pooling
+    public int index;
+
 
     void Start()
     {
@@ -36,7 +41,7 @@ public class Monster : MonoBehaviour
 
     void Update()
     {
-        if (isDead) return; // 죽었으면 이동하지 않음
+        if (HP <= 0) return; // 죽었으면 이동하지 않음
 
         target = GameObject.FindGameObjectWithTag("Player"); 
 
@@ -102,11 +107,39 @@ public class Monster : MonoBehaviour
     void Die()
     {
         Mob_Ani.SetTrigger("Die");
-        Destroy(gameObject, Dying);
+        StartCoroutine(WaitForDeathAnimation());
+    }
+
+    IEnumerator WaitForDeathAnimation()
+    {
+        AnimatorStateInfo stateInfo = Mob_Ani.GetCurrentAnimatorStateInfo(0);
+        float animationLength = stateInfo.length; // 현재 애니메이션의 길이 가져오기
+        yield return new WaitForSeconds(animationLength);
+
+        GameManager.Instance.pool.ReturnPool(this.gameObject, index);
+        InitStat();
+
     }
 
     public void ExpDrop()
     {
         Instantiate(EXP, transform.position, Quaternion.identity);
+    }
+
+
+
+    //Add YSW for pooling
+    public void Initialize_Index(int index)
+    {
+        this.index = index;
+    }
+
+    //조정이 필요
+    public void InitStat()
+    {
+        HP = 20;
+        Speed = 1;
+        Attack = 10;
+        isDead = false;
     }
 }
