@@ -10153,8 +10153,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13ed3a259d12c8a418b940e12950948c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  power: 5
-  delay: 0.1
+  awakenedVersion: {fileID: 0}
+  weaponType: 0
+  itemSprite: {fileID: 0}
+  AttackPower: 0
+  ProjectileCount: 0
+  projectileLimit: 0
+  CoolTime: 0
+  Penetration: 0
+  Critical: 0
+  Knockback: 0
+  enabled_delay: 0.1
   destroy_delay: 0.33
   itemManager: {fileID: 0}
   firstSound: 1

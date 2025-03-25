@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class Missile : MonoBehaviour
+public class Missile : Weapon_All
 {
-    public float power = 5f;
+    [Header("미사일 스탯")]
     public float detectionRange = 5f;  // 사거리
     public float attackRange = 5f;     // 범위 공격 반경
     public float speed = 10f;  // 미사일 이동 속도
@@ -28,7 +28,7 @@ public class Missile : MonoBehaviour
                     Monster monster = enemy.GetComponent<Monster>();
                     if (monster != null)
                     {
-                        monster.TakeDamage(power);
+                        monster.TakeDamage(AttackPower);
                     }
                 }
             }

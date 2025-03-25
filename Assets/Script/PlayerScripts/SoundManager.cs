@@ -5,6 +5,7 @@ public class SoundManager : MonoBehaviour
     public AudioClip itemGet;
     public AudioClip slash;
     public AudioClip slashAttack;
+    public AudioClip levelUp;
 
     public static SoundManager Instance;
     private AudioSource soundSource;
@@ -39,5 +40,10 @@ public class SoundManager : MonoBehaviour
     public void slashAttackSound()
     {
         soundSource.PlayOneShot(slashAttack);
+    }
+
+    public void PlaySound(AudioClip audioclip)
+    {
+        soundSource.PlayOneShot(audioclip);
     }
 }

@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using VampireSurvival.ItemSystem;
 
-public class Slash : MonoBehaviour
+public class Slash : Weapon_All
 {
-    public float power;
-    public float delay;
-
+    [Header("Slash 스탯")]
+    public float enabled_delay =0.1f;
     public float destroy_delay;
     public ItemManager itemManager;
 
@@ -26,7 +25,7 @@ public class Slash : MonoBehaviour
             }
 
             Monster monster = collision.GetComponent<Monster>();
-            monster.TakeDamage(power);
+            monster.TakeDamage(AttackPower);
 
         }
     }
@@ -57,9 +56,9 @@ public class Slash : MonoBehaviour
 
         if (whipWeapon != null)
         {
-            power = whipWeapon.baseAttackPower;
+            AttackPower = whipWeapon.baseAttackPower;
             //delay = whipWeapon.baseCoolTime;
-            Debug.Log($"Whip 무기 적용: 공격력({power}), 쿨타임({delay})");
+            Debug.Log($"Whip 무기 적용: 공격력({AttackPower}), 쿨타임({CoolTime})");
         }
         else
         {
@@ -67,7 +66,7 @@ public class Slash : MonoBehaviour
         }
 
         PolygonCollider2D polygon = GetComponent<PolygonCollider2D>();
-        StartCoroutine(OnCollider(polygon, delay, true));
+        StartCoroutine(OnCollider(polygon, enabled_delay, true));
         if (destroy_delay != 0)
         {
             StartCoroutine(OnCollider(polygon, destroy_delay, false));
