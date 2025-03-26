@@ -19,11 +19,16 @@ public class Monster : MonoBehaviour
 
     private bool isDead = false; // 몬스터가 죽었는지 확인하는 변수
 
+    private bool isAttacking = false;  // 지속피해 구현을 위한 bool
+    private float DamageTurm = 0.5f;  // 지속피해 주기
+
 
     private SpriteRenderer sr;
     private Rigidbody2D rb;
 
     private Color original;
+
+    private Coroutine DamageCoroutine;
 
     //for pooling
     public int index;
@@ -34,9 +39,8 @@ public class Monster : MonoBehaviour
         Mob_Ani= GetComponent<Animator>();  
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
-        original = sr.color; // 몬스터의 기본 색상 저장
-        Debug.Log("원래 색상: " + original);
-
+       
+        original = sr.color; // 몬스터의 기본 색상 저장 
     }
 
     void Update()
@@ -52,17 +56,42 @@ public class Monster : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision) // 닿을 경우
     {
-        if(collision.gameObject.CompareTag("Player"))
+        if (collision.CompareTag("Player") && !isAttacking)  // 태그= Player, isAttacking = false
         {
-            Player player = collision.gameObject.GetComponent<Player>();
-            if(player != null)
+            Player player = collision.GetComponent<Player>();
+            if (player != null)
             {
-                player.TakeDamage(Attack); //플레이어 스크립트의 함수 호출
-                Debug.Log("플레이어 데미지");
+                isAttacking = true;
+                DamageCoroutine = StartCoroutine(ConDam(player));
             }
         }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision) // 떨어지는 경우
+    {
+        if (collision.CompareTag("Player") && isAttacking) // 태그= Player, isAttacking = true
+        {
+            isAttacking = false; 
+
+            if (DamageCoroutine != null)
+            {
+                StopCoroutine(DamageCoroutine);
+                DamageCoroutine = null;
+            }
+        }
+    }
+    IEnumerator ConDam(Player player)
+    {
+        while (isAttacking && player != null)
+        {
+            player.TakeDamage(Attack);
+            yield return new WaitForSeconds(DamageTurm); // DamageTrum 마다 피해
+        }
+
+        isAttacking=false;
+        DamageCoroutine = null;
     }
 
     IEnumerator KnockbackCoroutine(Vector2 AttackDir)
@@ -79,8 +108,7 @@ public class Monster : MonoBehaviour
 
     IEnumerator Flashing()
     {
-        
-        sr.color = Color.white; // 흰색 변경
+        sr.color = Color.red;
         yield return new WaitForSeconds(0.1f); // 0.1초 유지  
         sr.color = original; // 색 돌아옴
     }
@@ -99,8 +127,7 @@ public class Monster : MonoBehaviour
         {
             isDead = true; // 몬스터 사망 처리
             ExpDrop();
-            Die();
-            
+            Die();  
         }
     }
 
