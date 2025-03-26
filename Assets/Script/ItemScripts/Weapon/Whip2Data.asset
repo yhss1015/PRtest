@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   awakenedVersion: {fileID: 0}
   weaponType: 0
-  itemSprite: {fileID: 0}
-  baseAttackPower: 0
-  baseProjectileCount: 0
-  projectileLimit: 0
-  baseCoolTime: 0
-  basePenetration: 0
-  baseCritical: 0
-  baseKnockback: 0
+  itemSprite: {fileID: -7795168921282561039, guid: 5f1b619d0087510449b02c0c2b83461f, type: 3}
+  baseAttackPower: 40
+  baseProjectileCount: 2
+  projectileLimit: 30
+  baseCoolTime: 1.35
+  basePenetration: -1
+  baseCritical: 10
+  baseKnockback: 1
   levelData: []

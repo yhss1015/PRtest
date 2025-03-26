@@ -52,3 +52,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: cb6a30031923f314fa2c9a7e6c1348fa, type: 2}
   weaponPrefab: {fileID: 8343974562744449887, guid: 6ded56c8a6c54714a972ad8822399f52, type: 3}
   accessoryPrefab: {fileID: 1818621112373551941, guid: 5f11b00484456e248a948a8fbd63b021, type: 3}
+  playerInventory: {fileID: 4001493338972827268, guid: 25b871a2f3ef2ec47a82aaaee9bfc121, type: 3}

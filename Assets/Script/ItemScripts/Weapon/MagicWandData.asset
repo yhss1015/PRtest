@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f42a46ac6665ba04c953d9dd9c798014, type: 3}
   m_Name: MagicWandData
   m_EditorClassIdentifier: 
-  awakenedVersion: {fileID: 0}
+  awakenedVersion: {fileID: 11400000, guid: b2218eabe4ed2fb48963efafffc16198, type: 2}
   weaponType: 1
   itemSprite: {fileID: -8102918881405342443, guid: 602f5c13d9bd9274fb227c86e0768070, type: 3}
   baseAttackPower: 10

@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace VampireSurvival.ItemSystem
 {
-    public enum WeaponType { Whip, MagicWand }
+    public enum WeaponType { Whip, MagicWand, KingVible }
 
     [System.Serializable]
     public class WeaponLevelData

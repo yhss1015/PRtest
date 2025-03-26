@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f42a46ac6665ba04c953d9dd9c798014, type: 3}
   m_Name: WhipData
   m_EditorClassIdentifier: 
+  awakenedVersion: {fileID: 11400000, guid: 41dc319ac42f70545ba49894d3d9d2e3, type: 2}
   weaponType: 0
-  itemSprite: {fileID: -7956655330049976835, guid: 5765831bf5cdc7841bed1127bceafd15, type: 3}
+  itemSprite: {fileID: -7956655330049976835, guid: d731057310c911745a83fb248d0ee928, type: 3}
   baseAttackPower: 10
   baseProjectileCount: 1
   projectileLimit: 30

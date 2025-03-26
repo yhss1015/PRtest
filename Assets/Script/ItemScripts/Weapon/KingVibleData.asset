@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f42a46ac6665ba04c953d9dd9c798014, type: 3}
-  m_Name: MagicWand2Data
+  m_Name: KingVibleData
   m_EditorClassIdentifier: 
   awakenedVersion: {fileID: 0}
-  weaponType: 1
-  itemSprite: {fileID: -8302243975248787457, guid: 242c7f30b80c5c348a106f427990f934, type: 3}
-  baseAttackPower: 30
-  baseProjectileCount: 4
-  projectileLimit: 60
-  baseCoolTime: 0.5
-  basePenetration: 2
-  baseCritical: 0
-  baseKnockback: 1
+  weaponType: 2
+  itemSprite: {fileID: -2873272198819583695, guid: 8010fa6bce77ae3448b814befc52e6e9, type: 3}
+  baseAttackPower: 10
+  baseProjectileCount: 1
+  projectileLimit: 50
+  baseCoolTime: 3
+  basePenetration: -1
+  baseCritical: 1
+  baseKnockback: 3
   levelData: []

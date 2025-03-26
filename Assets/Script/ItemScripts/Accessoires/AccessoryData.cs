@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace VampireSurvival.ItemSystem
 {
-    public enum AccessoryType { HollowHeart, EmptyTome }
+    public enum AccessoryType { HollowHeart, EmptyTome, Wing, Duplicator, Candelabrador, Spellbind }
 
     [CreateAssetMenu(menuName = "VampireSurvival/Accessory Data", fileName = "AccessoryData")]
     public class AccessoryData : ScriptableObject

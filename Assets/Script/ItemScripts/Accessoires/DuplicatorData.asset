@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4f34016ba1019cb4fafb95e71b5f34c1, type: 3}
-  m_Name: HollowHeartData
+  m_Name: DuplicatorData
   m_EditorClassIdentifier: 
-  accessoryType: 0
-  itemSprite: {fileID: 6577790532543883557, guid: 2ca79866aa7ebb24c8432c3033c70bd6, type: 3}
-  maxLevel: 5
-  perLevelEffectValue: 20
+  accessoryType: 3
+  itemSprite: {fileID: 5309039460772488400, guid: b5ad89fb6266f3b4ea5fbba6bdba0824, type: 3}
+  maxLevel: 2
+  perLevelEffectValue: 1

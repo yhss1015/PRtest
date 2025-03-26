@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: EmptyTome
   m_EditorClassIdentifier: 
   accessoryType: 1
-  itemSprite: {fileID: -2233107386865373265, guid: 1d3d00d359068624daa5f4dd56f8d6be, type: 3}
+  itemSprite: {fileID: -2233107386865373265, guid: b223d55a9742d414aa6a39e339cceb3d, type: 3}
   maxLevel: 5
   perLevelEffectValue: 8

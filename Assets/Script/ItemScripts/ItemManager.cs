@@ -12,6 +12,41 @@ public class ItemManager : MonoBehaviour
     public GameObject weaponPrefab;
     public GameObject accessoryPrefab;
 
+    // 플레이어의 인벤토리를 참조하기 위한 필드 (다중 장착을 관리하는 PlayerInventory로 가정)
+    public PlayerInventory playerInventory;
+
+    private void Start()
+    {
+        // 만약 Inspector에서 할당되지 않았다면, 씬에서 찾아봅니다.
+        if (playerInventory == null)
+        {
+            //playerInventory = FindObjectOfType<PlayerInventory>();
+        }
+    }
+
+    public void LevelUpPlayerWeapon(int weaponIndex)
+    {
+        PlayerInventory inventory = playerInventory;  // ItemManager 내에서 미리 할당된 PlayerInventory 참조
+
+        // playerInventory는 이미 ItemManager.cs에서 플레이어 인벤토리를 참조하는 public 필드라고 가정
+        if (playerInventory != null)
+        {
+            // PlayerInventory에서 해당 무기를 레벨업 (내부에서 각성 체크 포함)
+            playerInventory.LevelUpWeapon(weaponIndex);
+
+            // 최신 무기 데이터를 가져옴
+            WeaponData updatedWeapon = playerInventory.equippedWeapons[weaponIndex].itemData;
+
+            // Player.cs에 있는 무기 정보 업데이트 함수 호출
+            // (예: 무기 프리팹에 적용할 스탯 갱신)
+            if (GameManager.Instance.player != null)
+            {
+                GameManager.Instance.player.UpdateWeaponInfo(updatedWeapon);
+            }
+        }
+    }
+
+
     // 3개의 랜덤 아이템(무기/장신구)을 중복 없이 생성하는 함수
     public void SpawnRandomWeaponOrAccessory(Vector3 position)
     {
