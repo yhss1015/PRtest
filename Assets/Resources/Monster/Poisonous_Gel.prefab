@@ -129,8 +129,11 @@ MonoBehaviour:
   HP: 20
   Speed: 1
   Attack: 10
+  Dying: 1.5
+  KnockBack: 5
   target: {fileID: 0}
   EXP: {fileID: 7924704893378496037, guid: 8f4f7e806fe30614bba4a7b29d585925, type: 3}
+  index: 0
 --- !u!50 &1495993633777628365
 Rigidbody2D:
   serializedVersion: 5
