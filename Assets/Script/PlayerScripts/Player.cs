@@ -36,8 +36,13 @@ public class Player : MonoBehaviour
     public GameObject circle_prefab;   // 원형 공격 프리팹
     // 채찍,원거리 공격도 따로 Manager를 만들어서 관리하도록 변경할 필요 있음. Player에 코드가 너무많아진거 같음.
 
+    [Header("표창 공격 정보")]
+    public GameObject ninjaStarPrefab;  // 표창 프리팹
+    public float ninjaCount = 1;        // 한 번에 발사할 표창 개수
+    public float ninjaCoolTime = 2f;    // 표창 공격 주기
 
-    
+
+
     private Vector3 defaultScale;
     private Animator playerAnim; // 플레이어 애니메이터 가져옴
     [Header("아이템 매니저")]
@@ -54,6 +59,10 @@ public class Player : MonoBehaviour
         StartCoroutine(BasicAttackRoutine());
         StartCoroutine(MissileAttackRoutine());
         AcquireCircleAttack();
+        // 표창 공격 코루틴 실행
+        StartCoroutine(NinjaStarAttackRoutine());
+
+
     }
 
     void Update()
@@ -144,6 +153,28 @@ public class Player : MonoBehaviour
             circleAttackManager.UpdateCircleCount(newCount);
         }
     }
+
+
+    // 표창 공격 생성 코루틴
+    IEnumerator NinjaStarAttackRoutine()
+    {
+        while (true)
+        {
+            for (int i = 0; i < ninjaCount; i++)
+            {
+                // 표창 생성
+                Instantiate(ninjaStarPrefab, transform.position, Quaternion.identity);
+                SoundManager.Instance.slashSound(); // 표창 발사 사운드
+
+                // 0.1초 간격으로 표창을 발사
+                yield return new WaitForSeconds(0.1f);
+            }
+
+            // 표창 발사 주기만큼 대기
+            yield return new WaitForSeconds(ninjaCoolTime);
+        }
+    }
+
 
     // 체젠 코루틴
     IEnumerator RecoveryRoutine()

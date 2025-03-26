@@ -234,12 +234,15 @@ MonoBehaviour:
   - {fileID: 3286683016843523009, guid: a18a177b73a272d4fbe06c260a3fbbe3, type: 3}
   whipAttack_Level: 1
   whipCool: 2
-  whipCount: 0
+  whipCount: 1
   missile_prefab: {fileID: 1107109864453835660, guid: af4a69b970cdb1d4cbecef54addf2618, type: 3}
   MissileAttack_Level: 1
   MissileCool: 1.5
   circleAttackManager: {fileID: 0}
   circle_prefab: {fileID: 3742033552751930772, guid: f1696313fc1b08c409d60f71318fabe6, type: 3}
+  ninjaStarPrefab: {fileID: 4800235526105310760, guid: 09fa2c1cf6bdd644d98c0b02d3465610, type: 3}
+  ninjaCount: 2
+  ninjaCoolTime: 2
   itemManager: {fileID: 0}
 --- !u!61 &1261074253027245540
 BoxCollider2D:

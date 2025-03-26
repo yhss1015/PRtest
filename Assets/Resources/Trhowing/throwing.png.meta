@@ -1,0 +1,1560 @@
+fileFormatVersion: 2
+guid: 7079cfa6096c67f47805308247281ddb
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7117052237794372454
+    second: throwing_0
+  - first:
+      213: 2352392319030861549
+    second: throwing_1
+  - first:
+      213: -119538354939591604
+    second: throwing_2
+  - first:
+      213: 1219714722988879884
+    second: throwing_3
+  - first:
+      213: -3973727947732037966
+    second: throwing_4
+  - first:
+      213: -1978447511780474292
+    second: throwing_5
+  - first:
+      213: 2985222242390557525
+    second: throwing_6
+  - first:
+      213: -5982195947491586614
+    second: throwing_7
+  - first:
+      213: 6290830509977797223
+    second: throwing_8
+  - first:
+      213: 1301927378133745385
+    second: throwing_9
+  - first:
+      213: 4744008260080493432
+    second: throwing_10
+  - first:
+      213: -5333659372328744835
+    second: throwing_11
+  - first:
+      213: -8642645641169925170
+    second: throwing_12
+  - first:
+      213: -6060473547327339915
+    second: throwing_13
+  - first:
+      213: 2950209332168690086
+    second: throwing_14
+  - first:
+      213: 5198379399534419484
+    second: throwing_15
+  - first:
+      213: 5154576050348551557
+    second: throwing_16
+  - first:
+      213: -8324863839468092853
+    second: throwing_17
+  - first:
+      213: 3425959431082209638
+    second: throwing_18
+  - first:
+      213: -3780642731232474539
+    second: throwing_19
+  - first:
+      213: -2360014864980074733
+    second: throwing_20
+  - first:
+      213: 1000169245406317728
+    second: throwing_21
+  - first:
+      213: -6770766166585422105
+    second: throwing_22
+  - first:
+      213: 1537195316980819640
+    second: throwing_23
+  - first:
+      213: 4278070238670575115
+    second: throwing_24
+  - first:
+      213: 1813940051845094205
+    second: throwing_25
+  - first:
+      213: 6073172123185062231
+    second: throwing_26
+  - first:
+      213: 3069832965215056251
+    second: throwing_27
+  - first:
+      213: 6265909806097423737
+    second: throwing_28
+  - first:
+      213: -7321953807656918722
+    second: throwing_29
+  - first:
+      213: -5145471465573043016
+    second: throwing_30
+  - first:
+      213: -4519590260943401090
+    second: throwing_31
+  - first:
+      213: -7403720682192099528
+    second: throwing_32
+  - first:
+      213: -7546683768307158301
+    second: throwing_33
+  - first:
+      213: -8578908869936809520
+    second: throwing_34
+  - first:
+      213: 5075359009806232585
+    second: throwing_35
+  - first:
+      213: -4686056174423303650
+    second: throwing_36
+  - first:
+      213: 4287923384217923298
+    second: throwing_37
+  - first:
+      213: -181599469604782293
+    second: throwing_38
+  - first:
+      213: -866444384189797969
+    second: throwing_39
+  - first:
+      213: 2203339964861734848
+    second: throwing_40
+  - first:
+      213: -3347736257046450027
+    second: throwing_41
+  - first:
+      213: 4311361801393312214
+    second: throwing_42
+  - first:
+      213: -4531577153531449252
+    second: throwing_43
+  - first:
+      213: -3418619833985923635
+    second: throwing_44
+  - first:
+      213: -5102642872635505499
+    second: throwing_45
+  - first:
+      213: -7263167808025016807
+    second: throwing_46
+  - first:
+      213: -5895492404777742551
+    second: throwing_47
+  - first:
+      213: 211677907327290536
+    second: throwing_48
+  - first:
+      213: -3004270429625257109
+    second: throwing_49
+  - first:
+      213: -8695362272263805028
+    second: throwing_50
+  - first:
+      213: 7123873211764457383
+    second: throwing_51
+  - first:
+      213: 9193877537433254953
+    second: throwing_52
+  - first:
+      213: 3749157918682722579
+    second: throwing_53
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 138
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: throwing_0
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 433
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a941e5e82b62b3d90800000000000000
+      internalID: -7117052237794372454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: throwing_1
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 425
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dee1134c95065a020800000000000000
+      internalID: 2352392319030861549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: throwing_2
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 426
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c448ac0ef70575ef0800000000000000
+      internalID: -119538354939591604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: throwing_3
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 427
+        width: 16
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c00f017041c4de010800000000000000
+      internalID: 1219714722988879884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: throwing_4
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 404
+        width: 15
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2bec3693c7b7ad8c0800000000000000
+      internalID: -3973727947732037966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: throwing_5
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 401
+        width: 11
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c42c19568742b84e0800000000000000
+      internalID: -1978447511780474292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: throwing_6
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 409
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 553c84520d3ad6920800000000000000
+      internalID: 2985222242390557525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: throwing_7
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 357
+        width: 27
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: acd8bf41b78fafca0800000000000000
+      internalID: -5982195947491586614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: throwing_8
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 356
+        width: 31
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7628a61c4058d4750800000000000000
+      internalID: 6290830509977797223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: throwing_9
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 356
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ee74017d00611210800000000000000
+      internalID: 1301927378133745385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: throwing_10
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 356
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 873ed91b06a16d140800000000000000
+      internalID: 4744008260080493432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: throwing_11
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 324
+        width: 33
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d78896f4f090bf5b0800000000000000
+      internalID: -5333659372328744835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: throwing_12
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 324
+        width: 31
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ecb0d7e74972f0880800000000000000
+      internalID: -8642645641169925170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: throwing_13
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 325
+        width: 31
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57207e02b6fd4eba0800000000000000
+      internalID: -6060473547327339915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: throwing_14
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 324
+        width: 31
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a905f8b1cf31f820800000000000000
+      internalID: 2950209332168690086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: throwing_15
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 292
+        width: 32
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1e15fc858a542840800000000000000
+      internalID: 5198379399534419484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: throwing_16
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 260
+        width: 31
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58de2c09b9bb88740800000000000000
+      internalID: 5154576050348551557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: throwing_17
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 294
+        width: 26
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b42820de174287c80800000000000000
+      internalID: -8324863839468092853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: throwing_18
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 298
+        width: 11
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 661fd8873f37b8f20800000000000000
+      internalID: 3425959431082209638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: throwing_19
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 293
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55ac9367775788bc0800000000000000
+      internalID: -3780642731232474539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: throwing_20
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 304
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31f9834fbfa8f3fd0800000000000000
+      internalID: -2360014864980074733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: throwing_21
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 293
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0acc6bb21a051ed00800000000000000
+      internalID: 1000169245406317728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: throwing_22
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 273
+        width: 8
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ee41776b086902a0800000000000000
+      internalID: -6770766166585422105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: throwing_23
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 264
+        width: 25
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b629031ff6355510800000000000000
+      internalID: 1537195316980819640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: throwing_24
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 212
+        width: 31
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0651244732ce5b30800000000000000
+      internalID: 4278070238670575115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: throwing_25
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 195
+        width: 34
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3b9412ddd86c2910800000000000000
+      internalID: 1813940051845094205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: throwing_26
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 180
+        width: 46
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75120467edd384450800000000000000
+      internalID: 6073172123185062231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: throwing_27
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 184
+        width: 37
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b717d6331dc3a9a20800000000000000
+      internalID: 3069832965215056251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: throwing_28
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 123
+        width: 55
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97dd21b35cbf4f650800000000000000
+      internalID: 6265909806097423737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: throwing_29
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 179
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e316ac82ec1336a90800000000000000
+      internalID: -7321953807656918722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: throwing_30
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 182
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b43c94c6fc9798b0800000000000000
+      internalID: -5145471465573043016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: throwing_31
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 164
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7f472e7a903741c0800000000000000
+      internalID: -4519590260943401090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: throwing_32
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 130
+        width: 51
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8372ab12443b04990800000000000000
+      internalID: -7403720682192099528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: throwing_33
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 160
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e278d5c81bc44790800000000000000
+      internalID: -7546683768307158301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: throwing_34
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 129
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d9f7f6f5d791f880800000000000000
+      internalID: -8578908869936809520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: throwing_35
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 123
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90c2417012c4f6640800000000000000
+      internalID: 5075359009806232585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: throwing_36
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 127
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1a19f5bcb8c7feb0800000000000000
+      internalID: -4686056174423303650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: throwing_37
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 115
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ee666c7993c18b30800000000000000
+      internalID: 4287923384217923298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: throwing_38
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 90
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2fbeca9e34da7df0800000000000000
+      internalID: -181599469604782293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: throwing_39
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 90
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa92cb65c65c9f3f0800000000000000
+      internalID: -866444384189797969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: throwing_40
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 90
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0cf51053606d39e10800000000000000
+      internalID: 2203339964861734848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: throwing_41
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 90
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 590fc0d7c937a81d0800000000000000
+      internalID: -3347736257046450027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: throwing_42
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 90
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d19c3e37b805db30800000000000000
+      internalID: 4311361801393312214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: throwing_43
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 90
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c507b73969a9c11c0800000000000000
+      internalID: -4531577153531449252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: throwing_44
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 90
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc50a25af5f9e80d0800000000000000
+      internalID: -3418619833985923635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: throwing_45
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 90
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a4c1e0a755cf29b0800000000000000
+      internalID: -5102642872635505499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: throwing_46
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 18
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 916cd9a4c5b043b90800000000000000
+      internalID: -7263167808025016807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: throwing_47
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 18
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92f853db4e00f2ea0800000000000000
+      internalID: -5895492404777742551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: throwing_48
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 18
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ac8a096fe700f200800000000000000
+      internalID: 211677907327290536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: throwing_49
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 15
+        width: 72
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b63f9f826ffae46d0800000000000000
+      internalID: -3004270429625257109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: throwing_50
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 18
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c97e168551ed35780800000000000000
+      internalID: -8695362272263805028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: throwing_51
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 18
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7af342431f41dd260800000000000000
+      internalID: 7123873211764457383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: throwing_52
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 16
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92cf627b8e6379f70800000000000000
+      internalID: 9193877537433254953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: throwing_53
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 4
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3113ded534fa70430800000000000000
+      internalID: 3749157918682722579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      throwing_0: -7117052237794372454
+      throwing_1: 2352392319030861549
+      throwing_10: 4744008260080493432
+      throwing_11: -5333659372328744835
+      throwing_12: -8642645641169925170
+      throwing_13: -6060473547327339915
+      throwing_14: 2950209332168690086
+      throwing_15: 5198379399534419484
+      throwing_16: 5154576050348551557
+      throwing_17: -8324863839468092853
+      throwing_18: 3425959431082209638
+      throwing_19: -3780642731232474539
+      throwing_2: -119538354939591604
+      throwing_20: -2360014864980074733
+      throwing_21: 1000169245406317728
+      throwing_22: -6770766166585422105
+      throwing_23: 1537195316980819640
+      throwing_24: 4278070238670575115
+      throwing_25: 1813940051845094205
+      throwing_26: 6073172123185062231
+      throwing_27: 3069832965215056251
+      throwing_28: 6265909806097423737
+      throwing_29: -7321953807656918722
+      throwing_3: 1219714722988879884
+      throwing_30: -5145471465573043016
+      throwing_31: -4519590260943401090
+      throwing_32: -7403720682192099528
+      throwing_33: -7546683768307158301
+      throwing_34: -8578908869936809520
+      throwing_35: 5075359009806232585
+      throwing_36: -4686056174423303650
+      throwing_37: 4287923384217923298
+      throwing_38: -181599469604782293
+      throwing_39: -866444384189797969
+      throwing_4: -3973727947732037966
+      throwing_40: 2203339964861734848
+      throwing_41: -3347736257046450027
+      throwing_42: 4311361801393312214
+      throwing_43: -4531577153531449252
+      throwing_44: -3418619833985923635
+      throwing_45: -5102642872635505499
+      throwing_46: -7263167808025016807
+      throwing_47: -5895492404777742551
+      throwing_48: 211677907327290536
+      throwing_49: -3004270429625257109
+      throwing_5: -1978447511780474292
+      throwing_50: -8695362272263805028
+      throwing_51: 7123873211764457383
+      throwing_52: 9193877537433254953
+      throwing_53: 3749157918682722579
+      throwing_6: 2985222242390557525
+      throwing_7: -5982195947491586614
+      throwing_8: 6290830509977797223
+      throwing_9: 1301927378133745385
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
