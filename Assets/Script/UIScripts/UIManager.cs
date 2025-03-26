@@ -20,6 +20,7 @@ public class UIManager : MonoBehaviour
     void Start()
     {
         Player = GameManager.Instance.player = Player;
+        LevelUpUi.SetActive(false);
     }
 
     void Awake()
@@ -56,6 +57,7 @@ public class UIManager : MonoBehaviour
         {
             int index = i;
             buttonImage[i].GetComponent<Image>().sprite = weapons[i].itemSprite;
+            buttonDescription[i].text = weapons[i].name + "\n\n" + weapons[i].name; //나중에 itemData에 description추가될시 뒤에 부분 변경 필요.
 
             buttons[i].onClick.RemoveAllListeners();
             buttons[i].onClick.AddListener(() =>
