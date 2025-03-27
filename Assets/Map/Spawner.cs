@@ -1,6 +1,7 @@
-using System;
+
 using System.Collections;
 using System.Diagnostics;
+using System.Linq;
 using UnityEngine;
 
 public class Spawner : MonoBehaviour
@@ -11,11 +12,16 @@ public class Spawner : MonoBehaviour
     public int monsterNum = 0; //몬스터 숫자
     private Stopwatch stopwatch;
 
+    public float eventInterval = 30f; // 이벤트 주기
+    GameObject[] eventMonster;
+    public int eventLevel = 0;
+
     public int monsterMaxNum = 300;
 
     private void Start()
     {
         monsterNum = 8;
+        
         StartCoroutine(TryRegisterCoroutine());
         
     }
@@ -26,10 +32,12 @@ public class Spawner : MonoBehaviour
     }
     public void GameStart()
     {
+        eventMonster = Resources.LoadAll<GameObject>("Event_0/");
         stopwatch = new Stopwatch();
         stopwatch.Start();
         StartCoroutine(SpawnMonsters());
         StartCoroutine(IncreaseDifficulty());
+        StartCoroutine(StartEvent());
     }
 
     private IEnumerator SpawnMonsters()
@@ -85,4 +93,55 @@ public class Spawner : MonoBehaviour
         GameManager.Instance.spawner = this;
     }
 
+    private IEnumerator StartEvent()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(eventInterval);
+
+            GameObject eventMobsParent = GameObject.Find("EventMonster") ?? new GameObject("EventMonster");
+
+            GameObject player = GameManager.Instance.player.gameObject;
+            Vector3 spawnPos = GameManager.Instance.pool.GetSpawnPos(player.transform.position);
+
+            int repeatNum = eventMonster[eventLevel].GetComponent<EventMonster>().repeatNum;
+
+            yield return StartCoroutine(SpawnEventMonstersWithDelay(eventMonster[eventLevel], spawnPos, eventMobsParent, repeatNum));
+
+            // eventLevel 증가 (최대값 초과 방지)
+            eventLevel = Mathf.Min(eventLevel + 1, eventMonster.Count() - 1);
+        }
+    }
+
+    private IEnumerator SpawnEventMonstersWithDelay(GameObject monsterPrefab, Vector3 spawnPos, GameObject parent, int repeatNum)
+    {
+        float spawnDelay = 5f; // 몬스터 간 소환 간격 (5초)
+
+        for (int i = 0; i < repeatNum; i++)
+        {
+            SpawnEventMonster(monsterPrefab, spawnPos, parent);
+            yield return new WaitForSeconds(spawnDelay);
+        }
+    }
+
+    public void SpawnEventMonster(GameObject mobPrefab, Vector3 spawnPos, GameObject parent)
+    {
+        if (mobPrefab.GetComponent<EventMonster>() == null && mobPrefab.GetComponent<Monster>() == null) return;
+        float randomRange = 2f;
+
+        int num = mobPrefab.GetComponent<EventMonster>().spawnNum < 0 ? 1 : mobPrefab.GetComponent<EventMonster>().spawnNum;
+        for (int i = 0; i < num; i++)
+        {
+            Vector3 randomOffset = GetRandomOffset(randomRange);
+            GameObject mobInstance = Instantiate(mobPrefab, spawnPos + randomOffset, Quaternion.identity);
+            mobInstance.transform.parent = parent.transform;
+        }
+    }
+
+    private Vector3 GetRandomOffset(float range)
+    {
+        return new Vector3(Random.Range(-range, range), Random.Range(-range, range), 0);
+    }
+
+    
 }

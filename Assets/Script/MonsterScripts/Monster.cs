@@ -15,20 +15,20 @@ public class Monster : MonoBehaviour
     Vector2 Dir;
     Vector2 DirNo;
    
-    Animator Mob_Ani;
+    public Animator Mob_Ani;
 
-    private bool isDead = false; // 몬스터가 죽었는지 확인하는 변수
+    public bool isDead = false; // 몬스터가 죽었는지 확인하는 변수
 
-    private bool isAttacking = false;  // 지속피해 구현을 위한 bool
-    private float DamageTurm = 0.5f;  // 지속피해 주기
+    public bool isAttacking = false;  // 지속피해 구현을 위한 bool
+    public float DamageTurm = 0.5f;  // 지속피해 주기
 
 
-    private SpriteRenderer sr;
-    private Rigidbody2D rb;
+    public SpriteRenderer sr;
+    public Rigidbody2D rb;
 
-    private Color original;
+    public Color original;
 
-    private Coroutine DamageCoroutine;
+    public Coroutine DamageCoroutine;
 
     //for pooling
     public int index;
@@ -46,8 +46,11 @@ public class Monster : MonoBehaviour
     void Update()
     {
         if (HP <= 0) return; // 죽었으면 이동하지 않음
-
-        target = GameObject.FindGameObjectWithTag("Player"); 
+        if(index >= 0) //이벤트 몬스터가 아니면
+        {
+            target = GameObject.FindGameObjectWithTag("Player");
+        }
+        
 
         Dir = target.transform.position - transform.position;
         DirNo = Dir.normalized;
