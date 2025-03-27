@@ -56,6 +56,7 @@ public class Player : MonoBehaviour
         playerAnim = GetComponent<Animator>();
         prefabmanager = FindAnyObjectByType<PrefabManager>();
         circleAttackManager = FindAnyObjectByType<CircleAttackManager>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
         //무기 초기화는 PrefabManager에서 실행       
 
         // 2초마다 BasicAttackRoutine 실행
