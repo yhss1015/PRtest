@@ -9802,6 +9802,9 @@ MonoBehaviour:
   MissileCool: 3
   circleAttackManager: {fileID: 0}
   circle_prefab: {fileID: 0}
+  ninjaStarPrefab: {fileID: 0}
+  ninjaCount: 1
+  ninjaCoolTime: 2
   itemManager: {fileID: 0}
 --- !u!50 &1618354795
 Rigidbody2D:
@@ -18891,10 +18894,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6487457405459089973, guid: 965affdc2a395db49af1a91570c594d3, type: 3}
-      propertyPath: whipCount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6487457405459089973, guid: 965affdc2a395db49af1a91570c594d3, type: 3}
       propertyPath: itemManager
       value: 
       objectReference: {fileID: 2123026065}
@@ -19137,6 +19136,9 @@ MonoBehaviour:
   MissileCool: 1.5
   circleAttackManager: {fileID: 0}
   circle_prefab: {fileID: 3742033552751930772, guid: f1696313fc1b08c409d60f71318fabe6, type: 3}
+  ninjaStarPrefab: {fileID: 0}
+  ninjaCount: 1
+  ninjaCoolTime: 2
   itemManager: {fileID: 2123026065}
 --- !u!61 &6287346916924649525
 BoxCollider2D:

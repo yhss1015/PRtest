@@ -69,6 +69,10 @@ public class NinjaStar : Weapon_All
             closestEnemy = closest;
             direction = (closest.position - player.position).normalized;  // 목표 방향 설정
         }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     void Move()
@@ -87,5 +91,10 @@ public class NinjaStar : Weapon_All
         }
     }
 
+
+    private void OnBecameInvisible()
+    {
+        Destroy(gameObject);
+    }
 
 }

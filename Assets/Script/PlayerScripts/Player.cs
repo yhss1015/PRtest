@@ -17,13 +17,15 @@ public class Player : MonoBehaviour
     public float Level = 1; //캐릭터 레벨
     public bool isLeft = false;
 
+    public PrefabManager prefabmanager;
+    public SpriteRenderer spriteRenderer;
     [Header("채찍 공격 정보")]
     public GameObject[] attack_Prefab;
     public float whipAttack_Level = 1; // 기본 공격 레벨
     public float whipCool = 2f;    // 기본 공격 주기를 결정
     //public WeaponData whipWeapon;
     public float whipCount = 0;
-    
+
 
     [Header("원거리 공격 정보")]
     public GameObject missile_prefab;
@@ -52,7 +54,8 @@ public class Player : MonoBehaviour
     {
         defaultScale = transform.localScale; // 초기 스케일 저장
         playerAnim = GetComponent<Animator>();
-
+        prefabmanager = FindAnyObjectByType<PrefabManager>();
+        circleAttackManager = FindAnyObjectByType<CircleAttackManager>();
         //무기 초기화는 PrefabManager에서 실행       
 
         // 2초마다 BasicAttackRoutine 실행
@@ -81,7 +84,7 @@ public class Player : MonoBehaviour
 
     void PMove()
     {
-        float curSpeedX = Input.GetAxis("Horizontal") * speed *1.25f * Time.deltaTime;
+        float curSpeedX = Input.GetAxis("Horizontal") * speed * 1.25f * Time.deltaTime;
         float curSpeedY = Input.GetAxis("Vertical") * speed * Time.deltaTime;
 
         if (curSpeedX != 0 || curSpeedY != 0)
@@ -124,7 +127,7 @@ public class Player : MonoBehaviour
 
     // 원거리 공격 코루틴
     IEnumerator MissileAttackRoutine()
-    { 
+    {
         while (true)
         {
             Instantiate(missile_prefab, transform.position, Quaternion.identity);
@@ -193,26 +196,26 @@ public class Player : MonoBehaviour
 
 
         // 왼쪽 공격
-        if (whipCount != 1 )
+        if (whipCount != 1)
         {
             Instantiate(attack_Prefab[0], transform.position + attack_Prefab[0].transform.position, attack_Prefab[0].transform.rotation);
             SoundManager.Instance.slashSound();
             // 0.1초 후 오른쪽 공격 실행
             StartCoroutine(DelayedAttack(0.1f));
         }
-        else if((whipCount == 1 && isLeft == true)) // 채찍 횟수가 1이면서 왼쪽을 바라볼떄
+        else if ((whipCount == 1 && isLeft == true)) // 채찍 횟수가 1이면서 왼쪽을 바라볼떄
         {
             Instantiate(attack_Prefab[0], transform.position + attack_Prefab[0].transform.position, attack_Prefab[0].transform.rotation);
             SoundManager.Instance.slashSound();
-            
+
         }
         else // 오른쪽을 바라볼때 (채찍횟수 1이면서)
         {
             StartCoroutine(DelayedAttack(0.0f));
         }
-            
-        
-        
+
+
+
     }
 
     IEnumerator DelayedAttack(float delay)
@@ -227,17 +230,32 @@ public class Player : MonoBehaviour
     {
         curHp -= dmg;
 
-        if(curHp<=0)
+        // 색상 변경 효과 적용
+        StartCoroutine(DamageEffect());
+
+        if (curHp <= 0)
         {
             Debug.Log("플레이어 사망");
 
         }
     }
-    
+
+    private IEnumerator DamageEffect()
+    {
+        // 색상을 빨간색으로 변경
+        spriteRenderer.color = Color.red;
+
+        // 일정 시간 대기
+        yield return new WaitForSeconds(0.2f);
+
+        // 원래 색상으로 복구
+        spriteRenderer.color = new Color(1f, 1f, 1f, 1f);
+    }
+
     public void PlusHp(float amount)
     {
         curHp += amount;
-        if(curHp>maxHp)
+        if (curHp > maxHp)
         {
             curHp = maxHp;
         }
@@ -247,7 +265,7 @@ public class Player : MonoBehaviour
     {
         // 경험치 증가
         curExp += amount;
-        if(curExp>=maxExp) // 레벨경험치 꽉찰시 현재경험치 차감,최대 경험치 상승, 레벨 상승
+        if (curExp >= maxExp) // 레벨경험치 꽉찰시 현재경험치 차감,최대 경험치 상승, 레벨 상승
         {
             curExp -= maxExp; // 경험치 초기화 및 초과분 반환
             maxExp *= 1.1f; // 최대 경험치 증가
@@ -255,7 +273,7 @@ public class Player : MonoBehaviour
             SoundManager.Instance.PlaySound(SoundManager.Instance.levelUp); // 레벨업 사운드
             // 레벨업 ui 함수 추가
         }
-        
+
     }
 
 
@@ -274,8 +292,8 @@ public class Player : MonoBehaviour
     // 특정 무기정보를 가져온다.(참조 변수 활용)
     public WeaponData FindWeaponInfo(WeaponType weaponType)
     {
-        
-        if(itemManager==null)
+
+        if (itemManager == null)
         {
             Debug.LogWarning("씬에 ItemManager 객체를 생성하고 스크립트를 넣어주세요.");
             return null;
@@ -294,25 +312,54 @@ public class Player : MonoBehaviour
             }
             return curWeapon;
         }
-            
+
     }
 
     // 특정 무기의 정보를 가지고 플레이어의 무기를 업데이트한다.(특정무기만)
     // ex. 채찍무기를 레벨업 하였다-> UpdateWeaponInfo(WeaponData @@@) 알아서 구분하여 업데이트
     public void UpdateWeaponInfo(WeaponData weapondata)
     {
-        
-        switch(weapondata.weaponType)
+        WeaponType wt;
+        switch (weapondata.weaponType)
         {
             case WeaponType.Whip:
                 whipCool = weapondata.baseCoolTime;
                 whipCount = weapondata.baseProjectileCount;
+
                 break;
             case WeaponType.MagicWand:
                 MissileCool = weapondata.baseCoolTime;
                 break;
+            case WeaponType.KingVible:
+                foreach (var prefab in prefabmanager.prefabs)
+                {
+                    wt = prefab.GetComponent<Weapon_All>().weaponType;
+                    if (wt == WeaponType.KingVible)
+                    {
+                        circleAttackManager.maxCircles = prefab.GetComponent<Weapon_All>().ProjectileCount;
+                        break;
+                    }
+                }
+                break;
+            default:
+                break;
         }
 
-           
+        /*
+        // 웨폰 데이터의 레벨이 1이라면 공격을 시작하는 함수를 실행한다
+        if (weapondata.레벨)
+        {
+            StartCoroutine(BasicAttackRoutine());
+            StartCoroutine(MissileAttackRoutine());
+            AcquireCircleAttack();
+            // 표창 공격 코루틴 실행
+            StartCoroutine(NinjaStarAttackRoutine());
+            
+            switch문으로 구분
+
+
+        }
+        */
+
     }
 }
