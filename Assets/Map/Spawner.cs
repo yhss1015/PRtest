@@ -101,24 +101,26 @@ public class Spawner : MonoBehaviour
 
             GameObject eventMobsParent = GameObject.Find("EventMonster") ?? new GameObject("EventMonster");
 
-            GameObject player = GameManager.Instance.player.gameObject;
-            Vector3 spawnPos = GameManager.Instance.pool.GetSpawnPos(player.transform.position);
 
             int repeatNum = eventMonster[eventLevel].GetComponent<EventMonster>().repeatNum;
 
-            yield return StartCoroutine(SpawnEventMonstersWithDelay(eventMonster[eventLevel], spawnPos, eventMobsParent, repeatNum));
+            yield return StartCoroutine(SpawnEventMonstersWithDelay(eventMonster[eventLevel], eventMobsParent, repeatNum));
 
             // eventLevel 증가 (최대값 초과 방지)
             eventLevel = Mathf.Min(eventLevel + 1, eventMonster.Count() - 1);
         }
     }
 
-    private IEnumerator SpawnEventMonstersWithDelay(GameObject monsterPrefab, Vector3 spawnPos, GameObject parent, int repeatNum)
+    private IEnumerator SpawnEventMonstersWithDelay(GameObject monsterPrefab, GameObject parent, int repeatNum)
     {
+        
         float spawnDelay = 5f; // 몬스터 간 소환 간격 (5초)
 
         for (int i = 0; i < repeatNum; i++)
         {
+            GameObject player = GameManager.Instance.player.gameObject;
+            Vector3 spawnPos = GameManager.Instance.pool.GetSpawnPos(player.transform.position);
+
             SpawnEventMonster(monsterPrefab, spawnPos, parent);
             yield return new WaitForSeconds(spawnDelay);
         }
