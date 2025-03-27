@@ -32,8 +32,8 @@ public class EventMonster : Monster
             GameObject targetPoint = new GameObject("EventTarget") { transform = { position = targetPos } };
             
             target = targetPoint;
-            Destroy(gameObject, 9f);
-            Destroy(targetPoint, 10f);
+            Destroy(gameObject, 5f);
+            Destroy(targetPoint, 6f);
         }
         else { 
         }
