@@ -12,17 +12,18 @@ public class PoolManager : MonoBehaviour
 
     private void Awake()
     {
-        pools = new List<GameObject>[prefabs.Length];
-
-        for(int i = 0; i<pools.Length; i++)
-        {
-            pools[i] = new List<GameObject>();
-        }
+        
     }
     private void Start()
     {
-        StartCoroutine(TryRegisterCoroutine());
-        prefabs = Resources.LoadAll<GameObject>("Monster/");        
+        prefabs = Resources.LoadAll<GameObject>("Monster/");
+        pools = new List<GameObject>[prefabs.Length];
+
+        for (int i = 0; i < pools.Length; i++)
+        {
+            pools[i] = new List<GameObject>();
+        }
+        StartCoroutine(TryRegisterCoroutine()); 
     }
 
     public GameObject GetPrefab(int index)
