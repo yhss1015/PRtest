@@ -49,7 +49,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void levelUpEvent()
+    public void levelUpEvent()
     {
         Vector3 playerpos = GameManager.Instance.player.transform.position;
         Random.InitState((int)System.DateTime.Now.Ticks);

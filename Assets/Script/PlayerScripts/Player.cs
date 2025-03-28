@@ -273,6 +273,7 @@ public class Player : MonoBehaviour
             Level++;
             SoundManager.Instance.PlaySound(SoundManager.Instance.levelUp); // 레벨업 사운드
             // 레벨업 ui 함수 추가
+            GameManager.Instance.levelUpEvent();
         }
 
     }
