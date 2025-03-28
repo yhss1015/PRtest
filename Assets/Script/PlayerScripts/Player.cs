@@ -140,12 +140,9 @@ public class Player : MonoBehaviour
     // 써클 공격 시작 함수
     void AcquireCircleAttack()
     {
-        if (circleAttackManager == null)
-        {
-            circleAttackManager = gameObject.AddComponent<CircleAttackManager>();
-            circleAttackManager.circlePrefab = circle_prefab; //플레이어에서 프리팹 할당할시 사용
+        
             circleAttackManager.StartCircleAttack();
-        }
+        
     }
 
     // 써클 공격 갯수 증가 함수
@@ -349,6 +346,11 @@ public class Player : MonoBehaviour
                 foreach (var prefab in prefabmanager.prefabs)
                 {
                     wt = prefab.GetComponent<Weapon_All>().weaponType;
+                    if(circleAttackManager==null)
+                    {
+                        circleAttackManager = gameObject.AddComponent<CircleAttackManager>();
+                        circleAttackManager.circlePrefab = circle_prefab; //플레이어에서 프리팹 할당할시 사용
+                    }
                     if (wt == WeaponType.KingVible)
                     {
                         circleAttackManager.maxCircles = prefab.GetComponent<Weapon_All>().ProjectileCount;
@@ -363,8 +365,12 @@ public class Player : MonoBehaviour
                     ninjaCount = weapondata.baseProjectileCount;
                     ninjaCoolTime = weapondata.baseCoolTime; 
                 }
-                ninjaCount += weapondata.levelData[level].additionalProjectiles;
-                ninjaCoolTime += weapondata.levelData[level].additionalProjectiles;
+                else
+                {
+                    ninjaCount += weapondata.levelData[level].additionalProjectiles;
+                    ninjaCoolTime += weapondata.levelData[level].cooldownChange;
+                }
+                    
                 break;
             default:
                 break;

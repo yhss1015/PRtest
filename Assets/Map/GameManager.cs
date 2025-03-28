@@ -69,14 +69,16 @@ public class GameManager : MonoBehaviour
                 if (!playerInventory.FIndWeapon(weapon))
                 {
                     playerInventory.AddNewWeapon(weapon);
+                    GameManager.Instance.prefabManager.UpdateWeaponPrefab(weapon, playerInventory.equippedWeapons[index].currentLevel);
                     GameManager.Instance.player.StartWeapon(weapon);
                 }
                 else
                 {
                     playerInventory.LevelUpWeapon(index);
+                    GameManager.Instance.prefabManager.UpdateWeaponPrefab(weapon, playerInventory.equippedWeapons[index].currentLevel);
                 }                               
-                GameManager.Instance.prefabManager.UpdateWeaponPrefab(weapon, playerInventory.equippedWeapons[index].currentLevel);
-                GameManager.Instance.player.UpdateWeaponInfo(weapon, playerInventory.equippedWeapons[index].currentLevel);
+                
+                //GameManager.Instance.player.UpdateWeaponInfo(weapon, playerInventory.equippedWeapons[index].currentLevel);
             }
             else if (selectedItem is AccessoryData accessory)
             {
