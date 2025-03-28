@@ -32,7 +32,7 @@ public class ItemManager : MonoBehaviour
             // (예: 무기 프리팹에 적용할 스탯 갱신)
             if (GameManager.Instance.player != null)
             {
-                GameManager.Instance.player.UpdateWeaponInfo(updatedWeapon);
+                GameManager.Instance.player.UpdateWeaponInfo(updatedWeapon, playerInventory.equippedWeapons[weaponIndex].currentLevel);
             }
         }
     }

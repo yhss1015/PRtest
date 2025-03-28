@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
     public Player player;
     public ItemManager itemManager;
     public Spawner spawner;
+    public PlayerInventory playerInventory;
+    public PrefabManager prefabManager;
 
     public bool isRunning = false;
 
@@ -59,15 +61,31 @@ public class GameManager : MonoBehaviour
         UIManager.instance.LevelUpUI(randomItems, (selectedItem) =>
         {
             if (selectedItem is WeaponData weapon)
-            {
-                GameManager.Instance.player.UpdateWeaponInfo(weapon);
+            {                
+
+                Time.timeScale = 1;
+                int index = 0;
+                index = playerInventory.FIndIndex(weapon);
+                if (!playerInventory.FIndWeapon(weapon))
+                {
+                    playerInventory.AddNewWeapon(weapon);
+                    GameManager.Instance.player.StartWeapon(weapon);
+                }
+                else
+                {
+                    playerInventory.LevelUpWeapon(index);
+                }                               
+                GameManager.Instance.prefabManager.UpdateWeaponPrefab(weapon, playerInventory.equippedWeapons[index].currentLevel);
+                GameManager.Instance.player.UpdateWeaponInfo(weapon, playerInventory.equippedWeapons[index].currentLevel);
             }
             else if (selectedItem is AccessoryData accessory)
             {
+                Time.timeScale = 1;
                 GameManager.Instance.itemManager.playerInventory.AddNewAccessory(accessory);
             }
         });
-        Time.timeScale = 1;
+        
+        
     }
 
 

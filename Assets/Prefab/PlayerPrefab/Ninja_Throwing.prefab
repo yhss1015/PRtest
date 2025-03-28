@@ -126,7 +126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   awakenedVersion: {fileID: 0}
-  weaponType: 0
+  weaponType: 3
   itemSprite: {fileID: 0}
   AttackPower: 20
   ProjectileCount: 0
