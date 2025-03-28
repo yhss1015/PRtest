@@ -1,3 +1,4 @@
+using System.Threading;
 using UnityEngine;
 
 public class NinjaStar : Weapon_All
@@ -23,8 +24,18 @@ public class NinjaStar : Weapon_All
         if (collision.CompareTag("Enemy"))
         {
             //Instantiate(hitEffect, transform.position, Quaternion.identity);
-            Monster monster = collision.GetComponent<Monster>();
-            monster.TakeDamage(AttackPower);
+            if (collision.GetComponent<Monster>())
+            {
+                Monster monster = collision.GetComponent<Monster>();
+                monster.TakeDamage(AttackPower);
+            }
+            else if(collision.GetComponent<EventMonster>())
+            {
+                EventMonster monster = collision.GetComponent<EventMonster>();
+                monster.TakeDamage(AttackPower);
+            }
+            //Monster monster = collision.GetComponent<Monster>() ? collision.GetComponent<Monster>() : collision.GetComponent<EventMonster>();
+            //monster.TakeDamage(AttackPower);
 
         }
     }
@@ -38,10 +49,11 @@ public class NinjaStar : Weapon_All
 
     void Update()
     {
-        if (closestEnemy != null)
+        /*if (closestEnemy != null)
         {
             Move();  // 자연스럽게 속도가 감소하면서 이동
-        }
+        }*/
+        Move();  // 자연스럽게 속도가 감소하면서 이동
     }
 
     void FindClosestEnemy()

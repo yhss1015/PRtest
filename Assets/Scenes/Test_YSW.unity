@@ -18781,7 +18781,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3441136030434148913, guid: 965affdc2a395db49af1a91570c594d3, type: 3}
       propertyPath: eventInterval
-      value: 30
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3562755855181968325, guid: 965affdc2a395db49af1a91570c594d3, type: 3}
       propertyPath: m_Name

@@ -58,9 +58,16 @@ public class Monster : MonoBehaviour
         transform.Translate(DirNo * Speed *Time.deltaTime);
 
         if (Dir.x > 0)
-            transform.localScale = new Vector3(-1, 1, 1); // 오른쪽
+        {
+            //transform.localScale = new Vector3(-1, 1, 1);// 오른쪽
+            sr.flipX = true;
+        }
         else if (Dir.x < 0)
-            transform.localScale = new Vector3(1, 1, 1); // 왼쪽
+        {
+            //transform.localScale = new Vector3(1, 1, 1); // 왼쪽
+            sr.flipX = false;
+        }
+            
 
     }
 

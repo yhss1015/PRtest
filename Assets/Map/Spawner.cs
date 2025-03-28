@@ -136,7 +136,8 @@ public class Spawner : MonoBehaviour
         {
             Vector3 randomOffset = GetRandomOffset(randomRange);
             GameObject mobInstance = Instantiate(mobPrefab, spawnPos + randomOffset, Quaternion.identity);
-            mobInstance.transform.parent = parent.transform;
+            mobInstance.transform.SetParent(parent.transform, false);
+            mobInstance.transform.localScale = Vector3.one * mobInstance.GetComponent<EventMonster>().scale;
         }
     }
 

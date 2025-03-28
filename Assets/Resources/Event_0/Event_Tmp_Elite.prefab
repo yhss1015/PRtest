@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1010585151057189001}
   - component: {fileID: 6573888517527217815}
   m_Layer: 0
-  m_Name: Event_Tmp
+  m_Name: Event_Tmp_Elite
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33,7 +33,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.845, y: 0.364, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -82,7 +82,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 1330614483, guid: 30cd871a679e21842871b21d98a480f7, type: 3}
-  m_Color: {r: 0.6886792, g: 0, b: 0, a: 0.9647059}
+  m_Color: {r: 0.2438082, g: 0, b: 0.3962264, a: 0.9647059}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -201,12 +201,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a97d197e1ef0c74db8ee92fc999ee5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 100
-  Speed: 3
+  HP: 500
+  Speed: 1
   Attack: 5
   KnockBack: 10
   target: {fileID: 0}
-  EXP: {fileID: 7924704893378496037, guid: 8f4f7e806fe30614bba4a7b29d585925, type: 3}
+  EXP: {fileID: 1839766799452016957, guid: 40b908e2cd3f10f4cb698eb4d6f69ade, type: 3}
   Mob_Ani: {fileID: 0}
   isDead: 0
   isAttacking: 0
@@ -215,7 +215,7 @@ MonoBehaviour:
   rb: {fileID: 0}
   original: {r: 0, g: 0, b: 0, a: 0}
   index: 0
-  spawnNum: 15
-  repeatNum: 4
-  isNormalMonster: 1
-  scale: 1
+  spawnNum: 1
+  repeatNum: 1
+  isNormalMonster: 0
+  scale: 3
