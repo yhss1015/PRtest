@@ -165,7 +165,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnInterval: 5
   difficultyIncreaseInterval: 30
+  monsterLevel: 0
   monsterNum: 0
+  eventInterval: 30
+  eventLevel: 0
   monsterMaxNum: 300
 --- !u!1 &244900498
 GameObject:
@@ -5066,6 +5069,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pool: {fileID: 0}
   player: {fileID: 0}
+  itemManager: {fileID: 0}
   spawner: {fileID: 0}
   isRunning: 0
 --- !u!4 &1150209571
@@ -9597,7 +9601,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnInterval: 5
   difficultyIncreaseInterval: 30
+  monsterLevel: 0
   monsterNum: 0
+  eventInterval: 30
+  eventLevel: 0
   monsterMaxNum: 300
 --- !u!1 &1618354789
 GameObject:
@@ -9658,6 +9665,8 @@ MonoBehaviour:
   maxExp: 100
   Level: 1
   isLeft: 0
+  prefabmanager: {fileID: 0}
+  spriteRenderer: {fileID: 0}
   attack_Prefab:
   - {fileID: 5230563220734635514, guid: c237dfa0a9e439441a86607fb639221c, type: 3}
   - {fileID: 3286683016843523009, guid: a18a177b73a272d4fbe06c260a3fbbe3, type: 3}
@@ -9669,6 +9678,9 @@ MonoBehaviour:
   MissileCool: 3
   circleAttackManager: {fileID: 0}
   circle_prefab: {fileID: 0}
+  ninjaStarPrefab: {fileID: 0}
+  ninjaCount: 1
+  ninjaCoolTime: 2
   itemManager: {fileID: 0}
 --- !u!50 &1618354795
 Rigidbody2D:
@@ -18608,6 +18620,7 @@ MonoBehaviour:
   accessoryDataList: []
   weaponPrefab: {fileID: 8343974562744449887, guid: 6ded56c8a6c54714a972ad8822399f52, type: 3}
   accessoryPrefab: {fileID: 1818621112373551941, guid: 5f11b00484456e248a948a8fbd63b021, type: 3}
+  playerInventory: {fileID: 4001493338972827268, guid: 25b871a2f3ef2ec47a82aaaee9bfc121, type: 3}
 --- !u!4 &2123026066
 Transform:
   m_ObjectHideFlags: 0
@@ -18989,6 +19002,8 @@ MonoBehaviour:
   maxExp: 100
   Level: 1
   isLeft: 0
+  prefabmanager: {fileID: 0}
+  spriteRenderer: {fileID: 0}
   attack_Prefab:
   - {fileID: 5230563220734635514, guid: c237dfa0a9e439441a86607fb639221c, type: 3}
   - {fileID: 3286683016843523009, guid: a18a177b73a272d4fbe06c260a3fbbe3, type: 3}
@@ -19000,6 +19015,9 @@ MonoBehaviour:
   MissileCool: 1.5
   circleAttackManager: {fileID: 0}
   circle_prefab: {fileID: 3742033552751930772, guid: f1696313fc1b08c409d60f71318fabe6, type: 3}
+  ninjaStarPrefab: {fileID: 0}
+  ninjaCount: 1
+  ninjaCoolTime: 2
   itemManager: {fileID: 2123026065}
 --- !u!61 &6287346916924649525
 BoxCollider2D:
@@ -19059,7 +19077,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63130bd25ac6e294aba78962b90656b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  power: 5
+  awakenedVersion: {fileID: 0}
+  weaponType: 0
+  itemSprite: {fileID: 0}
+  AttackPower: 0
+  ProjectileCount: 0
+  projectileLimit: 0
+  CoolTime: 0
+  Penetration: 0
+  Critical: 0
+  Knockback: 0
 --- !u!1 &6470898655067685394
 GameObject:
   m_ObjectHideFlags: 0

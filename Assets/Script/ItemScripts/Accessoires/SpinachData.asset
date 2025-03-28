@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: SpinachData
   m_EditorClassIdentifier: 
   accessoryType: 5
-  itemSprite: {fileID: 0}
+  itemSprite: {fileID: 7647240639167449756, guid: 9574cfd9e4d14bc429f1a9f5dd179165, type: 3}
   maxLevel: 5
   perLevelEffectValue: 10
