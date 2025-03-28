@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SocialPlatforms;
 using UnityEngine.Timeline;
 using VampireSurvival.ItemSystem;
 
@@ -273,6 +274,7 @@ public class Player : MonoBehaviour
             Level++;
             SoundManager.Instance.PlaySound(SoundManager.Instance.levelUp); // 레벨업 사운드
             // 레벨업 ui 함수 추가
+            //Time.timeScale = 0;
         }
 
     }
