@@ -20,5 +20,8 @@ MonoBehaviour:
     requiredAccessoryType: 1
     awakenedWeapon: {fileID: 11400000, guid: b2218eabe4ed2fb48963efafffc16198, type: 2}
   - originalWeaponType: 2
-    requiredAccessoryType: 5
+    requiredAccessoryType: 3
     awakenedWeapon: {fileID: 11400000, guid: b78a0b0feb7a94a4dbdb26b948dd4b50, type: 2}
+  - originalWeaponType: 3
+    requiredAccessoryType: 5
+    awakenedWeapon: {fileID: 11400000, guid: 0a09e59424a54644d9cb277623c1ef3f, type: 2}

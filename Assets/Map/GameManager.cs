@@ -1,6 +1,8 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using VampireSurvival.ItemSystem;
+using static ItemManager;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
@@ -52,14 +54,22 @@ public class GameManager : MonoBehaviour
         Vector3 playerpos = GameManager.Instance.player.transform.position;
         Random.InitState((int)System.DateTime.Now.Ticks);
         Time.timeScale = 0;
-        WeaponData[] selectItem = new WeaponData[3];
-        GameManager.Instance.itemManager.SpawnRandomWeaponOrAccessory(playerpos);
-        UIManager.instance.LevelUpUI(selectItem, (selectedItem) =>
+        List<RandomItemData> randomItems = GameManager.Instance.itemManager.GetRandomItemData(GameManager.Instance.itemManager.playerInventory);
+
+        UIManager.instance.LevelUpUI(randomItems, (selectedItem) =>
         {
-            GameManager.Instance.player.UpdateWeaponInfo(selectedItem);
+            if (selectedItem is WeaponData weapon)
+            {
+                GameManager.Instance.player.UpdateWeaponInfo(weapon);
+            }
+            else if (selectedItem is AccessoryData accessory)
+            {
+                GameManager.Instance.itemManager.playerInventory.AddNewAccessory(accessory);
+            }
         });
         Time.timeScale = 1;
     }
+
 
 
     public void SetisRunning()

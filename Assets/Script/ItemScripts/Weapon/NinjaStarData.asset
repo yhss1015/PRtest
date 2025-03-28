@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f42a46ac6665ba04c953d9dd9c798014, type: 3}
-  m_Name: MagicWandData
+  m_Name: NinjaStarData
   m_EditorClassIdentifier: 
-  awakenedVersion: {fileID: 11400000, guid: b2218eabe4ed2fb48963efafffc16198, type: 2}
-  weaponType: 1
-  itemSprite: {fileID: -8102918881405342443, guid: 602f5c13d9bd9274fb227c86e0768070, type: 3}
-  baseAttackPower: 10
+  awakenedVersion: {fileID: 0}
+  weaponType: 3
+  itemSprite: {fileID: 0}
+  baseAttackPower: 5
   baseProjectileCount: 1
-  projectileLimit: 60
-  baseCoolTime: 1.2
-  basePenetration: 1
+  projectileLimit: 30
+  baseCoolTime: 2
+  basePenetration: -1
   baseCritical: 0
   baseKnockback: 1
   levelData:
@@ -28,15 +28,15 @@ MonoBehaviour:
     additionalRangePercent: 0
     cooldownChange: 0
     additionalPenetration: 0
-  - additionalProjectiles: 1
-    additionalAttackPower: 0
+  - additionalProjectiles: 0
+    additionalAttackPower: 10
     additionalRangePercent: 0
     cooldownChange: 0
     additionalPenetration: 0
   - additionalProjectiles: 0
-    additionalAttackPower: 0
-    additionalRangePercent: 0
-    cooldownChange: -0.2
+    additionalAttackPower: 5
+    additionalRangePercent: 10
+    cooldownChange: 0
     additionalPenetration: 0
   - additionalProjectiles: 1
     additionalAttackPower: 0
@@ -48,18 +48,18 @@ MonoBehaviour:
     additionalRangePercent: 0
     cooldownChange: 0
     additionalPenetration: 0
+  - additionalProjectiles: 0
+    additionalAttackPower: 0
+    additionalRangePercent: 10
+    cooldownChange: 0
+    additionalPenetration: 0
   - additionalProjectiles: 1
     additionalAttackPower: 0
     additionalRangePercent: 0
     cooldownChange: 0
     additionalPenetration: 0
   - additionalProjectiles: 0
-    additionalAttackPower: 0
-    additionalRangePercent: 0
-    cooldownChange: 0
-    additionalPenetration: 1
-  - additionalProjectiles: 0
     additionalAttackPower: 10
     additionalRangePercent: 0
     cooldownChange: 0
-    additionalPenetration: 1
+    additionalPenetration: 0

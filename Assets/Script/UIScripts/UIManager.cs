@@ -1,8 +1,10 @@
 using System;
+using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using VampireSurvival.ItemSystem;
+using static ItemManager;
 
 public class UIManager : MonoBehaviour
 {
@@ -48,26 +50,40 @@ public class UIManager : MonoBehaviour
         ExpSlider.value = Player.curExp/Player.maxExp;
     }
 
-    public void LevelUpUI(WeaponData[] item, Action<WeaponData> onSelected)
+    public void LevelUpUI(List<RandomItemData> items, Action<ScriptableObject> onSelected)
     {
         LevelUpUi.SetActive(true);
-        WeaponData[] weapons = { item[0], item[1], item[2] };
-
-        for (int i = 0; i < 3; i++)
+        // items 리스트가 3개 미만일 수도 있으니, 최소 3개가 되도록 처리하거나 UI를 유연하게 구성해야 합니다.
+        for (int i = 0; i < items.Count && i < 3; i++)
         {
             int index = i;
-            buttonImage[i].GetComponent<Image>().sprite = weapons[i].itemSprite;
-            buttonDescription[i].text = weapons[i].name + "\n\n" + weapons[i].name; //나중에 itemData에 description추가될시 뒤에 부분 변경 필요.
+            ScriptableObject item = items[i].itemData;
+
+            // 아이템이 무기이면 WeaponData, 장신구이면 AccessoryData로 처리 (여기서는 두 타입 모두 itemSprite와 name을 가지고 있다고 가정)
+            if (item is WeaponData weapon)
+            {
+                buttonImage[i].sprite = weapon.itemSprite;
+                buttonDescription[i].text = weapon.name + "\n\n" + weapon.name;
+            }
+            else if (item is AccessoryData accessory)
+            {
+                buttonImage[i].sprite = accessory.itemSprite;
+                buttonDescription[i].text = accessory.name + "\n\n" + accessory.name;
+            }
+            else
+            {
+                buttonImage[i].sprite = null;
+                buttonDescription[i].text = "Unknown";
+            }
 
             buttons[i].onClick.RemoveAllListeners();
             buttons[i].onClick.AddListener(() =>
             {
                 LevelUpUi.SetActive(false);
-                onSelected?.Invoke(weapons[index]);
+                onSelected?.Invoke(item);
             });
         }
     }
-
 
 
 
