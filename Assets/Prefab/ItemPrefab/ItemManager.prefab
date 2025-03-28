@@ -47,9 +47,15 @@ MonoBehaviour:
   weaponDataList:
   - {fileID: 11400000, guid: f45d4ce1ce4b57c48b73f29a6d4918c9, type: 2}
   - {fileID: 11400000, guid: 801ebecbf919ae648b779aee3b73648f, type: 2}
+  - {fileID: 11400000, guid: 8085cc2ca15aecd418cbed354ec004e5, type: 2}
+  - {fileID: 11400000, guid: 9fd0cd7a31a5b0c49896c3db8d913bb9, type: 2}
   accessoryDataList:
   - {fileID: 11400000, guid: f3235e5c2efbcc94c9cba8024f7d483e, type: 2}
   - {fileID: 11400000, guid: cb6a30031923f314fa2c9a7e6c1348fa, type: 2}
+  - {fileID: 11400000, guid: 71f541f262585bd4590671b69300b12c, type: 2}
+  - {fileID: 11400000, guid: 4041783d6894b0e4f8746872ca34f54b, type: 2}
+  - {fileID: 11400000, guid: ef34c2c286f18d046a3a64bf3e737a52, type: 2}
+  - {fileID: 11400000, guid: f6c6ba97eafc79f4bb36eaa2adc2bd70, type: 2}
   weaponPrefab: {fileID: 8343974562744449887, guid: 6ded56c8a6c54714a972ad8822399f52, type: 3}
   accessoryPrefab: {fileID: 1818621112373551941, guid: 5f11b00484456e248a948a8fbd63b021, type: 3}
   playerInventory: {fileID: 4001493338972827268, guid: 25b871a2f3ef2ec47a82aaaee9bfc121, type: 3}

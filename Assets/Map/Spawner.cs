@@ -8,7 +8,7 @@ public class Spawner : MonoBehaviour
 {
     public float spawnInterval = 5f; // 몬스터 생성 주기
     public float difficultyIncreaseInterval = 30f; // 난이도 증가 주기
-    private int monsterLevel = 0; // 몬스터 강도
+    public int monsterLevel = 0; // 몬스터 강도
     public int monsterNum = 0; //몬스터 숫자
     private Stopwatch stopwatch;
 

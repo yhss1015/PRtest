@@ -35,11 +35,10 @@ public class CircleAttackManager : MonoBehaviour
 
     public void UpdateCircleCount(int newCount)
     {
-        if (newCount != maxCircles)
-        {
-            maxCircles = Mathf.Clamp(newCount, 1, 6); // 최소 1개, 최대 6개 제한
-            InitializeCircles(); // 개수 변경 시 위치 업데이트
-        }
+
+        maxCircles = Mathf.Clamp(newCount, 1, 6); // 최소 1개, 최대 6개 제한
+        InitializeCircles(); // 개수 변경 시 위치 업데이트
+
     }
 
     private void InitializeCircles()

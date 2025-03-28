@@ -5,6 +5,7 @@ public class PrefabManager : MonoBehaviour
 {
     public GameObject[] prefabs;
     public WeaponData wd;
+    public PlayerInventory playerInventory;
 
     WeaponType wt; // 디버깅용
     Weapon_All wa;
@@ -13,7 +14,7 @@ public class PrefabManager : MonoBehaviour
 
 
     // Weapondata변경 사항을 프리팹에 적용하는 함수
-    public void UpdateWeaponPrefab(WeaponData weaponData)
+    public void UpdateWeaponPrefab(WeaponData weaponData,int level)
     {
         if (weaponData.weaponType == WeaponType.Whip)
         {
@@ -31,15 +32,29 @@ public class PrefabManager : MonoBehaviour
             {
                 count--;
                 wa = prefab.GetComponent<Weapon_All>();
-                wa.AttackPower = weaponData.baseAttackPower;
-                wa.ProjectileCount = weaponData.baseProjectileCount;
-                wa.projectileLimit = weaponData.projectileLimit;
-                wa.CoolTime = weaponData.baseCoolTime;
-                wa.Penetration = weaponData.basePenetration;
-                wa.Critical = weaponData.baseCritical;
-                wa.Knockback = weaponData.baseKnockback;
+                if(level==0)
+                {
+                    wa.AttackPower = weaponData.baseAttackPower;
+                    wa.ProjectileCount = weaponData.baseProjectileCount;
+                    wa.projectileLimit = weaponData.projectileLimit;
+                    wa.CoolTime = weaponData.baseCoolTime;
+                    wa.Penetration = weaponData.basePenetration;
+                    wa.Critical = weaponData.baseCritical;
+                    wa.Knockback = weaponData.baseKnockback;
+                }
+                else
+                {
+                    wa.AttackPower += weaponData.levelData[level].additionalAttackPower;
+                    wa.ProjectileCount += weaponData.levelData[level].additionalProjectiles;
+                    wa.projectileLimit = weaponData.projectileLimit;
+                    wa.CoolTime += weaponData.levelData[level].cooldownChange;
+                    wa.Penetration += weaponData.levelData[level].additionalPenetration;
+                    wa.Critical = weaponData.baseCritical;
+                    wa.Knockback = weaponData.baseKnockback;
+                }
+                    
 
-                player.UpdateWeaponInfo(weaponData);
+                player.UpdateWeaponInfo(weaponData,level);
 
                 Debug.Log($"{weaponData.weaponType}을 업데이트");
                 if (count == 0)
@@ -56,7 +71,7 @@ public class PrefabManager : MonoBehaviour
         InitializeWeapon();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         // 처음에는 whip 무기만 존재
-        player.UpdateWeaponInfo(player.FindWeaponInfo(WeaponType.Whip));
+        player.UpdateWeaponInfo(player.FindWeaponInfo(WeaponType.Whip),0);
 
     }
 
@@ -79,13 +94,6 @@ public class PrefabManager : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-        // 디버깅용 
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            UpdateWeaponPrefab(wd);
-        }
-    }
+    
 
 }

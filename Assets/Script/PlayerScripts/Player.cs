@@ -62,10 +62,10 @@ public class Player : MonoBehaviour
 
         // 2초마다 BasicAttackRoutine 실행
         StartCoroutine(BasicAttackRoutine());
-        StartCoroutine(MissileAttackRoutine());
-        AcquireCircleAttack();
+        //StartCoroutine(MissileAttackRoutine());
+        //AcquireCircleAttack();
         // 표창 공격 코루틴 실행
-        StartCoroutine(NinjaStarAttackRoutine());
+        //StartCoroutine(NinjaStarAttackRoutine());
 
 
     }
@@ -274,7 +274,10 @@ public class Player : MonoBehaviour
             Level++;
             SoundManager.Instance.PlaySound(SoundManager.Instance.levelUp); // 레벨업 사운드
             // 레벨업 ui 함수 추가
-            //Time.timeScale = 0;
+
+
+            GameManager.Instance.levelUpEvent();
+
         }
 
     }
@@ -320,29 +323,48 @@ public class Player : MonoBehaviour
 
     // 특정 무기의 정보를 가지고 플레이어의 무기를 업데이트한다.(특정무기만)
     // ex. 채찍무기를 레벨업 하였다-> UpdateWeaponInfo(WeaponData @@@) 알아서 구분하여 업데이트
-    public void UpdateWeaponInfo(WeaponData weapondata)
+    public void UpdateWeaponInfo(WeaponData weapondata,int level)
     {
         WeaponType wt;
         switch (weapondata.weaponType)
         {
             case WeaponType.Whip:
-                whipCool = weapondata.baseCoolTime;
-                whipCount = weapondata.baseProjectileCount;
+                if(level==0)
+                {
+                    whipCool = weapondata.baseCoolTime;
+                    whipCount = weapondata.baseProjectileCount;
+                }
+                else
+                {
+                    whipCool += weapondata.levelData[level].cooldownChange;
+                    whipCount += weapondata.levelData[level].additionalProjectiles;
+                }
 
-                break;
+                    break;
             case WeaponType.MagicWand:
                 MissileCool = weapondata.baseCoolTime;
                 break;
             case WeaponType.KingVible:
+                Debug.Log("킹 바이블");
                 foreach (var prefab in prefabmanager.prefabs)
                 {
                     wt = prefab.GetComponent<Weapon_All>().weaponType;
                     if (wt == WeaponType.KingVible)
                     {
                         circleAttackManager.maxCircles = prefab.GetComponent<Weapon_All>().ProjectileCount;
+                        circleAttackManager.UpdateCircleCount(prefab.GetComponent<Weapon_All>().ProjectileCount);
                         break;
                     }
                 }
+                break;
+            case WeaponType.NinjaStar:
+                if(level==0)
+                {
+                    ninjaCount = weapondata.baseProjectileCount;
+                    ninjaCoolTime = weapondata.baseCoolTime; 
+                }
+                ninjaCount += weapondata.levelData[level].additionalProjectiles;
+                ninjaCoolTime += weapondata.levelData[level].additionalProjectiles;
                 break;
             default:
                 break;
@@ -364,5 +386,23 @@ public class Player : MonoBehaviour
         }
         */
 
+    }
+    public void StartWeapon(WeaponData weapon)
+    {
+        switch(weapon.weaponType)
+        {
+            case WeaponType.MagicWand:
+                StartCoroutine(MissileAttackRoutine());
+                break;
+            case WeaponType.KingVible:
+                AcquireCircleAttack();
+                break;
+            case WeaponType.NinjaStar:
+                StartCoroutine(NinjaStarAttackRoutine());
+                break;
+            default:
+                Debug.LogWarning("없는 무기 타입");
+                break;
+        }
     }
 }

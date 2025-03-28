@@ -5,7 +5,7 @@ public class Enemy_Missile : MonoBehaviour
     public GameObject target; 
     public float Speed = 3f;
     public float Damage = 10f;
-    public float lifetime = 5;
+    public float lifetime = 10;
     Vector2 direction;
     //Vector2 dirNo;
 

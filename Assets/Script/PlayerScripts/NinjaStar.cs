@@ -34,6 +34,17 @@ public class NinjaStar : Weapon_All
                 EventMonster monster = collision.GetComponent<EventMonster>();
                 monster.TakeDamage(AttackPower);
             }
+            else if (collision.GetComponent<Ranger_Monster>())
+            {
+                Ranger_Monster monster = collision.GetComponent<Ranger_Monster>();
+                monster.TakeDamage(AttackPower);
+            }
+            else if (collision.GetComponent<Boss>())
+            {
+                Boss monster = collision.GetComponent<Boss>();
+                monster.TakeDamage(AttackPower);
+            }
+
             //Monster monster = collision.GetComponent<Monster>() ? collision.GetComponent<Monster>() : collision.GetComponent<EventMonster>();
             //monster.TakeDamage(AttackPower);
 

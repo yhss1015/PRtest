@@ -13,7 +13,7 @@ public class EquippedItem<T>
     public EquippedItem(T data)
     {
         itemData = data;
-        currentLevel = 1;
+        currentLevel = 0;
     }
 }
 #endregion
@@ -56,6 +56,31 @@ public class PlayerInventory : MonoBehaviour
             Debug.Log("무기가 이미 최대 레벨입니다. 각성 조건 확인...");
             CheckAndAwakenWeapon(weaponIndex);
         }
+    }
+
+    public int FIndIndex(WeaponData weapon)
+    {
+        Debug.Log(equippedWeapons.Count);
+        for (int i = 0; i < equippedWeapons.Count; i++)
+        {
+            if (weapon.weaponType == equippedWeapons[i].itemData.weaponType)
+            {
+                return i;
+            }
+        }
+        return 0;
+    }
+
+    public bool FIndWeapon(WeaponData weapon)
+    {
+        for(int i =0; i<equippedWeapons.Count;i++)
+        {
+            if(weapon.weaponType == equippedWeapons[i].itemData.weaponType)
+            {
+                return true;
+            }
+        }
+        return false;
     }
 
     // 특정 무기(인덱스)의 각성 조건을 체크하는 함수

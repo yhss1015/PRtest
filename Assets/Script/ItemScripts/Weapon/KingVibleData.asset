@@ -22,4 +22,44 @@ MonoBehaviour:
   basePenetration: -1
   baseCritical: 1
   baseKnockback: 3
-  levelData: []
+  levelData:
+  - additionalProjectiles: 0
+    additionalAttackPower: 0
+    additionalRangePercent: 0
+    cooldownChange: 0
+    additionalPenetration: 0
+  - additionalProjectiles: 1
+    additionalAttackPower: 0
+    additionalRangePercent: 0
+    cooldownChange: 0
+    additionalPenetration: 0
+  - additionalProjectiles: 0
+    additionalAttackPower: 5
+    additionalRangePercent: 25
+    cooldownChange: 0
+    additionalPenetration: 0
+  - additionalProjectiles: 0
+    additionalAttackPower: 10
+    additionalRangePercent: 0
+    cooldownChange: -0.5
+    additionalPenetration: 0
+  - additionalProjectiles: 1
+    additionalAttackPower: 0
+    additionalRangePercent: 0
+    cooldownChange: 0
+    additionalPenetration: 0
+  - additionalProjectiles: 0
+    additionalAttackPower: 0
+    additionalRangePercent: 25
+    cooldownChange: 0
+    additionalPenetration: 0
+  - additionalProjectiles: 0
+    additionalAttackPower: 10
+    additionalRangePercent: 0
+    cooldownChange: -0.5
+    additionalPenetration: 0
+  - additionalProjectiles: 1
+    additionalAttackPower: 0
+    additionalRangePercent: 0
+    cooldownChange: 0
+    additionalPenetration: 0

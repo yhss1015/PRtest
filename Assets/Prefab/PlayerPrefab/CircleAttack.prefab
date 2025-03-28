@@ -101,7 +101,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63130bd25ac6e294aba78962b90656b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  power: 5
+  awakenedVersion: {fileID: 0}
+  weaponType: 2
+  itemSprite: {fileID: 0}
+  AttackPower: 0
+  ProjectileCount: 0
+  projectileLimit: 0
+  CoolTime: 0
+  Penetration: 0
+  Critical: 0
+  Knockback: 0
 --- !u!58 &4065520368605217629
 CircleCollider2D:
   m_ObjectHideFlags: 0
