@@ -6,7 +6,6 @@ public class Monster : MonoBehaviour
     public float HP = 20;
     public float Speed = 3;
     public float Attack = 5;
-    //public float Dying =1.5f; // 몬스터 사망 모션 시간조절
     public float KnockBack = 10f; // 피격시 넉백 정도
 
 
@@ -63,11 +62,8 @@ public class Monster : MonoBehaviour
             sr.flipX = true;
         }
         else if (Dir.x < 0)
-        {
             //transform.localScale = new Vector3(1, 1, 1); // 왼쪽
             sr.flipX = false;
-        }
-            
 
     }
 
@@ -126,7 +122,6 @@ public class Monster : MonoBehaviour
         sr.color = new Color(1,1,1,0.5f);
         yield return new WaitForSeconds(0.1f); // 0.1초 유지  
         sr.color = original; // 색 돌아옴
-        Debug.Log("코루틴발생");
     }
 
     public void TakeDamage(float dmg) // 몬스터가 피해를 입는 함수
