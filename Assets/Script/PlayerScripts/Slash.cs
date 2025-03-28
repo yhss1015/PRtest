@@ -58,7 +58,7 @@ public class Slash : Weapon_All
 
     // 히트 되는 타이밍을 조절하기위해 collider를 일정 시간 뒤에 활성화 함.
     private void Start()
-    {
+    {/*
         itemManager = FindAnyObjectByType<ItemManager>();
         if (itemManager == null)
         {
@@ -87,7 +87,7 @@ public class Slash : Weapon_All
         {
             Debug.LogError("weaponDataList에서 Whip 타입 무기를 찾을 수 없습니다!");
         }
-
+        */
         PolygonCollider2D polygon = GetComponent<PolygonCollider2D>();
         StartCoroutine(OnCollider(polygon, enabled_delay, true));
         if (destroy_delay != 0)
