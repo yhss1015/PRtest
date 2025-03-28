@@ -25,9 +25,24 @@ public class Missile : Weapon_All
             {
                 if (enemy.CompareTag("Enemy"))
                 {
-                    Monster monster = enemy.GetComponent<Monster>();
-                    if (monster != null)
+                    if (collision.GetComponent<Monster>())
                     {
+                        Monster monster = collision.GetComponent<Monster>();
+                        monster.TakeDamage(AttackPower);
+                    }
+                    else if (collision.GetComponent<EventMonster>())
+                    {
+                        EventMonster monster = collision.GetComponent<EventMonster>();
+                        monster.TakeDamage(AttackPower);
+                    }
+                    else if (collision.GetComponent<Ranger_Monster>())
+                    {
+                        Ranger_Monster monster = collision.GetComponent<Ranger_Monster>();
+                        monster.TakeDamage(AttackPower);
+                    }
+                    else if (collision.GetComponent<Boss>())
+                    {
+                        Boss monster = collision.GetComponent<Boss>();
                         monster.TakeDamage(AttackPower);
                     }
                 }

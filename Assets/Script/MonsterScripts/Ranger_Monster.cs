@@ -6,7 +6,6 @@ public class Ranger_Monster : MonoBehaviour
     public float HP = 20;
     public float Speed = 3;
     public float Attack = 5;
-    //public float Dying =1.5f; // 몬스터 사망 모션 시간조절
     public float KnockBack = 5f; // 피격시 넉백 정도
     public float Interval = 5f;
     public float detectionrange = 10f;
@@ -64,16 +63,22 @@ public class Ranger_Monster : MonoBehaviour
         transform.Translate(DirNo * Speed * Time.deltaTime);
 
         if (Dir.x > 0)
-            transform.localScale = new Vector3(-1, 1, 1); // 오른쪽
+        {
+            //transform.localScale = new Vector3(-1, 1, 1);// 오른쪽
+            sr.flipX = true;
+        }
         else if (Dir.x < 0)
-            transform.localScale = new Vector3(1, 1, 1); // 왼쪽
+            //transform.localScale = new Vector3(1, 1, 1); // 왼쪽
+            sr.flipX = false;
 
-        float DistanceToPlayer = Vector2.Distance(transform.position, Player.position);
+    
+
+    float DistanceToPlayer = Vector2.Distance(transform.position, Player.position);
 
         if (DistanceToPlayer <= detectionrange)
         {
-            //플레이어 방향으로 스프라이트 회전
-            sr.flipX = (Player.position.x < transform.position.x);
+            ////플레이어 방향으로 스프라이트 회전
+            //sr.flipX = (Player.position.x < transform.position.x);
 
             //미사일 발사 로직
             fireTimer -= Time.deltaTime;  // 타이머 감소
@@ -151,7 +156,6 @@ public class Ranger_Monster : MonoBehaviour
         sr.color = Color.red;
         yield return new WaitForSeconds(0.1f); // 0.1초 유지  
         sr.color = original; // 색 돌아옴
-        Debug.Log("코루틴발생");
     }
 
     public void TakeDamage(float dmg) // 몬스터가 피해를 입는 함수
