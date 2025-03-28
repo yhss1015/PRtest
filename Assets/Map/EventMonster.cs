@@ -8,6 +8,7 @@ public class EventMonster : Monster
     public int spawnNum;
     public int repeatNum = 1;
     public bool isNormalMonster = false;
+    public int scale = 1;
 
     public void Start()
     {
@@ -35,7 +36,9 @@ public class EventMonster : Monster
             Destroy(gameObject, 5f);
             Destroy(targetPoint, 6f);
         }
-        else { 
+        else
+        {
+            target = GameObject.FindGameObjectWithTag("Player");
         }
     }
     private IEnumerator TmpCorutine()

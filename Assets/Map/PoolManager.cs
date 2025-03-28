@@ -69,7 +69,7 @@ public class PoolManager : MonoBehaviour
 
     public void ReturnPool(GameObject obj, int index)
     {
-        if (index >= pools.Length) return;
+        if (index >= pools.Length || index < 0) return;
         if (!pools[index].Contains(obj))
         {
             pools[index].Add(obj);
