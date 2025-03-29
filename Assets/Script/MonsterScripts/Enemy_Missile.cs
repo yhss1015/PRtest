@@ -15,7 +15,7 @@ public class Enemy_Missile : MonoBehaviour
     public void SetDirection(Vector2 dir)
     {
         direction = dir.normalized;
-        transform.right = direction; // 화살 방향을 올바르게 설정
+        transform.right = direction;
     }
 
     void Update()

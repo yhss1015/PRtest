@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 772786511422284088}
   - component: {fileID: 5240919035222104299}
   m_Layer: 0
-  m_Name: ArrowSkeleton
+  m_Name: 2ArrowSkeleton
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -226,10 +226,10 @@ MonoBehaviour:
   Speed: 1
   Attack: 5
   KnockBack: 5
-  Interval: 5
+  Interval: 4
   detectionrange: 10
   target: {fileID: 0}
-  EXP: {fileID: 1839766799452016957, guid: 40b908e2cd3f10f4cb698eb4d6f69ade, type: 3}
+  EXP: {fileID: 7924704893378496037, guid: 8f4f7e806fe30614bba4a7b29d585925, type: 3}
   Missileprefab: {fileID: 14243668848378739, guid: e4c5db89940563846be2a4cb3e86e6b6, type: 3}
   Shooter: {fileID: 1095931938859643143}
   index: 0
