@@ -5,7 +5,7 @@ using UnityEngine;
 public class CircleAttackManager : MonoBehaviour
 {
     public GameObject circlePrefab; // 원형 공격 프리팹 (하나만 사용)
-    public int maxCircles = 4; // 현재 활성화된 서클 개수 (최대 6개)
+    public int maxCircles = 1; // 현재 활성화된 서클 개수 (최대 6개)
     public float radius = 2.7f; // 원이 도는 반지름
     public float rotationSpeed = 200f; // 회전 속도
 
@@ -37,6 +37,7 @@ public class CircleAttackManager : MonoBehaviour
     {
 
         maxCircles = Mathf.Clamp(newCount, 1, 6); // 최소 1개, 최대 6개 제한
+        ClearCircles(); // 기존 서클을 모두 제거
         InitializeCircles(); // 개수 변경 시 위치 업데이트
 
     }

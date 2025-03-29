@@ -6,6 +6,7 @@ public class PrefabManager : MonoBehaviour
     public GameObject[] prefabs;
     public WeaponData wd;
     public PlayerInventory playerInventory;
+    
 
     WeaponType wt; // 디버깅용
     Weapon_All wa;
@@ -68,9 +69,10 @@ public class PrefabManager : MonoBehaviour
     private void Start()
     {
 
-        InitializeWeapon();
+        //InitializeWeapon();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         // 처음에는 whip 무기만 존재
+        UpdateWeaponPrefab(wd, 0);
         player.UpdateWeaponInfo(player.FindWeaponInfo(WeaponType.Whip),0);
 
     }
