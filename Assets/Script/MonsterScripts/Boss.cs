@@ -10,7 +10,10 @@ public class Boss : MonoBehaviour
 
 
     public GameObject target;  //플레이어
-    public GameObject EXP;
+    public GameObject pos;
+    public GameObject Missileprefab;
+    public GameObject Missileprefab2;
+    public Transform center;
     Vector2 Dir;
     Vector2 DirNo;
 
@@ -40,6 +43,9 @@ public class Boss : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
 
         original = sr.color; // 몬스터의 기본 색상 저장 
+
+        StartCoroutine(CircleFire());
+        StartCoroutine(SpreadBullet());
     }
 
     void Update()
@@ -55,6 +61,7 @@ public class Boss : MonoBehaviour
         DirNo = Dir.normalized;
 
         transform.Translate(DirNo * Speed * Time.deltaTime);
+
 
         if (Dir.x > 0)
         {
@@ -94,6 +101,75 @@ public class Boss : MonoBehaviour
             }
         }
     }
+
+    IEnumerator CircleFire()
+    {
+        //공격주기
+        float attackRate = 6;
+        //발사체 생성갯수
+        int count =18;
+        //발사체 사이의 각도
+        float intervalAngle = 360 / count;
+        //가중되는 각도(항상 같은 위치로 발사하지 않도록 설정
+        float weightAngle = 0f;
+
+        while (true)
+        {
+            yield return new WaitForSeconds(attackRate);
+
+            for (int i = 0; i < count; ++i)
+            {
+                //발사체 생성
+                GameObject clone = Instantiate(Missileprefab, transform.position, Quaternion.identity);
+
+                //발사체 이동 방향(각도)
+                float angle = weightAngle + intervalAngle * i;
+               
+                float x = Mathf.Cos(angle * Mathf.Deg2Rad);
+                
+                float y = Mathf.Sin(angle * Mathf.Deg2Rad);
+
+                //발사체 이동 방향 설정
+                clone.GetComponent<Enemy_Missile>().SetDirection(new Vector2(x, y));
+            }
+            //발사체가 생성되는 시작 각도 설정을 위한변수
+            weightAngle += 1;
+
+        }
+
+    }
+
+    IEnumerator SpreadBullet()
+    {
+        float attackRate = 10;
+        int count = 30;
+        float intervalAngle = 360f / count;
+        float fireDelay = 0.1f;
+        while (true)
+        {
+            yield return new WaitForSeconds(attackRate);
+
+            for (int i = 0; i < count; ++i)
+            {
+                
+                GameObject missile = Instantiate(Missileprefab2, transform.position, Quaternion.identity);
+               
+                float angle = intervalAngle * i;
+
+                // 발사체의 이동 방향 설정 (원형 경로를 따라)
+                float x = Mathf.Cos(angle * Mathf.Deg2Rad);
+                float y = Mathf.Sin(angle * Mathf.Deg2Rad);
+
+                // 발사체 이동 방향 설정
+                missile.GetComponent<Enemy_Missile>().SetDirection(new Vector2(x, y));
+
+                // fireDelay 간격으로 하나씩 발사
+                yield return new WaitForSeconds(fireDelay); 
+
+            }
+        }
+    }
+
     IEnumerator ConDam(Player player)
     {
         while (isAttacking && player != null)
@@ -138,7 +214,6 @@ public class Boss : MonoBehaviour
         if (HP <= 0)
         {
             isDead = true; // 몬스터 사망 처리
-            ExpDrop();
             Die();
         }
     }
@@ -159,12 +234,6 @@ public class Boss : MonoBehaviour
         InitStat();
 
     }
-
-    public void ExpDrop()
-    {
-        Instantiate(EXP, transform.position, Quaternion.identity);
-    }
-
 
 
     //Add YSW for pooling

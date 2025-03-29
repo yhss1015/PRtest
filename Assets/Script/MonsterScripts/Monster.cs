@@ -69,6 +69,8 @@ public class Monster : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision) // 닿을 경우
     {
+        if(HP <= 0) return;  // 피격판정 삭제
+
         if (collision.CompareTag("Player") && !isAttacking)  // 태그= Player, isAttacking = false
         {
             Player player = collision.GetComponent<Player>();
