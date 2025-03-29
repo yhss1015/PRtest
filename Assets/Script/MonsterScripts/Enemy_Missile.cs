@@ -2,28 +2,26 @@ using UnityEngine;
 
 public class Enemy_Missile : MonoBehaviour
 {
-    public GameObject target; 
     public float Speed = 3f;
     public float Damage = 10f;
-    public float lifetime = 10;
-    Vector2 direction;
-    //Vector2 dirNo;
+    public float lifetime = 10f;
+    private Vector2 direction;
 
     void Start()
     {
-      Destroy(gameObject, lifetime);
+        Destroy(gameObject, lifetime);
     }
 
     public void SetDirection(Vector2 dir)
     {
         direction = dir.normalized;
+        transform.right = direction; // 화살 방향을 올바르게 설정
     }
 
     void Update()
     {
-        transform.Translate(direction * Speed * Time.deltaTime);
+        transform.position += (Vector3)direction * Speed * Time.deltaTime;
     }
-
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
