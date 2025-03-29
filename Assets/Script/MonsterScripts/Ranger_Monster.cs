@@ -93,12 +93,13 @@ public class Ranger_Monster : MonoBehaviour
 
     void shoot()
     {
-        //미사일 생성
-        GameObject missile = Instantiate(Missileprefab, Shooter.position, Quaternion.identity);
+        // 플레이어 방향 계산
+        Vector3 direction = (Player.position - Shooter.position).normalized;
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
-        //플레이어 방향으로 발사 방향 설정
-        Vector2 Direction = (Player.position - Shooter.position).normalized;
-        missile.GetComponent<Enemy_Missile>().SetDirection(Direction);
+        // 미사일 생성 및 회전 적용
+        GameObject missile = Instantiate(Missileprefab, Shooter.position, Quaternion.Euler(0, 0, angle));
+        missile.GetComponent<Enemy_Missile>().SetDirection(direction);
     }
 
     private void OnTriggerEnter2D(Collider2D collision) // 닿을 경우
