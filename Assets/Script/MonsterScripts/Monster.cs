@@ -1,4 +1,5 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
 
 public class Monster : MonoBehaviour
@@ -32,12 +33,14 @@ public class Monster : MonoBehaviour
     //for pooling
     public int index;
 
+    public GameObject DmgCanvas;
 
     void Start()
     {
         Mob_Ani= GetComponent<Animator>();  
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
+        
        
         original = sr.color; // 몬스터의 기본 색상 저장 
     }
@@ -128,8 +131,17 @@ public class Monster : MonoBehaviour
 
     public void TakeDamage(float dmg) // 몬스터가 피해를 입는 함수
     {
+        if(DmgCanvas==null)
+        {
+            DmgCanvas = GameManager.Instance.DmgPrefab;
+        }
+        
         if (isDead) return; // 이미 죽었으면 추가 피해를 받지 않음
         HP -= dmg;
+        GameObject DmgObj =Instantiate(DmgCanvas, transform.position, Quaternion.identity);
+        TextMeshProUGUI DmgText = DmgObj.GetComponentInChildren<TextMeshProUGUI>();
+        DmgText.text = dmg.ToString();
+        Destroy(DmgObj, 1);
 
         StartCoroutine(Flashing()); // 피격 시 점멸
 

@@ -1,4 +1,5 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
 
 public class Boss : MonoBehaviour
@@ -35,6 +36,7 @@ public class Boss : MonoBehaviour
     //for pooling
     public int index;
 
+    public GameObject DmgCanvas;
 
     void Start()
     {
@@ -205,6 +207,10 @@ public class Boss : MonoBehaviour
     {
         if (isDead) return; // 이미 죽었으면 추가 피해를 받지 않음
         HP -= dmg;
+        GameObject DmgObj = Instantiate(DmgCanvas, transform.position, Quaternion.identity);
+        TextMeshProUGUI DmgText = DmgObj.GetComponentInChildren<TextMeshProUGUI>();
+        DmgText.text = dmg.ToString();
+        Destroy(DmgObj, 1);
 
         StartCoroutine(Flashing()); // 피격 시 점멸
 

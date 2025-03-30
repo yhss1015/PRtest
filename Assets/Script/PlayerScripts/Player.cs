@@ -51,6 +51,9 @@ public class Player : MonoBehaviour
     [Header("아이템 매니저")]
     public ItemManager itemManager;
 
+    public GameObject DieText1;
+    public GameObject DieText2;
+
     void Start()
     {
         defaultScale = transform.localScale; // 초기 스케일 저장
@@ -67,6 +70,7 @@ public class Player : MonoBehaviour
         // 표창 공격 코루틴 실행
         //StartCoroutine(NinjaStarAttackRoutine());
         StartCoroutine(RecoveryRoutine());
+        StartCoroutine(TryRegisterCoroutine());
 
 
     }
@@ -236,6 +240,9 @@ public class Player : MonoBehaviour
         if (curHp <= 0)
         {
             Debug.Log("플레이어 사망");
+            Time.timeScale = 0;
+            DieText1.SetActive(true);
+            DieText2.SetActive(true);
 
         }
     }
@@ -340,8 +347,16 @@ public class Player : MonoBehaviour
 
                     break;
             case WeaponType.MagicWand:
-                MissileCool = weapondata.baseCoolTime;
-                break;
+                if(level==0)
+                {
+                    MissileCool = weapondata.baseCoolTime;
+                }
+                else
+                {
+                    MissileCool += weapondata.levelData[level].cooldownChange;
+                }
+
+                    break;
             case WeaponType.KingVible:
                 Debug.Log("킹 바이블");
                 foreach (var prefab in prefabmanager.prefabs)
@@ -350,7 +365,7 @@ public class Player : MonoBehaviour
                     if(circleAttackManager==null)
                     {
                         circleAttackManager = gameObject.AddComponent<CircleAttackManager>();
-                        circleAttackManager.circlePrefab = circle_prefab; //플레이어에서 프리팹 할당할시 사용
+                        circleAttackManager.circlePrefab = prefabmanager.prefabs[0]; //플레이어에서 프리팹 할당할시 사용
                     }
                     if (wt == WeaponType.KingVible)
                     {
@@ -412,4 +427,18 @@ public class Player : MonoBehaviour
                 break;
         }
     }
+
+    IEnumerator TryRegisterCoroutine()
+    {
+        while (GameManager.Instance == null)
+        {
+            yield return null; // 한 프레임 대기
+        }
+        GameManager.Instance.player = this;
+        UIManager.instance.Player = this;
+        MapManager.Instance.player = this;
+    }
+
+
+    
 }

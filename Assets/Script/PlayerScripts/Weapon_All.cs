@@ -18,6 +18,7 @@ public class Weapon_All : MonoBehaviour
     public float Critical;      // 치명타 확률(%)
     public float Knockback;      // 넉백
 
+
     void Start()
     {
         

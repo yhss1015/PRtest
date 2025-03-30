@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   awakenedVersion: {fileID: 0}
   weaponType: 3
-  itemSprite: {fileID: 0}
+  itemSprite: {fileID: 2352392319030861549, guid: 7079cfa6096c67f47805308247281ddb, type: 3}
   baseAttackPower: 77
   baseProjectileCount: 1
   projectileLimit: 20

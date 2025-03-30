@@ -104,13 +104,13 @@ MonoBehaviour:
   awakenedVersion: {fileID: 0}
   weaponType: 2
   itemSprite: {fileID: 0}
-  AttackPower: 0
-  ProjectileCount: 0
-  projectileLimit: 0
-  CoolTime: 0
-  Penetration: 0
-  Critical: 0
-  Knockback: 0
+  AttackPower: 15
+  ProjectileCount: 3
+  projectileLimit: 50
+  CoolTime: 3
+  Penetration: -1
+  Critical: 1
+  Knockback: 3
 --- !u!58 &4065520368605217629
 CircleCollider2D:
   m_ObjectHideFlags: 0

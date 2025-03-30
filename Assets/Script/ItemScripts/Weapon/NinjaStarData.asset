@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   awakenedVersion: {fileID: 0}
   weaponType: 3
-  itemSprite: {fileID: 0}
+  itemSprite: {fileID: 2352392319030861549, guid: 7079cfa6096c67f47805308247281ddb, type: 3}
   baseAttackPower: 5
   baseProjectileCount: 1
   projectileLimit: 30
@@ -28,38 +28,38 @@ MonoBehaviour:
     additionalRangePercent: 0
     cooldownChange: 0
     additionalPenetration: 0
-  - additionalProjectiles: 0
-    additionalAttackPower: 10
+  - additionalProjectiles: 1
+    additionalAttackPower: 2
     additionalRangePercent: 0
-    cooldownChange: 0
-    additionalPenetration: 0
-  - additionalProjectiles: 0
-    additionalAttackPower: 5
-    additionalRangePercent: 10
     cooldownChange: 0
     additionalPenetration: 0
   - additionalProjectiles: 1
     additionalAttackPower: 0
-    additionalRangePercent: 0
-    cooldownChange: 0
-    additionalPenetration: 0
-  - additionalProjectiles: 0
-    additionalAttackPower: 10
-    additionalRangePercent: 0
-    cooldownChange: 0
-    additionalPenetration: 0
-  - additionalProjectiles: 0
-    additionalAttackPower: 0
     additionalRangePercent: 10
+    cooldownChange: 0
+    additionalPenetration: 0
+  - additionalProjectiles: 0
+    additionalAttackPower: 2
+    additionalRangePercent: 0
+    cooldownChange: 0
+    additionalPenetration: 0
+  - additionalProjectiles: 0
+    additionalAttackPower: 3
+    additionalRangePercent: 0
     cooldownChange: 0
     additionalPenetration: 0
   - additionalProjectiles: 1
     additionalAttackPower: 0
+    additionalRangePercent: 10
+    cooldownChange: -0.2
+    additionalPenetration: 0
+  - additionalProjectiles: 0
+    additionalAttackPower: 3
     additionalRangePercent: 0
     cooldownChange: 0
     additionalPenetration: 0
   - additionalProjectiles: 0
-    additionalAttackPower: 10
+    additionalAttackPower: 0
     additionalRangePercent: 0
-    cooldownChange: 0
+    cooldownChange: -0.25
     additionalPenetration: 0

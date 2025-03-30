@@ -26,6 +26,8 @@ public class UIManager : MonoBehaviour
         LevelUpUi.SetActive(false);
     }
 
+    
+
     void Awake()
     {
         if (instance == null)
