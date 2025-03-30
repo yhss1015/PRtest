@@ -6,14 +6,14 @@ using VampireSurvival.ItemSystem;
 
 public class Player : MonoBehaviour
 {
-    public float maxHp = 100;       // 최대 체력
-    public float curHp = 100;       // 현재 체력
+    public float maxHp = 300;       // 최대 체력
+    public float curHp = 300;       // 현재 체력
     public float speed = 4;         // 스피드
     public float attack = 10;       // 공격력
-    public float recoveryHp = 1f;   // 1초마다 재생 체력
+    public float recoveryHp = 30f;   // 1초마다 재생 체력
 
     public float curExp = 0;
-    public float maxExp = 100;
+    public float maxExp = 30;
 
     public float Level = 1; //캐릭터 레벨
     public bool isLeft = false;
@@ -66,6 +66,7 @@ public class Player : MonoBehaviour
         //AcquireCircleAttack();
         // 표창 공격 코루틴 실행
         //StartCoroutine(NinjaStarAttackRoutine());
+        StartCoroutine(RecoveryRoutine());
 
 
     }

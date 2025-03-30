@@ -17,6 +17,7 @@ public class UIManager : MonoBehaviour
     public Text[] texts = new Text[10];
     public Slider ExpSlider;
     public GameObject LevelUpUi;
+    public GameObject[] menuButtons;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -48,6 +49,21 @@ public class UIManager : MonoBehaviour
         texts[2].text = Player.curHp.ToString("F1");
         texts[3].text = Player.speed.ToString("F1");
         ExpSlider.value = Player.curExp/Player.maxExp;
+
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            if(Time.timeScale==1)
+            {
+                Time.timeScale = 0;
+                menuButtons[0].SetActive(true);
+                menuButtons[1].SetActive(true);
+            }
+            
+        }
+    }
+    public void TimeScaleChange(float scale)
+    {
+        Time.timeScale = scale;
     }
 
     public void LevelUpUI(List<RandomItemData> items, Action<ScriptableObject> onSelected)
