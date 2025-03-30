@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using VampireSurvival.ItemSystem; // WeaponData, AccessoryData 등이 정의된 네임스페이스
@@ -96,5 +97,19 @@ public class ItemManager : MonoBehaviour
         }
 
         return selectedItems;
+    }
+
+    IEnumerator TryRegisterCoroutine()
+    {
+        while (GameManager.Instance == null)
+        {
+            yield return null; // 한 프레임 대기
+        }
+        GameManager.Instance.itemManager = this;
+    }
+
+    private void Start()
+    {
+        StartCoroutine(TryRegisterCoroutine());
     }
 }

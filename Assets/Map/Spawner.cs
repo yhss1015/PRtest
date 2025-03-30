@@ -64,7 +64,7 @@ public class Spawner : MonoBehaviour
     private void SpawnMonster()
     {
         
-        for (int i = 0; i<monsterNum + (stopwatch.Elapsed.Seconds/10); i++)
+        for (int i = 0; i<monsterNum + (stopwatch.Elapsed.Seconds/5); i++)
         {
             GameObject monster = GameManager.Instance.pool.GetPrefab(monsterLevel);
             if (monster != null)

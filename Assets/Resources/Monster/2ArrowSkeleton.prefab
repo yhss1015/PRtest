@@ -233,6 +233,7 @@ MonoBehaviour:
   Missileprefab: {fileID: 14243668848378739, guid: e4c5db89940563846be2a4cb3e86e6b6, type: 3}
   Shooter: {fileID: 1095931938859643143}
   index: 0
+  DmgCanvas: {fileID: 4206071704922510580, guid: 63d035c8a100ea14f892d1af0f3dd9a9, type: 3}
 --- !u!114 &5240919035222104299
 MonoBehaviour:
   m_ObjectHideFlags: 0

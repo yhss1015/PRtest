@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using VampireSurvival.ItemSystem;
 
@@ -52,6 +53,9 @@ public class PrefabManager : MonoBehaviour
                     wa.Penetration += weaponData.levelData[level].additionalPenetration;
                     wa.Critical = weaponData.baseCritical;
                     wa.Knockback = weaponData.baseKnockback;
+
+
+                    
                 }
                     
 
@@ -70,10 +74,12 @@ public class PrefabManager : MonoBehaviour
     {
 
         //InitializeWeapon();
+        StartCoroutine(TryRegisterCoroutine());
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         // 처음에는 whip 무기만 존재
         UpdateWeaponPrefab(wd, 0);
         player.UpdateWeaponInfo(player.FindWeaponInfo(WeaponType.Whip),0);
+        
 
     }
 
@@ -96,6 +102,14 @@ public class PrefabManager : MonoBehaviour
         }
     }
 
-    
+    IEnumerator TryRegisterCoroutine()
+    {
+        while (GameManager.Instance == null)
+        {
+            yield return null; // 한 프레임 대기
+        }
+        GameManager.Instance.prefabManager = this;
+    }
+
 
 }

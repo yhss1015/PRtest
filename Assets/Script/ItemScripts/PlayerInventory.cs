@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using VampireSurvival.ItemSystem;
@@ -181,4 +182,18 @@ public class PlayerInventory : MonoBehaviour
         Debug.Log("신규 장신구 획득");
     }
     #endregion
+
+    IEnumerator TryRegisterCoroutine()
+    {
+        while (GameManager.Instance == null)
+        {
+            yield return null; // 한 프레임 대기
+        }
+        GameManager.Instance.playerInventory = this;
+    }
+
+    private void Start()
+    {
+        StartCoroutine(TryRegisterCoroutine());
+    }
 }

@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public Spawner spawner;
     public PlayerInventory playerInventory;
     public PrefabManager prefabManager;
+    public GameObject DmgPrefab;
 
     public bool isRunning = false;
 

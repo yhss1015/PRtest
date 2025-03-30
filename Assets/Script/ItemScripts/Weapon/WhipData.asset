@@ -34,27 +34,27 @@ MonoBehaviour:
     cooldownChange: 0
     additionalPenetration: 0
   - additionalProjectiles: 0
-    additionalAttackPower: 5
+    additionalAttackPower: 2
     additionalRangePercent: 0
-    cooldownChange: 0
+    cooldownChange: -0.1
     additionalPenetration: 0
   - additionalProjectiles: 0
-    additionalAttackPower: 5
+    additionalAttackPower: 3
     additionalRangePercent: 10
     cooldownChange: 0
     additionalPenetration: 0
   - additionalProjectiles: 0
-    additionalAttackPower: 5
+    additionalAttackPower: 2
     additionalRangePercent: 0
-    cooldownChange: 0
+    cooldownChange: -0.15
     additionalPenetration: 0
   - additionalProjectiles: 0
-    additionalAttackPower: 5
+    additionalAttackPower: 0
     additionalRangePercent: 10
-    cooldownChange: 0
+    cooldownChange: -0.15
     additionalPenetration: 0
   - additionalProjectiles: 0
-    additionalAttackPower: 5
+    additionalAttackPower: 2
     additionalRangePercent: 0
     cooldownChange: 0
     additionalPenetration: 0

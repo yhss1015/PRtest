@@ -9,6 +9,11 @@ public class SceneLoader : MonoBehaviour
         SceneManager.LoadScene(sceneName);
     }
 
+    public void TimeScaleChnage(float scale)
+    {
+        Time.timeScale = scale;
+    }
+
     public void GameExit()
     {
 #if UNITY_EDITOR

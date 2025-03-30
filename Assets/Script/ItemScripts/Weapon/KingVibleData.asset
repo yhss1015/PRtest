@@ -15,7 +15,7 @@ MonoBehaviour:
   awakenedVersion: {fileID: 0}
   weaponType: 2
   itemSprite: {fileID: -2873272198819583695, guid: 8010fa6bce77ae3448b814befc52e6e9, type: 3}
-  baseAttackPower: 10
+  baseAttackPower: 5
   baseProjectileCount: 1
   projectileLimit: 50
   baseCoolTime: 3
@@ -34,27 +34,27 @@ MonoBehaviour:
     cooldownChange: 0
     additionalPenetration: 0
   - additionalProjectiles: 0
-    additionalAttackPower: 5
+    additionalAttackPower: 3
     additionalRangePercent: 25
     cooldownChange: 0
     additionalPenetration: 0
-  - additionalProjectiles: 0
-    additionalAttackPower: 10
+  - additionalProjectiles: 1
+    additionalAttackPower: 2
     additionalRangePercent: 0
     cooldownChange: -0.5
     additionalPenetration: 0
-  - additionalProjectiles: 1
-    additionalAttackPower: 0
+  - additionalProjectiles: 0
+    additionalAttackPower: 3
     additionalRangePercent: 0
     cooldownChange: 0
     additionalPenetration: 0
-  - additionalProjectiles: 0
+  - additionalProjectiles: 1
     additionalAttackPower: 0
     additionalRangePercent: 25
     cooldownChange: 0
     additionalPenetration: 0
   - additionalProjectiles: 0
-    additionalAttackPower: 10
+    additionalAttackPower: 5
     additionalRangePercent: 0
     cooldownChange: -0.5
     additionalPenetration: 0

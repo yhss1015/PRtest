@@ -4,7 +4,7 @@ public class Missile : Weapon_All
 {
     [Header("미사일 스탯")]
     public float detectionRange = 5f;  // 사거리
-    public float attackRange = 5f;     // 범위 공격 반경
+    public float attackRange = 1f;     // 범위 공격 반경
     public float speed = 10f;  // 미사일 이동 속도
     public bool targeting = true;  // 추적 여부
     private Transform target;  // 목표 (가장 가까운 몬스터)
@@ -25,24 +25,24 @@ public class Missile : Weapon_All
             {
                 if (enemy.CompareTag("Enemy"))
                 {
-                    if (collision.GetComponent<Monster>())
+                    if (enemy.GetComponent<Monster>())
                     {
-                        Monster monster = collision.GetComponent<Monster>();
+                        Monster monster = enemy.GetComponent<Monster>();
                         monster.TakeDamage(AttackPower);
                     }
-                    else if (collision.GetComponent<EventMonster>())
+                    else if (enemy.GetComponent<EventMonster>())
                     {
-                        EventMonster monster = collision.GetComponent<EventMonster>();
+                        EventMonster monster = enemy.GetComponent<EventMonster>();
                         monster.TakeDamage(AttackPower);
                     }
-                    else if (collision.GetComponent<Ranger_Monster>())
+                    else if (enemy.GetComponent<Ranger_Monster>())
                     {
-                        Ranger_Monster monster = collision.GetComponent<Ranger_Monster>();
+                        Ranger_Monster monster = enemy.GetComponent<Ranger_Monster>();
                         monster.TakeDamage(AttackPower);
                     }
-                    else if (collision.GetComponent<Boss>())
+                    else if (enemy.GetComponent<Boss>())
                     {
-                        Boss monster = collision.GetComponent<Boss>();
+                        Boss monster = enemy.GetComponent<Boss>();
                         monster.TakeDamage(AttackPower);
                     }
                 }
