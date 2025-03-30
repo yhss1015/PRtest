@@ -6,8 +6,8 @@ public class CircleAttackManager : MonoBehaviour
 {
     public GameObject circlePrefab; // 원형 공격 프리팹 (하나만 사용)
     public int maxCircles = 1; // 현재 활성화된 서클 개수 (최대 6개)
-    public float radius = 2.7f; // 원이 도는 반지름
-    public float rotationSpeed = 200f; // 회전 속도
+    public float radius = 2.35f; // 원이 도는 반지름
+    public float rotationSpeed = 230f; // 회전 속도
 
     private List<GameObject> circles = new List<GameObject>();
     private float currentAngle = 0f; // 회전 각도
