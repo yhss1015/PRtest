@@ -40,6 +40,7 @@ namespace VampireSurvival.ItemSystem
         [Header("레벨 데이터 (레벨 1 ~ 8)")]
         [Tooltip("인덱스 0: 레벨1 (초기 상태), 인덱스 1: 레벨2, ... 인덱스 7: 레벨8")]
         public WeaponLevelData[] levelData;
+        public string[] levelDescriptions;
     }
     
 }

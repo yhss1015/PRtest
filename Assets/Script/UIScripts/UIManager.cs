@@ -68,30 +68,41 @@ public class UIManager : MonoBehaviour
         Time.timeScale = scale;
     }
 
-    public void LevelUpUI(List<RandomItemData> items, Action<ScriptableObject> onSelected)
+    public void LevelUpUI(List<ItemManager.RandomItemData> items, Action<ScriptableObject> onSelected)
     {
         LevelUpUi.SetActive(true);
-        // items 리스트가 3개 미만일 수도 있으니, 최소 3개가 되도록 처리하거나 UI를 유연하게 구성해야 합니다.
         for (int i = 0; i < items.Count && i < 3; i++)
         {
             int index = i;
             ScriptableObject item = items[i].itemData;
 
-            // 아이템이 무기이면 WeaponData, 장신구이면 AccessoryData로 처리 (여기서는 두 타입 모두 itemSprite와 name을 가지고 있다고 가정)
             if (item is WeaponData weapon)
             {
+                int currentLevel = 0;
+                var equipped = GameManager.Instance.playerInventory.equippedWeapons.Find(e => e.itemData == weapon);
+                if (equipped != null)
+                { currentLevel = equipped.currentLevel; }
+                // Whip의 경우 currentLevel이 0이면 보정해서 1로 처리
+                if (weapon.weaponType == WeaponType.Whip && currentLevel == 0)
+                { currentLevel = 1; }
+                int nextLevel = currentLevel + 1;
+                int descriptionIndex = (weapon.weaponType == WeaponType.Whip) ? currentLevel : nextLevel - 1;
+                string desc = "";
+                if (weapon.levelDescriptions != null && weapon.levelDescriptions.Length > descriptionIndex)
+                { desc = weapon.levelDescriptions[descriptionIndex]; }
+
                 buttonImage[i].sprite = weapon.itemSprite;
-                buttonDescription[i].text = weapon.name + "\n\n" + weapon.name;
+                buttonDescription[i].text = weapon.name + " (" + nextLevel + ")\n" + desc;
             }
             else if (item is AccessoryData accessory)
             {
+                int currentLevel = 0;
+                var equipped = GameManager.Instance.playerInventory.equippedAccessories.Find(e => e.itemData == accessory);
+                if (equipped != null)
+                    currentLevel = equipped.currentLevel;
+                int nextLevel = currentLevel + 1;
                 buttonImage[i].sprite = accessory.itemSprite;
-                buttonDescription[i].text = accessory.name + "\n\n" + accessory.name;
-            }
-            else
-            {
-                buttonImage[i].sprite = null;
-                buttonDescription[i].text = "Unknown";
+                buttonDescription[i].text = accessory.name + " (" + nextLevel + ")\n" + accessory.levelDescription;
             }
 
             buttons[i].onClick.RemoveAllListeners();

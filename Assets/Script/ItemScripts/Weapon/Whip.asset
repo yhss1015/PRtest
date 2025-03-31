@@ -1,0 +1,74 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f42a46ac6665ba04c953d9dd9c798014, type: 3}
+  m_Name: Whip
+  m_EditorClassIdentifier: 
+  awakenedVersion: {fileID: 11400000, guid: 41dc319ac42f70545ba49894d3d9d2e3, type: 2}
+  weaponType: 0
+  itemSprite: {fileID: -7956655330049976835, guid: d731057310c911745a83fb248d0ee928, type: 3}
+  baseAttackPower: 10
+  baseProjectileCount: 1
+  projectileLimit: 30
+  baseCoolTime: 1.35
+  basePenetration: -1
+  baseCritical: 20
+  baseKnockback: 1
+  levelData:
+  - additionalProjectiles: 0
+    additionalAttackPower: 0
+    additionalRangePercent: 0
+    cooldownChange: 0
+    additionalPenetration: 0
+  - additionalProjectiles: 1
+    additionalAttackPower: 0
+    additionalRangePercent: 0
+    cooldownChange: 0
+    additionalPenetration: 0
+  - additionalProjectiles: 0
+    additionalAttackPower: 2
+    additionalRangePercent: 0
+    cooldownChange: -0.1
+    additionalPenetration: 0
+  - additionalProjectiles: 0
+    additionalAttackPower: 3
+    additionalRangePercent: 10
+    cooldownChange: 0
+    additionalPenetration: 0
+  - additionalProjectiles: 0
+    additionalAttackPower: 2
+    additionalRangePercent: 0
+    cooldownChange: -0.15
+    additionalPenetration: 0
+  - additionalProjectiles: 0
+    additionalAttackPower: 0
+    additionalRangePercent: 10
+    cooldownChange: -0.15
+    additionalPenetration: 0
+  - additionalProjectiles: 0
+    additionalAttackPower: 2
+    additionalRangePercent: 0
+    cooldownChange: 0
+    additionalPenetration: 0
+  - additionalProjectiles: 0
+    additionalAttackPower: 5
+    additionalRangePercent: 0
+    cooldownChange: 0
+    additionalPenetration: 0
+  levelDescriptions:
+  - 
+  - "\uD22C\uC0AC\uCCB4 \uC218 1 \uC99D\uAC00"
+  - "\uACF5\uACA9\uB825 2 \uC99D\uAC00, \uCFE8\uD0C0\uC784 0.1\uCD08 \uAC10\uC18C"
+  - "\uACF5\uACA9\uB825 3 \uC99D\uAC00"
+  - "\uACF5\uACA9\uB825 2 \uC99D\uAC00, \uCFE8\uD0C0\uC784 0.15\uCD08 \uAC10\uC18C"
+  - "\uCFE8\uD0C0\uC784 0.15\uCD08 \uAC10\uC18C"
+  - "\uACF5\uACA9\uB825 2 \uC99D\uAC00"
+  - "\uACF5\uACA9\uB825 5 \uC99D\uAC00"

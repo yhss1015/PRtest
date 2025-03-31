@@ -1,0 +1,74 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f42a46ac6665ba04c953d9dd9c798014, type: 3}
+  m_Name: KingVible
+  m_EditorClassIdentifier: 
+  awakenedVersion: {fileID: 0}
+  weaponType: 2
+  itemSprite: {fileID: -2873272198819583695, guid: 8010fa6bce77ae3448b814befc52e6e9, type: 3}
+  baseAttackPower: 5
+  baseProjectileCount: 1
+  projectileLimit: 50
+  baseCoolTime: 3
+  basePenetration: -1
+  baseCritical: 1
+  baseKnockback: 3
+  levelData:
+  - additionalProjectiles: 0
+    additionalAttackPower: 0
+    additionalRangePercent: 0
+    cooldownChange: 0
+    additionalPenetration: 0
+  - additionalProjectiles: 1
+    additionalAttackPower: 0
+    additionalRangePercent: 0
+    cooldownChange: 0
+    additionalPenetration: 0
+  - additionalProjectiles: 0
+    additionalAttackPower: 3
+    additionalRangePercent: 25
+    cooldownChange: 0
+    additionalPenetration: 0
+  - additionalProjectiles: 1
+    additionalAttackPower: 2
+    additionalRangePercent: 0
+    cooldownChange: -0.5
+    additionalPenetration: 0
+  - additionalProjectiles: 0
+    additionalAttackPower: 3
+    additionalRangePercent: 0
+    cooldownChange: 0
+    additionalPenetration: 0
+  - additionalProjectiles: 1
+    additionalAttackPower: 0
+    additionalRangePercent: 25
+    cooldownChange: 0
+    additionalPenetration: 0
+  - additionalProjectiles: 0
+    additionalAttackPower: 5
+    additionalRangePercent: 0
+    cooldownChange: -0.5
+    additionalPenetration: 0
+  - additionalProjectiles: 1
+    additionalAttackPower: 0
+    additionalRangePercent: 0
+    cooldownChange: 0
+    additionalPenetration: 0
+  levelDescriptions:
+  - "\uD0B9 \uBC14\uC774\uBE14 \uD68D\uB4DD(\uC8FC\uBCC0\uC744 \uB3CC\uBA70 \uACF5\uACA9)"
+  - "\uD22C\uC0AC\uCCB4 1 \uC99D\uAC00"
+  - "\uACF5\uACA9\uB825 3 \uC99D\uAC00"
+  - "\uD22C\uC0AC\uCCB4 1 \uC99D\uAC00, \uACF5\uACA9\uB825 2\uC99D\uAC00"
+  - "\uACF5\uACA9\uB825 3 \uC99D\uAC00"
+  - "\uD22C\uC0AC\uCCB4 1 \uC99D\uAC00"
+  - "\uACF5\uACA9\uB825 5 \uC99D\uAC00"
+  - "\uD22C\uC0AC\uCCB4 1 \uC99D\uAC00"

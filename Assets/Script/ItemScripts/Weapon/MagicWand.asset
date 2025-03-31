@@ -1,0 +1,74 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f42a46ac6665ba04c953d9dd9c798014, type: 3}
+  m_Name: MagicWand
+  m_EditorClassIdentifier: 
+  awakenedVersion: {fileID: 11400000, guid: b2218eabe4ed2fb48963efafffc16198, type: 2}
+  weaponType: 1
+  itemSprite: {fileID: -8102918881405342443, guid: 602f5c13d9bd9274fb227c86e0768070, type: 3}
+  baseAttackPower: 5
+  baseProjectileCount: 1
+  projectileLimit: 60
+  baseCoolTime: 1
+  basePenetration: 1
+  baseCritical: 0
+  baseKnockback: 1
+  levelData:
+  - additionalProjectiles: 0
+    additionalAttackPower: 0
+    additionalRangePercent: 0
+    cooldownChange: 0
+    additionalPenetration: 0
+  - additionalProjectiles: 0
+    additionalAttackPower: 2
+    additionalRangePercent: 0
+    cooldownChange: -0.15
+    additionalPenetration: 0
+  - additionalProjectiles: 0
+    additionalAttackPower: 2
+    additionalRangePercent: 0
+    cooldownChange: -0.175
+    additionalPenetration: 0
+  - additionalProjectiles: 0
+    additionalAttackPower: 0
+    additionalRangePercent: 0
+    cooldownChange: -0.25
+    additionalPenetration: 0
+  - additionalProjectiles: 0
+    additionalAttackPower: 2
+    additionalRangePercent: 0
+    cooldownChange: -0.3
+    additionalPenetration: 0
+  - additionalProjectiles: 0
+    additionalAttackPower: 2
+    additionalRangePercent: 0
+    cooldownChange: 0
+    additionalPenetration: 0
+  - additionalProjectiles: 0
+    additionalAttackPower: 3
+    additionalRangePercent: 0
+    cooldownChange: 0
+    additionalPenetration: 0
+  - additionalProjectiles: 0
+    additionalAttackPower: 5
+    additionalRangePercent: 0
+    cooldownChange: 0
+    additionalPenetration: 1
+  levelDescriptions:
+  - "\uB9E4\uC9C1 \uC644\uB4DC \uD68D\uB4DD(\uB2E8\uC77C \uD0C0\uAC9F \uCD94\uC801)"
+  - "\uACF5\uACA9\uB825 2 \uC99D\uAC00, \uCFE8\uD0C0\uC784 0.15\uCD08 \uAC10\uC18C"
+  - "\uACF5\uACA9\uB825 2 \uC99D\uAC00, \uCFE8\uD0C0\uC784 0.175\uCD08 \uAC10\uC18C"
+  - "\uCFE8\uD0C0\uC784 0.25\uCD08 \uAC10\uC18C"
+  - "\uACF5\uACA9\uB825 2 \uC99D\uAC00, \uCFE8\uD0C0\uC784 0.3\uCD08 \uAC10\uC18C"
+  - "\uACF5\uACA9\uB825 2 \uC99D\uAC00"
+  - "\uACF5\uACA9\uB825 3 \uC99D\uAC00"
+  - "\uACF5\uACA9\uB825 5 \uC99D\uAC00"
