@@ -24,5 +24,6 @@ namespace VampireSurvival.ItemSystem
         public int maxLevel = 5;
         [Tooltip("매 레벨당 효과 값 (HollowHeart: 최대 체력 20% 증가, EmptyTome: 쿨타임 8% 감소 등)")]
         public float perLevelEffectValue;
+        public string levelDescription;
     }
 }

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f42a46ac6665ba04c953d9dd9c798014, type: 3}
-  m_Name: WhipData
+  m_Name: Whip
   m_EditorClassIdentifier: 
   awakenedVersion: {fileID: 11400000, guid: 41dc319ac42f70545ba49894d3d9d2e3, type: 2}
   weaponType: 0
@@ -63,3 +63,12 @@ MonoBehaviour:
     additionalRangePercent: 0
     cooldownChange: 0
     additionalPenetration: 0
+  levelDescriptions:
+  - 
+  - "\uD22C\uC0AC\uCCB4 \uC218 1 \uC99D\uAC00"
+  - "\uACF5\uACA9\uB825 2 \uC99D\uAC00, \uCFE8\uD0C0\uC784 0.1\uCD08 \uAC10\uC18C"
+  - "\uACF5\uACA9\uB825 3 \uC99D\uAC00"
+  - "\uACF5\uACA9\uB825 2 \uC99D\uAC00, \uCFE8\uD0C0\uC784 0.15\uCD08 \uAC10\uC18C"
+  - "\uCFE8\uD0C0\uC784 0.15\uCD08 \uAC10\uC18C"
+  - "\uACF5\uACA9\uB825 2 \uC99D\uAC00"
+  - "\uACF5\uACA9\uB825 5 \uC99D\uAC00"

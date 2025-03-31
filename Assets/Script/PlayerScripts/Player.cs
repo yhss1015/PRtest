@@ -81,11 +81,7 @@ public class Player : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.E))
         {
-            Slash sl = attack_Prefab[0].GetComponent<Slash>();
-            sl.AttackPower += 1;
-            Debug.Log("능력치업");
-
-            IncreaseCircleCount();
+            PlusExp(50);
         }
     }
 

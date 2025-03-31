@@ -35052,6 +35052,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2294504400448297690, guid: dc1f81e7d158d9643ae91585513bc136, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2294504400448297690, guid: dc1f81e7d158d9643ae91585513bc136, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2294504400448297690, guid: dc1f81e7d158d9643ae91585513bc136, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2294504400448297690, guid: dc1f81e7d158d9643ae91585513bc136, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2294504400448297690, guid: dc1f81e7d158d9643ae91585513bc136, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 335
+      objectReference: {fileID: 0}
+    - target: {fileID: 2294504400448297690, guid: dc1f81e7d158d9643ae91585513bc136, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 140
+      objectReference: {fileID: 0}
+    - target: {fileID: 2294504400448297690, guid: dc1f81e7d158d9643ae91585513bc136, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 3012705450743774769, guid: dc1f81e7d158d9643ae91585513bc136, type: 3}
       propertyPath: Player
       value: 
@@ -35076,6 +35104,38 @@ PrefabInstance:
       propertyPath: 'menuButtons.Array.data[1]'
       value: 
       objectReference: {fileID: 1582422093}
+    - target: {fileID: 3287311955962449038, guid: dc1f81e7d158d9643ae91585513bc136, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4100953806294232965, guid: dc1f81e7d158d9643ae91585513bc136, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4100953806294232965, guid: dc1f81e7d158d9643ae91585513bc136, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4100953806294232965, guid: dc1f81e7d158d9643ae91585513bc136, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4100953806294232965, guid: dc1f81e7d158d9643ae91585513bc136, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4100953806294232965, guid: dc1f81e7d158d9643ae91585513bc136, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 335
+      objectReference: {fileID: 0}
+    - target: {fileID: 4100953806294232965, guid: dc1f81e7d158d9643ae91585513bc136, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 140
+      objectReference: {fileID: 0}
+    - target: {fileID: 4100953806294232965, guid: dc1f81e7d158d9643ae91585513bc136, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 4504735637886741475, guid: dc1f81e7d158d9643ae91585513bc136, type: 3}
       propertyPath: m_Color.b
       value: 1
@@ -35089,6 +35149,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5446071655563565746, guid: dc1f81e7d158d9643ae91585513bc136, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 1f62f8ad00e37674abb5a7c37c2e1c9c, type: 3}
+    - target: {fileID: 5446071655563565746, guid: dc1f81e7d158d9643ae91585513bc136, type: 3}
       propertyPath: m_FontData.m_MinSize
       value: 2
       objectReference: {fileID: 0}
@@ -35096,6 +35160,10 @@ PrefabInstance:
       propertyPath: m_FontData.m_FontSize
       value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 5567547309745578775, guid: dc1f81e7d158d9643ae91585513bc136, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 1f62f8ad00e37674abb5a7c37c2e1c9c, type: 3}
     - target: {fileID: 5567547309745578775, guid: dc1f81e7d158d9643ae91585513bc136, type: 3}
       propertyPath: m_FontData.m_MinSize
       value: 2
@@ -35116,6 +35184,22 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6457067127092441154, guid: dc1f81e7d158d9643ae91585513bc136, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6457067127092441154, guid: dc1f81e7d158d9643ae91585513bc136, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6840298717515647790, guid: dc1f81e7d158d9643ae91585513bc136, type: 3}
+      propertyPath: m_Text
+      value: "\uC548\uB155\uD558\uC138\uC694\n\uC548\uB155\uD558\uC138\uC694\uC548\uB155\uD558\uC138\uC694dkssuddksduskdsdkusd"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6840298717515647790, guid: dc1f81e7d158d9643ae91585513bc136, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 1f62f8ad00e37674abb5a7c37c2e1c9c, type: 3}
     - target: {fileID: 6840298717515647790, guid: dc1f81e7d158d9643ae91585513bc136, type: 3}
       propertyPath: m_FontData.m_MinSize
       value: 0
@@ -35135,6 +35219,38 @@ PrefabInstance:
     - target: {fileID: 7645850650087403900, guid: dc1f81e7d158d9643ae91585513bc136, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8174343827250225304, guid: dc1f81e7d158d9643ae91585513bc136, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8174343827250225304, guid: dc1f81e7d158d9643ae91585513bc136, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8174343827250225304, guid: dc1f81e7d158d9643ae91585513bc136, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8174343827250225304, guid: dc1f81e7d158d9643ae91585513bc136, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8174343827250225304, guid: dc1f81e7d158d9643ae91585513bc136, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 335
+      objectReference: {fileID: 0}
+    - target: {fileID: 8174343827250225304, guid: dc1f81e7d158d9643ae91585513bc136, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 140
+      objectReference: {fileID: 0}
+    - target: {fileID: 8174343827250225304, guid: dc1f81e7d158d9643ae91585513bc136, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8174343827250225304, guid: dc1f81e7d158d9643ae91585513bc136, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8534864142887120532, guid: dc1f81e7d158d9643ae91585513bc136, type: 3}
       propertyPath: m_Color.b
@@ -35668,7 +35784,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   equippedWeapons:
   - itemData: {fileID: 11400000, guid: f45d4ce1ce4b57c48b73f29a6d4918c9, type: 2}
-    currentLevel: 0
+    currentLevel: 1
   equippedAccessories: []
   weaponDisplayController: {fileID: 0}
   setAwakeningMappingList: {fileID: 0}
@@ -35691,6 +35807,9 @@ MonoBehaviour:
   - {fileID: 5230563220734635514, guid: c237dfa0a9e439441a86607fb639221c, type: 3}
   - {fileID: 3286683016843523009, guid: a18a177b73a272d4fbe06c260a3fbbe3, type: 3}
   wd: {fileID: 11400000, guid: f45d4ce1ce4b57c48b73f29a6d4918c9, type: 2}
+  wd2: {fileID: 11400000, guid: 801ebecbf919ae648b779aee3b73648f, type: 2}
+  wd3: {fileID: 11400000, guid: 9fd0cd7a31a5b0c49896c3db8d913bb9, type: 2}
+  wd4: {fileID: 11400000, guid: 8085cc2ca15aecd418cbed354ec004e5, type: 2}
   playerInventory: {fileID: 1896131349}
 --- !u!4 &1896131351
 Transform:

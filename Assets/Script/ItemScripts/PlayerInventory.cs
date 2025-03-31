@@ -14,7 +14,7 @@ public class EquippedItem<T>
     public EquippedItem(T data)
     {
         itemData = data;
-        currentLevel = 0;
+        currentLevel = 1;
     }
 }
 #endregion

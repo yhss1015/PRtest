@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f42a46ac6665ba04c953d9dd9c798014, type: 3}
-  m_Name: NinjaStarData
+  m_Name: NinjaStar
   m_EditorClassIdentifier: 
   awakenedVersion: {fileID: 0}
   weaponType: 3
@@ -63,3 +63,13 @@ MonoBehaviour:
     additionalRangePercent: 0
     cooldownChange: -0.25
     additionalPenetration: 0
+  levelDescriptions:
+  - "\uB2CC\uC790 \uD45C\uCC3D \uD68D\uB4DD(\uD45C\uCC3D\uC744 \uD22C\uCC99,\uD50C\uB808\uC774\uC5B4\uC5D0\uAC8C
+    \uB3CC\uC544\uC634)"
+  - "\uD22C\uC0AC\uCCB4 1\uC99D\uAC00, \uACF5\uACA9\uB825 2 \uC99D\uAC00"
+  - "\uD22C\uC0AC\uCCB4 1\uC99D\uAC00"
+  - "\uACF5\uACA9\uB825 2 \uC99D\uAC00"
+  - "\uACF5\uACA9\uB825 3 \uC99D\uAC00"
+  - "\uD22C\uC0AC\uCCB4 1 \uC99D\uAC00, \uCFE8\uD0C0\uC784 0.2\uCD08 \uAC10\uC18C"
+  - "\uACF5\uACA9\uB825 3 \uC99D\uAC00"
+  - "\uCFE8\uD0C0\uC784 0.25\uCD08 \uAC10\uC18C"

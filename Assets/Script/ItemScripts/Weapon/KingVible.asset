@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f42a46ac6665ba04c953d9dd9c798014, type: 3}
-  m_Name: KingVibleData
+  m_Name: KingVible
   m_EditorClassIdentifier: 
   awakenedVersion: {fileID: 0}
   weaponType: 2
@@ -63,3 +63,12 @@ MonoBehaviour:
     additionalRangePercent: 0
     cooldownChange: 0
     additionalPenetration: 0
+  levelDescriptions:
+  - "\uD0B9 \uBC14\uC774\uBE14 \uD68D\uB4DD(\uC8FC\uBCC0\uC744 \uB3CC\uBA70 \uACF5\uACA9)"
+  - "\uD22C\uC0AC\uCCB4 1 \uC99D\uAC00"
+  - "\uACF5\uACA9\uB825 3 \uC99D\uAC00"
+  - "\uD22C\uC0AC\uCCB4 1 \uC99D\uAC00, \uACF5\uACA9\uB825 2\uC99D\uAC00"
+  - "\uACF5\uACA9\uB825 3 \uC99D\uAC00"
+  - "\uD22C\uC0AC\uCCB4 1 \uC99D\uAC00"
+  - "\uACF5\uACA9\uB825 5 \uC99D\uAC00"
+  - "\uD22C\uC0AC\uCCB4 1 \uC99D\uAC00"

@@ -65,16 +65,20 @@ public class GameManager : MonoBehaviour
             {                
 
                 Time.timeScale = 1;
-                int index = 0;
-                index = playerInventory.FIndIndex(weapon);
+                
                 if (!playerInventory.FIndWeapon(weapon))
                 {
+                    
                     playerInventory.AddNewWeapon(weapon);
+                    int index = 0;
+                    index = playerInventory.FIndIndex(weapon);
                     GameManager.Instance.prefabManager.UpdateWeaponPrefab(weapon, playerInventory.equippedWeapons[index].currentLevel);
                     GameManager.Instance.player.StartWeapon(weapon);
                 }
                 else
                 {
+                    int index = 0;
+                    index = playerInventory.FIndIndex(weapon);
                     playerInventory.LevelUpWeapon(index);
                     GameManager.Instance.prefabManager.UpdateWeaponPrefab(weapon, playerInventory.equippedWeapons[index].currentLevel);
                 }                               
