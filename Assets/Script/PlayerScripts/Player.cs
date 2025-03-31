@@ -51,8 +51,8 @@ public class Player : MonoBehaviour
     [Header("아이템 매니저")]
     public ItemManager itemManager;
 
-    public GameObject DieText1;
-    public GameObject DieText2;
+    public GameObject DieCanvas;
+    
 
     void Start()
     {
@@ -237,8 +237,8 @@ public class Player : MonoBehaviour
         {
             Debug.Log("플레이어 사망");
             Time.timeScale = 0;
-            DieText1.SetActive(true);
-            DieText2.SetActive(true);
+            DieCanvas.SetActive(true);
+            
 
         }
     }
